@@ -1,1048 +1,400 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Haider Mohsin | Technical Specialist</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto+Slab:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --dark-bg: #0a0a0f;
-            --darker-bg: #050508;
-            --card-bg: #12121a;
-            --accent-gold: #d4af37;
-            --accent-cyan: #00f5f5;
-            --text-primary: #f0f0f0;
-            --text-secondary: #b0b0c0;
-            --border-radius: 8px;
-            --transition: all 0.3s ease;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background: var(--dark-bg);
-            color: var(--text-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(0, 245, 245, 0.05) 0%, transparent 20%),
-                radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 20%),
-                linear-gradient(to bottom, var(--darker-bg), var(--dark-bg));
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header & Navigation */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(10, 10, 15, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid rgba(0, 245, 245, 0.1);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-        
-        .logo {
-            font-family: 'Roboto Slab', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            background: linear-gradient(45deg, var(--accent-gold), var(--accent-cyan));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            letter-spacing: 1px;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-        
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.1rem;
-            transition: var(--transition);
-            position: relative;
-        }
-        
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--accent-cyan);
-        }
-        
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent-cyan);
-            transition: var(--transition);
-        }
-        
-        .nav-links a:hover::after, .nav-links a.active::after {
-            width: 100%;
-        }
-        
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 100px 0 80px;
-            position: relative;
-        }
-        
-        .hero-content {
-            max-width: 700px;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-            line-height: 1.2;
-        }
-        
-        .hero h1 span {
-            display: block;
-            color: var(--accent-cyan);
-            font-size: 1.8rem;
-            font-weight: 500;
-            margin-top: 10px;
-        }
-        
-        .motto {
-            font-family: 'Roboto Slab', serif;
-            font-size: 1.6rem;
-            margin: 30px 0;
-            color: var(--accent-gold);
-            position: relative;
-            padding-left: 30px;
-            font-style: italic;
-        }
-        
-        .motto::before {
-            content: """;
-            position: absolute;
-            left: 0;
-            top: -15px;
-            font-size: 3rem;
-            color: rgba(212, 175, 55, 0.3);
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            margin-bottom: 40px;
-            max-width: 600px;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            padding: 15px 35px;
-            background: linear-gradient(45deg, var(--accent-gold), var(--accent-cyan));
-            color: var(--dark-bg);
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 30px;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            font-size: 1.1rem;
-            letter-spacing: 1px;
-            box-shadow: 0 5px 15px rgba(0, 245, 245, 0.3);
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 245, 245, 0.4);
-        }
-        
-        /* Section Styling */
-        section {
-            padding: 100px 0;
-            position: relative;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 70px;
-        }
-        
-        .section-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            background: linear-gradient(45deg, var(--accent-gold), var(--accent-cyan));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            display: inline-block;
-        }
-        
-        .section-header p {
-            color: var(--text-secondary);
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-        }
-        
-        /* Skills Section */
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
-        }
-        
-        .skill-category {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(0, 245, 245, 0.1);
-            transition: var(--transition);
-        }
-        
-        .skill-category:hover {
-            transform: translateY(-10px);
-            border-color: rgba(0, 245, 245, 0.3);
-            box-shadow: 0 15px 40px rgba(0, 245, 245, 0.2);
-        }
-        
-        .skill-category h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: var(--accent-cyan);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .skill-category h3 i {
-            color: var(--accent-gold);
-        }
-        
-        .skill-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-        
-        .badge {
-            background: rgba(0, 245, 245, 0.1);
-            color: var(--accent-cyan);
-            padding: 8px 15px;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .badge:hover {
-            background: var(--accent-cyan);
-            color: var(--dark-bg);
-            transform: translateY(-3px);
-        }
-        
-        .expertise-tag {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background: var(--accent-gold);
-            color: var(--dark-bg);
-            font-size: 0.7rem;
-            font-weight: bold;
-            padding: 2px 8px;
-            border-radius: 20px;
-            transform: rotate(15deg);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-        }
-        
-        /* Why Trust Me Section */
-        .trust-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .trust-card {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(212, 175, 55, 0.1);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .trust-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(212, 175, 55, 0.3);
-        }
-        
-        .trust-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--accent-gold), var(--accent-cyan));
-        }
-        
-        .trust-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--accent-gold);
-        }
-        
-        .trust-card p {
-            color: var(--text-secondary);
-            margin-bottom: 20px;
-        }
-        
-        .trust-icon {
-            font-size: 2.5rem;
-            color: var(--accent-cyan);
-            margin-bottom: 20px;
-        }
-        
-        /* Detailed Skills Section */
-        .expertise-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-        
-        .expertise-category {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(0, 245, 245, 0.1);
-        }
-        
-        .expertise-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .expertise-header i {
-            font-size: 2rem;
-            color: var(--accent-cyan);
-        }
-        
-        .expertise-header h3 {
-            font-size: 1.5rem;
-            color: var(--accent-cyan);
-        }
-        
-        .expertise-item {
-            margin-bottom: 20px;
-            padding-left: 15px;
-            border-left: 2px solid var(--accent-gold);
-        }
-        
-        .expertise-item h4 {
-            font-size: 1.1rem;
-            color: var(--text-primary);
-            margin-bottom: 5px;
-        }
-        
-        .expertise-item p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-        
-        .skill-level {
-            display: inline-block;
-            padding: 3px 10px;
-            background: rgba(0, 245, 245, 0.1);
-            color: var(--accent-cyan);
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-top: 5px;
-        }
-        
-        /* Philosophy Section */
-        .philosophy-content {
-            max-width: 800px;
-            margin: 0 auto;
-            background: var(--card-bg);
-            padding: 40px;
-            border-radius: var(--border-radius);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(212, 175, 55, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .philosophy-content::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--accent-gold), var(--accent-cyan));
-        }
-        
-        .philosophy-content p {
-            margin-bottom: 25px;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-secondary);
-        }
-        
-        .highlight {
-            color: var(--accent-cyan);
-            font-weight: 500;
-        }
-        
-        .urdu {
-            font-family: 'Noto Nastaliq Urdu', serif;
-            font-size: 1.3rem;
-            color: var(--accent-gold);
-            text-align: right;
-            margin: 30px 0;
-            direction: rtl;
-            padding: 15px;
-            border-right: 2px solid var(--accent-gold);
-        }
-        
-        /* Contact Section */
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .contact-info {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(212, 175, 55, 0.1);
-            text-align: center;
-        }
-        
-        .contact-methods {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-            margin-top: 30px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            color: var(--text-secondary);
-            transition: var(--transition);
-            text-decoration: none;
-            padding: 15px;
-            border-radius: var(--border-radius);
-            background: rgba(255, 255, 255, 0.05);
-        }
-        
-        .contact-item:hover {
-            background: rgba(0, 245, 245, 0.1);
-            transform: translateY(-3px);
-        }
-        
-        .contact-item i {
-            width: 50px;
-            height: 50px;
-            background: rgba(0, 245, 245, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            color: var(--accent-cyan);
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--darker-bg);
-            padding: 40px 0;
-            text-align: center;
-            border-top: 1px solid rgba(0, 245, 245, 0.1);
-        }
-        
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 20px;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 50%;
-            color: var(--text-secondary);
-            transition: var(--transition);
-            font-size: 1.2rem;
-        }
-        
-        .social-links a:hover {
-            background: var(--accent-cyan);
-            color: var(--dark-bg);
-            transform: translateY(-3px);
-        }
-        
-        .copyright {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            margin-top: 20px;
-        }
-        
-        /* Background Effects */
-        .code-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.05;
-            overflow: hidden;
-            pointer-events: none;
-            z-index: 0;
-        }
-        
-        .code-line {
-            position: absolute;
-            font-family: monospace;
-            color: var(--accent-cyan);
-            font-size: 14px;
-            white-space: nowrap;
-            animation: scrollCode 20s linear infinite;
-        }
-        
-        @keyframes scrollCode {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
-        
-        .floating-shapes {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 0;
-        }
-        
-        .shape {
-            position: absolute;
-            border-radius: 50%;
-            background: radial-gradient(circle, var(--accent-cyan), transparent);
-            opacity: 0.1;
-            filter: blur(20px);
-        }
-        
-        .shape:nth-child(1) {
-            width: 300px;
-            height: 300px;
-            top: 10%;
-            left: 5%;
-            animation: float 15s infinite ease-in-out;
-        }
-        
-        .shape:nth-child(2) {
-            width: 200px;
-            height: 200px;
-            top: 60%;
-            right: 10%;
-            background: radial-gradient(circle, var(--accent-gold), transparent);
-            animation: float 12s infinite ease-in-out;
-            animation-delay: 2s;
-        }
-        
-        .shape:nth-child(3) {
-            width: 150px;
-            height: 150px;
-            bottom: 20%;
-            left: 15%;
-            animation: float 18s infinite ease-in-out;
-            animation-delay: 4s;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            25% { transform: translate(20px, -20px) rotate(5deg); }
-            50% { transform: translate(0, -40px) rotate(0deg); }
-            75% { transform: translate(-20px, -20px) rotate(-5deg); }
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .nav-links {
-                gap: 15px;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .motto {
-                font-size: 1.3rem;
-            }
-            
-            section {
-                padding: 70px 0;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-                background: none;
-                border: none;
-                color: var(--text-secondary);
-                font-size: 1.5rem;
-                cursor: pointer;
-            }
-            
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .motto {
-                font-size: 1.1rem;
-            }
-        }
-    </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Haider Mohsin — Technical Specialist</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto+Slab:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#07070b;
+    --card:#0f1116;
+    --accent-cyan:#00f5f5;
+    --accent-gold:#d4af37;
+    --muted:#9aa0a6;
+    --glass: rgba(255,255,255,0.03);
+    --radius:12px;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: radial-gradient(1200px 600px at 10% 10%, rgba(0,245,245,0.03), transparent),
+                radial-gradient(900px 500px at 90% 90%, rgba(212,175,55,0.02), transparent),
+                var(--bg);
+    color:#e9eef1;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.45;
+    padding-bottom:80px;
+  }
+
+  .wrap{max-width:1100px;margin:0 auto;padding:28px;}
+
+  /* Header */
+  header{position:sticky;top:12px;z-index:40;padding:6px 0;backdrop-filter: blur(6px);display:flex;align-items:center;justify-content:space-between}
+  .brand{display:flex;align-items:center;gap:12px}
+  .logo{
+    font-family:"Roboto Slab", serif;
+    font-weight:700;
+    font-size:1.2rem;
+    background:linear-gradient(90deg,var(--accent-gold),var(--accent-cyan));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  nav{display:flex;gap:14px;align-items:center}
+  nav a{color:var(--muted);text-decoration:none;font-weight:600;padding:8px 12px;border-radius:8px;transition:all .18s}
+  nav a:hover{color:var(--accent-cyan);background:rgba(0,245,245,0.03)}
+  .cta-small{background:linear-gradient(90deg,var(--accent-gold),var(--accent-cyan));color:#0a0a0f;padding:8px 14px;border-radius:999px;font-weight:700;text-decoration:none}
+
+  /* Hero */
+  .hero{display:grid;grid-template-columns:1fr 340px;gap:28px;align-items:center;margin-top:18px}
+  .hero-left h1{font-size:2.4rem;margin:0 0 6px}
+  .hero-left .tag{color:var(--accent-cyan);font-weight:600;margin-bottom:10px;display:inline-block}
+  .hero-left p{color:var(--muted);margin:10px 0 18px;max-width:60ch}
+  .hero-left .buttons{display:flex;gap:12px}
+  .btn{
+    padding:12px 18px;border-radius:12px;font-weight:700;border:none;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:10px
+  }
+  .btn-primary{background:linear-gradient(90deg,var(--accent-gold),var(--accent-cyan));color:#081017}
+  .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
+
+  .hero-right{
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)
+  }
+  .profile-card h3{margin:0 0 6px}
+  .profile-card p{margin:0;color:var(--muted);font-size:0.95rem}
+
+  /* Sections */
+  section{margin-top:34px}
+  .section-title{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+  .section-title h2{margin:0;font-size:1.4rem;background:linear-gradient(90deg,var(--accent-gold),var(--accent-cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .section-title p{margin:0;color:var(--muted);font-size:.95rem}
+
+  .grid{display:grid;gap:16px}
+  .cols-3{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+
+  .card{
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius:var(--radius);
+    padding:16px;
+    border:1px solid rgba(255,255,255,0.03);
+    box-shadow: 0 8px 30px rgba(2,8,12,0.6);
+  }
+
+  /* badges */
+  .badges{display:flex;flex-wrap:wrap;gap:8px}
+  .badge{
+    padding:8px 12px;border-radius:999px;background:rgba(0,245,245,0.07);color:var(--accent-cyan);font-weight:600;font-size:.9rem
+  }
+  .badge.gold{background:rgba(212,175,55,0.08);color:var(--accent-gold)}
+
+  /* tools list */
+  .tools-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px}
+  .tool{padding:10px;border-radius:8px;background:var(--glass);color:var(--muted);display:flex;align-items:center;gap:10px;font-weight:600}
+  .tool i{color:var(--accent-cyan);min-width:22px;text-align:center}
+
+  /* projects */
+  .project{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent);border:1px solid rgba(255,255,255,0.02)}
+  .project h4{margin:0 0 6px}
+  .project p{margin:0;color:var(--muted);font-size:.95rem}
+
+  /* timeline style for labs/certs */
+  .list{display:flex;flex-direction:column;gap:10px}
+  .list-item{display:flex;gap:12px;align-items:flex-start}
+  .dot{width:10px;height:10px;border-radius:99px;background:var(--accent-cyan);margin-top:6px}
+
+  /* contact */
+  .contact-grid{display:grid;grid-template-columns:1fr 280px;gap:18px}
+  .contact-card{display:flex;flex-direction:column;gap:10px}
+  .contact-item{display:flex;gap:12px;align-items:center;color:var(--muted);padding:10px;border-radius:8px;background:rgba(255,255,255,0.02)}
+  .contact-item i{color:var(--accent-gold);width:28px;text-align:center}
+
+  /* footer */
+  footer{text-align:center;color:var(--muted);margin-top:36px;font-size:.9rem}
+
+  /* small screens */
+  @media (max-width:880px){
+    .hero{grid-template-columns:1fr;gap:18px}
+    .contact-grid{grid-template-columns:1fr}
+  }
+
+  /* subtle animation */
+  .float-up{transform:translateY(0);opacity:1;transition:all .6s cubic-bezier(.2,.9,.3,1)}
+  .fade-in{opacity:1;transform:none;transition:all .5s ease}
+  [data-animate="hidden"]{opacity:0;transform:translateY(8px)}
+  /* typing */
+  .typing{display:inline-block;color:var(--accent-cyan);font-weight:700}
+</style>
 </head>
 <body>
-    <!-- Background Effects -->
-    <div class="code-bg" id="code-bg"></div>
-    <div class="floating-shapes">
-        <div class="shape"></div>
-        <div class="shape"></div>
-        <div class="shape"></div>
+<div class="wrap">
+
+  <header>
+    <div class="brand">
+      <div class="logo">Haider Mohsin</div>
+      <div style="color:var(--muted);font-weight:600;font-size:.92rem">Technical Specialist</div>
     </div>
-    
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">Haider Mohsin</div>
-                <div class="nav-links">
-                    <a href="#" class="active">Home</a>
-                    <a href="#expertise">Expertise</a>
-                    <a href="#value">My Value</a>
-                    <a href="#philosophy">Philosophy</a>
-                    <a href="#contact">Contact</a>
-                </div>
-                <button class="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </nav>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certs">Certifications</a>
+      <a href="#contact" class="cta-small">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <main class="hero" style="margin-top:18px">
+    <div class="hero-left">
+      <div class="tag">Pentester • Bug Bounty Learner • Python Developer • IT Support</div>
+      <h1 id="name-heading">Hi — I’m <span style="background:linear-gradient(90deg,var(--accent-gold),var(--accent-cyan));-webkit-background-clip:text;background-clip:text;color:transparent">Haider Mohsin</span></h1>
+      <p id="about-line">I build automation tools, practice realistic security labs, and solve practical IT problems. I’m focused on learning and applying modern web security techniques while improving systems reliability and maintainability.</p>
+
+      <div class="buttons">
+        <a class="btn btn-primary" href="#projects"><i class="fas fa-laptop-code"></i> View Projects</a>
+        <a class="btn btn-ghost" href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+      </div>
+    </div>
+
+    <aside class="hero-right profile-card card">
+      <h3>Quick Profile</h3>
+      <p><strong>Role:</strong> Pentester / Python Developer / IT Support</p>
+      <p><strong>Location:</strong> Lahore, Pakistan</p>
+      <p style="margin-top:10px;color:var(--muted)">Open to freelance pentesting, bug bounty submissions, automation & scraping projects, and IT support roles. I balance hands-on practice (HTB, THM) with tool-building in Python.</p>
+      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+        <div class="badge">HackTheBox</div>
+        <div class="badge">TryHackMe</div>
+        <div class="badge gold">PortSwigger</div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-title">
+      <h2>About Me</h2>
+      <p>Practical learner who turns study into projects — I practice in labs, build tools, and write concise reports for improvement.</p>
+    </div>
+    <div class="card">
+      <p style="color:var(--muted);margin:0">I’m an aspiring pentester and Python developer with hands-on experience in web security labs, system administration, and automation. My aim is to grow into a reliable security researcher: consistently find valid issues, write clear reports, and build small tools that speed up the testing process.</p>
+    </div>
+  </section>
+
+  <!-- SKILLS & TOOLS -->
+  <section id="skills">
+    <div class="section-title">
+      <h2>Skills & Tools</h2>
+      <p>Grouped by focus — Cybersecurity, Development, and IT Support.</p>
+    </div>
+
+    <div class="grid cols-3" style="grid-template-columns: 1.2fr .9fr .9fr; gap:18px;">
+      <!-- Left: Core Skills -->
+      <div class="card">
+        <h3 style="margin-top:0">Core Skills (Highlights)</h3>
+        <div style="margin-top:8px">
+          <strong style="color:var(--accent-cyan)">Cybersecurity & Bug Bounty</strong>
+          <ul style="color:var(--muted);margin:8px 0 14px 18px">
+            <li>XSS (Mavo, Vue.js, DOM, CSP/WAF bypass)</li>
+            <li>CSRF & WebSocket handshake attacks (CSWSH)</li>
+            <li>SSRF, SQLi, NoSQL, IDOR, Access Control testing</li>
+            <li>API testing, Business Logic flaws, Bug chaining</li>
+            <li>Recon & automation: subfinder, httpx, gau, hakrawler, Python scripts</li>
+          </ul>
+          <strong style="color:var(--accent-cyan)">Programming & Scripting</strong>
+          <ul style="color:var(--muted);margin:8px 0 0 18px">
+            <li>Python — automation, scraping, PoC tools</li>
+            <li>HTML/CSS/JavaScript, Dash, Vue.js basics</li>
+            <li>Bash / Shell scripting, Git usage</li>
+          </ul>
         </div>
-    </header>
-    
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Technical Specialist<br><span>Automation & Cybersecurity</span></h1>
-                <p class="motto">Hacking reality like code, reshaping perception like JavaScript manipulates the DOM</p>
-                <p>I specialize in building sophisticated automation systems, robust web applications, and securing digital environments against emerging threats. My work combines technical precision with creative problem-solving to deliver elegant solutions.</p>
-                <a href="#contact" class="cta-button">Get in Touch</a>
-            </div>
+      </div>
+
+      <!-- Middle: Tools -->
+      <div class="card">
+        <h3 style="margin-top:0">Tools — Security & Recon</h3>
+        <div class="tools-list" style="margin-top:10px">
+          <div class="tool"><i class="fas fa-bug"></i> Burp Suite</div>
+          <div class="tool"><i class="fas fa-wrench"></i> OWASP ZAP</div>
+          <div class="tool"><i class="fas fa-server"></i> Nmap</div>
+          <div class="tool"><i class="fas fa-network-wired"></i> Netcat</div>
+          <div class="tool"><i class="fas fa-robot"></i> httpx / subfinder</div>
+          <div class="tool"><i class="fas fa-file-code"></i> Gau / Hakrawler</div>
+          <div class="tool"><i class="fas fa-code"></i> Postman / JWT.io</div>
+          <div class="tool"><i class="fas fa-docker"></i> Docker</div>
+          <div class="tool"><i class="fas fa-wave-square"></i> Wireshark</div>
+          <div class="tool"><i class="fas fa-search"></i> Gobuster / Dirsearch</div>
         </div>
-    </section>
-    
-    <!-- Expertise Section -->
-    <section id="expertise">
-        <div class="container">
-            <div class="section-header">
-                <h2>Technical Expertise</h2>
-                <p>Comprehensive skills in programming, cybersecurity, and automation technologies</p>
+      </div>
+
+      <!-- Right: IT / Admin -->
+      <div class="card">
+        <h3 style="margin-top:0">IT Support & Systems</h3>
+        <div style="margin-top:8px;color:var(--muted)">
+          <ul style="margin:0 0 6px 18px">
+            <li>Windows & Linux (Ubuntu) administration</li>
+            <li>Server setup, patching and monitoring</li>
+            <li>Network troubleshooting (LAN/Wi-Fi, DHCP, DNS, firewalls)</li>
+            <li>Hardware diagnostics (desktops, laptops, printers, routers)</li>
+            <li>Ticketing & documentation practices</li>
+          </ul>
+          <div style="margin-top:8px">
+            <strong style="color:var(--accent-gold)">Other tools</strong>
+            <div style="margin-top:8px" class="badges">
+              <div class="badge">Git</div>
+              <div class="badge gold">Docker</div>
+              <div class="badge">VS Code</div>
+              <div class="badge">Postman</div>
             </div>
-            
-            <div class="expertise-container">
-                <div class="expertise-category">
-                    <div class="expertise-header">
-                        <i class="fab fa-python"></i>
-                        <h3>Python Development</h3>
-                    </div>
-                    <div class="expertise-item">
-                        <h4>Automation & Scripting <span class="skill-level">Expert</span></h4>
-                        <p>Building robust automation solutions for complex workflows and repetitive tasks.</p>
-                    </div>
-                    <div class="expertise-item">
-                        <h4>Web Scraping <span class="skill-level">Expert</span></h4>
-                        <p>Advanced data extraction using Playwright, Selenium, BeautifulSoup, and Requests.</p>
-                    </div>
-                    <div class="expertise-item">
-                        <h4>Backend API Development <span class="skill-level">Expert</span></h4>
-                        <p>Creating scalable and secure backend systems with RESTful interfaces.</p>
-                    </div>
-                    <div class="expertise-item">
-                        <h4>Data Processing <span class="skill-level">Expert</span></h4>
-                        <p>Advanced data manipulation with Pandas and NumPy for insights and analytics.</p>
-                    </div>
-                    <div class="expertise-item">
-                        <h4>Discord.py <span class="skill-level">Expert</span></h4>
-                        <p>Building sophisticated bots for moderation, automation, and community engagement.</p>
-                    </div>
-                </div>
-                
-                <div class="expertise-category">
-                    <div class="expertise-header">
-                        <i class="fab fa-js"></i>
-                        <h3>JavaScript & Web</h3>
-                    </div>
-                    <div class="expertise-item">
-                        <h4>DOM Manipulation <span class="skill-level">Advanced</span></h4>
-                        <p>Precise control and dynamic modification of web page elements.</p>
-                    </div>
-                    <div class="expertise-item">
-                        <h4>Browser Automation <span class="skill-level">Advanced</span></h4>
-                        <p>Automating complex browser interactions and workflows.</p>
-                    </div>
-                    <div class="expertise-item">
-                        <h4>XSS Payload Crafting <span class="skill-level">Advanced</span></h4>
-                        <p>Developing sophisticated payloads for security testing.</p>
-                    </div>
-                    <div class="expertise-item">
-                        <h4>HTML5 & CSS3 <span class="skill-level">Proficient</span></h4>
-                        <p>Building responsive layouts with modern CSS frameworks and techniques.</p>
-                    </div>
-                    <div class="expertise-item">
-                        <h4>Node.js Scripting <span class="skill-level">Advanced</span></h4>
-                        <p>Server-side JavaScript for building efficient backend solutions.</p>
-                    </div>
-                </div>
-                
-                <div class="expertise-category">
-                    <div class="expertise-header">
-                        <i class="fas fa-shield-alt"></i>
-                        <h3>Cybersecurity</h3>
-                    </div>
-                    <div class="expertise-item">
-                        <h4>XSS (Cross-Site Scripting) <span class="skill-level">Expert</span></h4>
-                        <p>Stored, Reflected, DOM-based attacks and CSP bypass techniques.</p>
-                    </div>
-                    <div class="expertise-item">
-                        <h4>IDOR (Insecure Direct Object Reference) <span class="skill-level">Expert</span></h4>
-                        <p>Access control testing and exploitation strategies.</p>
-                    </div>
-                    <div class="expertise-item">
-                        <h4>CSRF (Cross-Site Request Forgery) <span class="skill-level">Expert</span></h4>
-                        <p>Traditional and WebSocket handshake attacks.</p>
-                    </div>
-                    <div class="expertise-item">
-                        <h4>SSRF (Server-Side Request Forgery) <span class="skill-level">Expert</span></h4>
-                        <p>Internal network scanning and HTTP smuggling techniques.</p>
-                    </div>
-                    <div class="expertise-item">
-                        <h4>Authentication & Session Management <span class="skill-level">Expert</span></h4>
-                        <p>Bypass and brute-force strategies for security testing.</p>
-                    </div>
-                </div>
-                
-                <div class="expertise-category">
-                    <div class="expertise-header">
-                        <i class="fas fa-chart-line"></i>
-                        <h3>Data & DevOps</h3>
-                    </div>
-                    <div class="expertise-item">
-                        <h4>Data Analysis <span class="skill-level">Expert</span></h4>
-                        <p>Data cleaning and transformation with Pandas and NumPy.</p>
-                    </div>
-                    <div class="expertise-item">
-                        <h4>Data Visualization <span class="skill-level">Expert</span></h4>
-                        <p>Creating insightful charts with Matplotlib and Seaborn.</p>
-                    </div>
-                    <div class="expertise-item">
-                        <h4>Git & GitHub <span class="skill-level">Proficient</span></h4>
-                        <p>Version control, branching, and CI/CD implementation.</p>
-                    </div>
-                    <div class="expertise-item">
-                        <h4>Docker <span class="skill-level">Proficient</span></h4>
-                        <p>Containerizing scripts and tools for portability and deployment.</p>
-                    </div>
-                    <div class="expertise-item">
-                        <h4>Cloud & APIs <span class="skill-level">Proficient</span></h4>
-                        <p>Designing RESTful APIs and working with AWS services (S3, Lambda).</p>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
-    
-    <!-- Why Trust Me Section -->
-    <section id="value" style="background: rgba(18, 18, 26, 0.5);">
-        <div class="container">
-            <div class="section-header">
-                <h2>Why Employers Trust Me</h2>
-                <p>Delivering technical excellence with professional discipline</p>
-            </div>
-            
-            <div class="trust-container">
-                <div class="trust-card">
-                    <div class="trust-icon">
-                        <i class="fas fa-medal"></i>
-                    </div>
-                    <h3>Professional Discipline</h3>
-                    <p>I approach every project with military precision - requirements are analyzed, milestones are established, and deadlines are sacred. My Fiverr experience has honed my ability to deliver exceptional work within tight timeframes.</p>
-                </div>
-                
-                <div class="trust-card">
-                    <div class="trust-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>Technical Precision</h3>
-                    <p>My code isn't just functional - it's elegant, efficient, and maintainable. I implement comprehensive testing protocols and security audits to ensure solutions are robust and future-proof.</p>
-                </div>
-                
-                <div class="trust-card">
-                    <div class="trust-icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <h3>Client Communication</h3>
-                    <p>I maintain crystal-clear communication throughout projects, providing regular updates and setting realistic expectations. Technical concepts are explained in accessible language to ensure alignment with stakeholders.</p>
-                </div>
-                
-                <div class="trust-card">
-                    <div class="trust-icon">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <h3>Problem-Solving Mindset</h3>
-                    <p>I thrive on complex technical challenges, approaching them with a hacker's creativity and an engineer's discipline. My solutions don't just address symptoms - they solve root problems with elegant efficiency.</p>
-                </div>
-                
-                <div class="trust-card">
-                    <div class="trust-icon">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <h3>Security-First Approach</h3>
-                    <p>Security isn't an afterthought - it's integrated into every solution I build. My cybersecurity expertise ensures systems are resilient against modern threats from the ground up.</p>
-                </div>
-                
-                <div class="trust-card">
-                    <div class="trust-icon">
-                        <i class="fas fa-sync-alt"></i>
-                    </div>
-                    <h3>Continuous Improvement</h3>
-                    <p>Technology evolves rapidly, and so do I. I dedicate significant time to mastering emerging technologies and refining my skills to deliver cutting-edge solutions.</p>
-                </div>
-            </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-title">
+      <h2>Projects & Labs</h2>
+      <p>Hands-on work and labs that show what I practice and build.</p>
+    </div>
+
+    <div class="grid" style="gap:12px">
+      <div class="card project">
+        <h4>Personal Bug Bounty Lab</h4>
+        <p class="muted">Set up Docker-based labs (DVWA, Juice Shop, vulnerable WebSocket apps). Used these to test payloads, reproduce bugs, and practice chained exploits.</p>
+      </div>
+
+      <div class="project card">
+        <h4>Python Automation Tools</h4>
+        <p>Built small tools for header fuzzing, JWT analysis, recon automation and scraping. Tools are used during recon and report preparation.</p>
+      </div>
+
+      <div class="project card">
+        <h4>Advanced XSS Research</h4>
+        <p>Explored XSS vectors specific to Vue.js and Mavo, tested CSP and sanitizer bypass techniques, and documented payloads for future testing.</p>
+      </div>
+
+      <div class="project card">
+        <h4>HackTheBox & TryHackMe</h4>
+        <p>Completed multiple machines and paths focusing on web exploitation, API testing, and privilege escalation. I use structured write-ups to track learning.</p>
+      </div>
+
+      <div class="project card">
+        <h4>Freelance Scraping Demo</h4>
+        <p>Delivered a scraping project (Fiverr demo): end-to-end data extraction and after-processing pipeline with clean output examples.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS & LEARNING -->
+  <section id="certs">
+    <div class="section-title">
+      <h2>Certifications & Learning</h2>
+      <p>Courses and learning platforms that shaped my technical path.</p>
+    </div>
+
+    <div class="card">
+      <div class="list">
+        <div class="list-item"><div class="dot"></div><div><strong>CompTIA Security+ (SY0-701)</strong> — In progress (security fundamentals, controls, PKI)</div></div>
+        <div class="list-item"><div class="dot"></div><div><strong>PortSwigger Web Security Academy</strong> — Completed modules on XSS, CSRF, SQLi, SSRF, Access Control</div></div>
+        <div class="list-item"><div class="dot"></div><div><strong>TryHackMe & HackTheBox</strong> — Practical pentest labs and structured learning paths</div></div>
+        <div class="list-item"><div class="dot"></div><div><strong>Code with Harry / W3Schools</strong> — Python, HTML/CSS/JS, Dash, Bash fundamentals</div></div>
+        <div class="list-item"><div class="dot"></div><div><strong>Self-learning</strong> — Advanced XSS, Vue.js security, Mavo-based labs, WebSocket testing, Docker setups</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES / PHILOSOPHY -->
+  <section id="values">
+    <div class="section-title">
+      <h2>Professional Values</h2>
+      <p>How I approach work and growth.</p>
+    </div>
+
+    <div class="card">
+      <ul style="color:var(--muted);margin:0 0 0 18px">
+        <li><strong>Practical learning:</strong> I convert study into reproducible projects and write-ups.</li>
+        <li><strong>Responsible disclosure:</strong> I follow ethics and clear communication for bug reporting.</li>
+        <li><strong>Continuous improvement:</strong> Regular practice on HTB/THM and tool-building keep me evolving.</li>
+        <li><strong>Clear documentation:</strong> I maintain concise notes and reproducible steps for every finding.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-title">
+      <h2>Contact</h2>
+      <p>Open to freelance work, collaboration, and mentorship opportunities.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="card contact-card">
+        <div class="contact-item"><i class="fas fa-envelope"></i><div><strong>Email</strong><div style="color:var(--muted)">haidermohsin1357@gmail.com</div></div></div>
+        <div class="contact-item"><i class="fab fa-github"></i><div><strong>GitHub</strong><div style="color:var(--muted)">github.com/haider1928</div></div></div>
+        <div class="contact-item"><i class="fas fa-globe"></i><div><strong>Fiverr</strong><div style="color:var(--muted)">fiverr.com/haidermohsinn</div></div></div>
+        <div class="contact-item"><i class="fas fa-phone"></i><div><strong>Phone</strong><div style="color:var(--muted)">(add your number)</div></div></div>
+      </div>
+
+      <aside class="card" style="display:flex;flex-direction:column;gap:12px;justify-content:center;align-items:center">
+        <div style="text-align:center">
+          <div style="font-weight:700;color:var(--accent-cyan);font-size:1.05rem">Let's collaborate</div>
+          <p style="color:var(--muted);margin:8px 0 0;text-align:center">If you have a bug bounty target, freelance scraping job, or need IT support setup — reach out and let's plan the next steps.</p>
         </div>
-    </section>
-    
-    <!-- Philosophy Section -->
-    <section id="philosophy">
-        <div class="container">
-            <div class="section-header">
-                <h2>Philosophy & Thought</h2>
-                <p>Exploring the nature of reality through technology and metaphysics</p>
-            </div>
-            
-            <div class="philosophy-content">
-                <p>My worldview is shaped by the understanding that <span class="highlight">"Energy, Time, and Space are not the origin but the result"</span>. This perspective informs both my technical work and philosophical explorations.</p>
-                
-                <p>I approach complex systems - whether codebases or cosmic phenomena - with the same analytical rigor. Just as JavaScript manipulates the DOM, we can reshape our perception of reality through disciplined thought and technical mastery.</p>
-                
-                <p>My intellectual pursuits span multiple domains:</p>
-                
-                <ul>
-                    <li>Cosmology and theoretical physics</li>
-                    <li>Urdu poetry and its metaphysical insights</li>
-                    <li>Linguistics and the structure of meaning</li>
-                    <li>Emergent behavior in complex systems</li>
-                </ul>
-                
-                <div class="urdu">
-                    وجود کی حقیقت کو سمجھنے کے لئے<br>
-                    ہمیں کوڈ کی طرح کائنات کو ڈی کوڈ کرنا ہوگا<br>
-                    ہر لائن میں معنی، ہر فنکشن میں حکمت<br>
-                    یہی ہے میرا فلسفہ، میرا راستہ
-                </div>
-                
-                <p>This interdisciplinary approach enables me to see patterns and connections that others might miss, bringing unique solutions to technical challenges.</p>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2>Get In Touch</h2>
-                <p>Let's collaborate on your next project or discuss technology and philosophy</p>
-            </div>
-            
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Professional Contact</h3>
-                    <div class="contact-methods">
-                        <a href="https://fiverr.com/haidermohsinn" class="contact-item">
-                            <i class="fas fa-globe"></i>
-                            <span>Fiverr.com/haidermohsinn</span>
-                        </a>
-                        <a href="https://github.com/haider1928" class="contact-item">
-                            <i class="fab fa-github"></i>
-                            <span>GitHub.com/haider1928</span>
-                        </a>
-                        <a href="mailto:haidermohsin1357@gmail.com" class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>haidermohsin1357@gmail.com</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="logo">Haider Mohsin</div>
-                <div class="social-links">
-                    <a href="https://fiverr.com/haidermohsinn"><i class="fas fa-globe"></i></a>
-                    <a href="https://github.com/haider1928"><i class="fab fa-github"></i></a>
-                    <a href="mailto:haidermohsin1357@gmail.com"><i class="fas fa-envelope"></i></a>
-                </div>
-                <div class="copyright">
-                    &copy; 2023 Haider Mohsin. All rights reserved.
-                </div>
-            </div>
-        </div>
-    </footer>
-    
-    <script>
-        // Generate code background effect
-        const codeBg = document.getElementById('code-bg');
-        const codeLines = [
-            'function exploreReality() {',
-            '  while (true) {',
-            '    let knowledge = learn();',
-            '    let wisdom = apply(knowledge);',
-            '    universe.revealPatterns(wisdom);',
-            '  }',
-            '}',
-            'class DigitalAlchemist {',
-            '  constructor() {',
-            '    this.skills = ["Python", "JavaScript", "Cybersecurity"];',
-            '    this.philosophy = "Reality as Code";',
-            '  }',
-            '  transformProblemToSolution(problem) {',
-            '    return elegantSolution(problem);',
-            '  }',
-            '}',
-            'const haider = new DigitalAlchemist();',
-            'haider.transformProblemToSolution(challenge);'
-        ];
-        
-        for (let i = 0; i < 20; i++) {
-            const line = document.createElement('div');
-            line.className = 'code-line';
-            line.textContent = codeLines[Math.floor(Math.random() * codeLines.length)];
-            line.style.top = `${Math.random() * 100}%`;
-            line.style.animationDuration = `${20 + Math.random() * 20}s`;
-            line.style.animationDelay = `${Math.random() * 5}s`;
-            codeBg.appendChild(line);
-        }
-        
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Update active nav link on scroll
-        window.addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-links a');
-            
-            let currentSection = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 100) {
-                    currentSection = section.getAttribute('id');
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${currentSection}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
+        <a href="mailto:haidermohsin1357@gmail.com" class="btn btn-primary" style="width:100%;justify-content:center"><i class="fas fa-paper-plane"></i> Message me</a>
+      </aside>
+    </div>
+  </section>
+
+  <footer>
+    <div style="margin-top:28px">© <span id="year"></span> Haider Mohsin — Built with a focus on learning & practical results.</div>
+  </footer>
+</div>
+
+<!-- Minimal JS: typing effect + year -->
+<script>
+  // gentle typing effect for about-line
+  const phrases = [
+    "I build automation tools, practice realistic security labs, and solve practical IT problems.",
+    "I focus on learning modern web security techniques while improving systems reliability.",
+    "I convert study into projects and reproducible write-ups for continuous improvement."
+  ];
+  let idx = 0, char = 0, forward = true;
+  const el = document.getElementById('about-line');
+  function typeLoop(){
+    const text = phrases[idx];
+    if(forward){
+      char++;
+      el.textContent = text.slice(0,char);
+      if(char === text.length){ forward=false; setTimeout(typeLoop,1200); return;}
+    } else {
+      char--;
+      el.textContent = text.slice(0,char);
+      if(char === 0){ forward=true; idx=(idx+1)%phrases.length; }
+    }
+    setTimeout(typeLoop, forward?40:18);
+  }
+  typeLoop();
+
+  // reveal on scroll (simple)
+  const animTargets = document.querySelectorAll('[data-animate="hidden"]');
+  function reveal(){
+    document.querySelectorAll('.card, .project, .contact-item').forEach((el, i)=>{
+      const r = el.getBoundingClientRect();
+      if(r.top < window.innerHeight - 40){
+        el.classList.add('fade-in');
+        el.style.transitionDelay = (i*30)%300 + 'ms';
+      }
+    });
+  }
+  window.addEventListener('scroll', reveal);
+  reveal();
+
+  // year
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
