@@ -3,398 +3,60 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Haider Mohsin — Technical Specialist</title>
+<title>Haider Mohsin — Home</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto+Slab:wght@300;400;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#07070b;
-    --card:#0f1116;
-    --accent-cyan:#00f5f5;
-    --accent-gold:#d4af37;
-    --muted:#9aa0a6;
-    --glass: rgba(255,255,255,0.03);
-    --radius:12px;
-  }
-  *{box-sizing:border-box}
-  html,body{height:100%}
-  body{
-    margin:0;
-    font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    background: radial-gradient(1200px 600px at 10% 10%, rgba(0,245,245,0.03), transparent),
-                radial-gradient(900px 500px at 90% 90%, rgba(212,175,55,0.02), transparent),
-                var(--bg);
-    color:#e9eef1;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    line-height:1.45;
-    padding-bottom:80px;
-  }
-
-  .wrap{max-width:1100px;margin:0 auto;padding:28px;}
-
-  /* Header */
-  header{position:sticky;top:12px;z-index:40;padding:6px 0;backdrop-filter: blur(6px);display:flex;align-items:center;justify-content:space-between}
-  .brand{display:flex;align-items:center;gap:12px}
-  .logo{
-    font-family:"Roboto Slab", serif;
-    font-weight:700;
-    font-size:1.2rem;
-    background:linear-gradient(90deg,var(--accent-gold),var(--accent-cyan));
-    -webkit-background-clip:text;background-clip:text;color:transparent;
-  }
-  nav{display:flex;gap:14px;align-items:center}
-  nav a{color:var(--muted);text-decoration:none;font-weight:600;padding:8px 12px;border-radius:8px;transition:all .18s}
-  nav a:hover{color:var(--accent-cyan);background:rgba(0,245,245,0.03)}
-  .cta-small{background:linear-gradient(90deg,var(--accent-gold),var(--accent-cyan));color:#0a0a0f;padding:8px 14px;border-radius:999px;font-weight:700;text-decoration:none}
-
-  /* Hero */
-  .hero{display:grid;grid-template-columns:1fr 340px;gap:28px;align-items:center;margin-top:18px}
-  .hero-left h1{font-size:2.4rem;margin:0 0 6px}
-  .hero-left .tag{color:var(--accent-cyan);font-weight:600;margin-bottom:10px;display:inline-block}
-  .hero-left p{color:var(--muted);margin:10px 0 18px;max-width:60ch}
-  .hero-left .buttons{display:flex;gap:12px}
-  .btn{
-    padding:12px 18px;border-radius:12px;font-weight:700;border:none;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:10px
-  }
-  .btn-primary{background:linear-gradient(90deg,var(--accent-gold),var(--accent-cyan));color:#081017}
-  .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted)}
-
-  .hero-right{
-    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)
-  }
-  .profile-card h3{margin:0 0 6px}
-  .profile-card p{margin:0;color:var(--muted);font-size:0.95rem}
-
-  /* Sections */
-  section{margin-top:34px}
-  .section-title{display:flex;align-items:center;gap:12px;margin-bottom:18px}
-  .section-title h2{margin:0;font-size:1.4rem;background:linear-gradient(90deg,var(--accent-gold),var(--accent-cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .section-title p{margin:0;color:var(--muted);font-size:.95rem}
-
-  .grid{display:grid;gap:16px}
-  .cols-3{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
-
-  .card{
-    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    border-radius:var(--radius);
-    padding:16px;
-    border:1px solid rgba(255,255,255,0.03);
-    box-shadow: 0 8px 30px rgba(2,8,12,0.6);
-  }
-
-  /* badges */
-  .badges{display:flex;flex-wrap:wrap;gap:8px}
-  .badge{
-    padding:8px 12px;border-radius:999px;background:rgba(0,245,245,0.07);color:var(--accent-cyan);font-weight:600;font-size:.9rem
-  }
-  .badge.gold{background:rgba(212,175,55,0.08);color:var(--accent-gold)}
-
-  /* tools list */
-  .tools-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px}
-  .tool{padding:10px;border-radius:8px;background:var(--glass);color:var(--muted);display:flex;align-items:center;gap:10px;font-weight:600}
-  .tool i{color:var(--accent-cyan);min-width:22px;text-align:center}
-
-  /* projects */
-  .project{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent);border:1px solid rgba(255,255,255,0.02)}
-  .project h4{margin:0 0 6px}
-  .project p{margin:0;color:var(--muted);font-size:.95rem}
-
-  /* timeline style for labs/certs */
-  .list{display:flex;flex-direction:column;gap:10px}
-  .list-item{display:flex;gap:12px;align-items:flex-start}
-  .dot{width:10px;height:10px;border-radius:99px;background:var(--accent-cyan);margin-top:6px}
-
-  /* contact */
-  .contact-grid{display:grid;grid-template-columns:1fr 280px;gap:18px}
-  .contact-card{display:flex;flex-direction:column;gap:10px}
-  .contact-item{display:flex;gap:12px;align-items:center;color:var(--muted);padding:10px;border-radius:8px;background:rgba(255,255,255,0.02)}
-  .contact-item i{color:var(--accent-gold);width:28px;text-align:center}
-
-  /* footer */
-  footer{text-align:center;color:var(--muted);margin-top:36px;font-size:.9rem}
-
-  /* small screens */
-  @media (max-width:880px){
-    .hero{grid-template-columns:1fr;gap:18px}
-    .contact-grid{grid-template-columns:1fr}
-  }
-
-  /* subtle animation */
-  .float-up{transform:translateY(0);opacity:1;transition:all .6s cubic-bezier(.2,.9,.3,1)}
-  .fade-in{opacity:1;transform:none;transition:all .5s ease}
-  [data-animate="hidden"]{opacity:0;transform:translateY(8px)}
-  /* typing */
-  .typing{display:inline-block;color:var(--accent-cyan);font-weight:700}
-</style>
+<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 <div class="wrap">
-
   <header>
     <div class="brand">
       <div class="logo">Haider Mohsin</div>
       <div style="color:var(--muted);font-weight:600;font-size:.92rem">Technical Specialist</div>
     </div>
     <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#certs">Certifications</a>
-      <a href="#contact" class="cta-small">Contact</a>
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
-  <!-- HERO -->
-  <main class="hero" style="margin-top:18px">
-    <div class="hero-left">
-      <div class="tag">Pentester • Bug Bounty Learner • Python Developer • IT Support</div>
-      <h1 id="name-heading">Hi — I’m <span style="background:linear-gradient(90deg,var(--accent-gold),var(--accent-cyan));-webkit-background-clip:text;background-clip:text;color:transparent">Haider Mohsin</span></h1>
-      <p id="about-line">I build automation tools, practice realistic security labs, and solve practical IT problems. I’m focused on learning and applying modern web security techniques while improving systems reliability and maintainability.</p>
-
-      <div class="buttons">
-        <a class="btn btn-primary" href="#projects"><i class="fas fa-laptop-code"></i> View Projects</a>
-        <a class="btn btn-ghost" href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+  <main class="hero">
+    <section class="card">
+      <div class="section-title">
+        <h1>Welcome</h1>
       </div>
-    </div>
+      <p class="muted">This portfolio is now organized into separate pages. Use the links below to explore my background, skills, practical lab work, and contact details.</p>
+      <p><span class="badge">Pentester</span> <span class="badge">Python Developer</span> <span class="badge">IT Support</span></p>
+      <a class="btn btn-primary" href="projects.html"><i class="fas fa-laptop-code"></i> Go to Projects</a>
+    </section>
 
-    <aside class="hero-right profile-card card">
-      <h3>Quick Profile</h3>
-      <p><strong>Role:</strong> Pentester / Python Developer / IT Support</p>
+    <aside class="card">
+      <h3 style="margin-top:0">Quick Profile</h3>
       <p><strong>Location:</strong> Lahore, Pakistan</p>
-      <p style="margin-top:10px;color:var(--muted)">Open to freelance pentesting, bug bounty submissions, automation & scraping projects, and IT support roles. I balance hands-on practice (HTB, THM) with tool-building in Python.</p>
-      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
-        <div class="badge">HackTheBox</div>
-        <div class="badge">TryHackMe</div>
-        <div class="badge gold">PortSwigger</div>
-      </div>
+      <p><strong>Focus:</strong> Bug bounty practice, automation tools, and reliable IT support.</p>
+      <p class="muted">Open to freelance and collaboration opportunities.</p>
     </aside>
   </main>
 
-  <!-- ABOUT -->
-  <section id="about">
+  <section style="margin-top:28px">
     <div class="section-title">
-      <h2>About Me</h2>
-      <p>Practical learner who turns study into projects — I practice in labs, build tools, and write concise reports for improvement.</p>
+      <h2>Site Pages</h2>
+      <p>Choose a page to continue.</p>
     </div>
-    <div class="card">
-      <p style="color:var(--muted);margin:0">I’m an aspiring pentester and Python developer with hands-on experience in web security labs, system administration, and automation. My aim is to grow into a reliable security researcher: consistently find valid issues, write clear reports, and build small tools that speed up the testing process.</p>
+    <div class="page-links">
+      <a class="page-link card" href="about.html"><h3>About</h3><p class="muted">Professional summary and learning goals.</p></a>
+      <a class="page-link card" href="skills.html"><h3>Skills</h3><p class="muted">Cybersecurity, development, and IT tools.</p></a>
+      <a class="page-link card" href="projects.html"><h3>Projects & Labs</h3><p class="muted">Hands-on practice and technical work.</p></a>
+      <a class="page-link card" href="contact.html"><h3>Contact</h3><p class="muted">Email and collaboration details.</p></a>
     </div>
   </section>
 
-  <!-- SKILLS & TOOLS -->
-  <section id="skills">
-    <div class="section-title">
-      <h2>Skills & Tools</h2>
-      <p>Grouped by focus — Cybersecurity, Development, and IT Support.</p>
-    </div>
-
-    <div class="grid cols-3" style="grid-template-columns: 1.2fr .9fr .9fr; gap:18px;">
-      <!-- Left: Core Skills -->
-      <div class="card">
-        <h3 style="margin-top:0">Core Skills (Highlights)</h3>
-        <div style="margin-top:8px">
-          <strong style="color:var(--accent-cyan)">Cybersecurity & Bug Bounty</strong>
-          <ul style="color:var(--muted);margin:8px 0 14px 18px">
-            <li>XSS (Mavo, Vue.js, DOM, CSP/WAF bypass)</li>
-            <li>CSRF & WebSocket handshake attacks (CSWSH)</li>
-            <li>SSRF, SQLi, NoSQL, IDOR, Access Control testing</li>
-            <li>API testing, Business Logic flaws, Bug chaining</li>
-            <li>Recon & automation: subfinder, httpx, gau, hakrawler, Python scripts</li>
-          </ul>
-          <strong style="color:var(--accent-cyan)">Programming & Scripting</strong>
-          <ul style="color:var(--muted);margin:8px 0 0 18px">
-            <li>Python — automation, scraping, PoC tools</li>
-            <li>HTML/CSS/JavaScript, Dash, Vue.js basics</li>
-            <li>Bash / Shell scripting, Git usage</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Middle: Tools -->
-      <div class="card">
-        <h3 style="margin-top:0">Tools — Security & Recon</h3>
-        <div class="tools-list" style="margin-top:10px">
-          <div class="tool"><i class="fas fa-bug"></i> Burp Suite</div>
-          <div class="tool"><i class="fas fa-wrench"></i> OWASP ZAP</div>
-          <div class="tool"><i class="fas fa-server"></i> Nmap</div>
-          <div class="tool"><i class="fas fa-network-wired"></i> Netcat</div>
-          <div class="tool"><i class="fas fa-robot"></i> httpx / subfinder</div>
-          <div class="tool"><i class="fas fa-file-code"></i> Gau / Hakrawler</div>
-          <div class="tool"><i class="fas fa-code"></i> Postman / JWT.io</div>
-          <div class="tool"><i class="fas fa-docker"></i> Docker</div>
-          <div class="tool"><i class="fas fa-wave-square"></i> Wireshark</div>
-          <div class="tool"><i class="fas fa-search"></i> Gobuster / Dirsearch</div>
-        </div>
-      </div>
-
-      <!-- Right: IT / Admin -->
-      <div class="card">
-        <h3 style="margin-top:0">IT Support & Systems</h3>
-        <div style="margin-top:8px;color:var(--muted)">
-          <ul style="margin:0 0 6px 18px">
-            <li>Windows & Linux (Ubuntu) administration</li>
-            <li>Server setup, patching and monitoring</li>
-            <li>Network troubleshooting (LAN/Wi-Fi, DHCP, DNS, firewalls)</li>
-            <li>Hardware diagnostics (desktops, laptops, printers, routers)</li>
-            <li>Ticketing & documentation practices</li>
-          </ul>
-          <div style="margin-top:8px">
-            <strong style="color:var(--accent-gold)">Other tools</strong>
-            <div style="margin-top:8px" class="badges">
-              <div class="badge">Git</div>
-              <div class="badge gold">Docker</div>
-              <div class="badge">VS Code</div>
-              <div class="badge">Postman</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects">
-    <div class="section-title">
-      <h2>Projects & Labs</h2>
-      <p>Hands-on work and labs that show what I practice and build.</p>
-    </div>
-
-    <div class="grid" style="gap:12px">
-      <div class="card project">
-        <h4>Personal Bug Bounty Lab</h4>
-        <p class="muted">Set up Docker-based labs (DVWA, Juice Shop, vulnerable WebSocket apps). Used these to test payloads, reproduce bugs, and practice chained exploits.</p>
-      </div>
-
-      <div class="project card">
-        <h4>Python Automation Tools</h4>
-        <p>Built small tools for header fuzzing, JWT analysis, recon automation and scraping. Tools are used during recon and report preparation.</p>
-      </div>
-
-      <div class="project card">
-        <h4>Advanced XSS Research</h4>
-        <p>Explored XSS vectors specific to Vue.js and Mavo, tested CSP and sanitizer bypass techniques, and documented payloads for future testing.</p>
-      </div>
-
-      <div class="project card">
-        <h4>HackTheBox & TryHackMe</h4>
-        <p>Completed multiple machines and paths focusing on web exploitation, API testing, and privilege escalation. I use structured write-ups to track learning.</p>
-      </div>
-
-      <div class="project card">
-        <h4>Freelance Scraping Demo</h4>
-        <p>Delivered a scraping project (Fiverr demo): end-to-end data extraction and after-processing pipeline with clean output examples.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CERTIFICATIONS & LEARNING -->
-  <section id="certs">
-    <div class="section-title">
-      <h2>Certifications & Learning</h2>
-      <p>Courses and learning platforms that shaped my technical path.</p>
-    </div>
-
-    <div class="card">
-      <div class="list">
-        <div class="list-item"><div class="dot"></div><div><strong>CompTIA Security+ (SY0-701)</strong> — In progress (security fundamentals, controls, PKI)</div></div>
-        <div class="list-item"><div class="dot"></div><div><strong>PortSwigger Web Security Academy</strong> — Completed modules on XSS, CSRF, SQLi, SSRF, Access Control</div></div>
-        <div class="list-item"><div class="dot"></div><div><strong>TryHackMe & HackTheBox</strong> — Practical pentest labs and structured learning paths</div></div>
-        <div class="list-item"><div class="dot"></div><div><strong>Code with Harry / W3Schools</strong> — Python, HTML/CSS/JS, Dash, Bash fundamentals</div></div>
-        <div class="list-item"><div class="dot"></div><div><strong>Self-learning</strong> — Advanced XSS, Vue.js security, Mavo-based labs, WebSocket testing, Docker setups</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- VALUES / PHILOSOPHY -->
-  <section id="values">
-    <div class="section-title">
-      <h2>Professional Values</h2>
-      <p>How I approach work and growth.</p>
-    </div>
-
-    <div class="card">
-      <ul style="color:var(--muted);margin:0 0 0 18px">
-        <li><strong>Practical learning:</strong> I convert study into reproducible projects and write-ups.</li>
-        <li><strong>Responsible disclosure:</strong> I follow ethics and clear communication for bug reporting.</li>
-        <li><strong>Continuous improvement:</strong> Regular practice on HTB/THM and tool-building keep me evolving.</li>
-        <li><strong>Clear documentation:</strong> I maintain concise notes and reproducible steps for every finding.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="section-title">
-      <h2>Contact</h2>
-      <p>Open to freelance work, collaboration, and mentorship opportunities.</p>
-    </div>
-
-    <div class="contact-grid">
-      <div class="card contact-card">
-        <div class="contact-item"><i class="fas fa-envelope"></i><div><strong>Email</strong><div style="color:var(--muted)">haidermohsin1357@gmail.com</div></div></div>
-        <div class="contact-item"><i class="fab fa-github"></i><div><strong>GitHub</strong><div style="color:var(--muted)">github.com/haider1928</div></div></div>
-        <div class="contact-item"><i class="fas fa-globe"></i><div><strong>Fiverr</strong><div style="color:var(--muted)">fiverr.com/haidermohsinn</div></div></div>
-       
-      </div>
-
-      <aside class="card" style="display:flex;flex-direction:column;gap:12px;justify-content:center;align-items:center">
-        <div style="text-align:center">
-          <div style="font-weight:700;color:var(--accent-cyan);font-size:1.05rem">Let's collaborate</div>
-          <p style="color:var(--muted);margin:8px 0 0;text-align:center">If you have a bug bounty target, freelance scraping job, or need IT support setup — reach out and let's plan the next steps.</p>
-        </div>
-        <a href="mailto:haidermohsin1357@gmail.com" class="btn btn-primary" style="width:100%;justify-content:center"><i class="fas fa-paper-plane"></i> Message me</a>
-      </aside>
-    </div>
-  </section>
-
-  <footer>
-    <div style="margin-top:28px">© <span id="year"></span> Haider Mohsin — Built with a focus on learning & practical results.</div>
-  </footer>
+  <footer>© <span data-year></span> Haider Mohsin</footer>
 </div>
-
-<!-- Minimal JS: typing effect + year -->
-<script>
-  // gentle typing effect for about-line
-  const phrases = [
-    "I build automation tools, practice realistic security labs, and solve practical IT problems.",
-    "I focus on learning modern web security techniques while improving systems reliability.",
-    "I convert study into projects and reproducible write-ups for continuous improvement."
-  ];
-  let idx = 0, char = 0, forward = true;
-  const el = document.getElementById('about-line');
-  function typeLoop(){
-    const text = phrases[idx];
-    if(forward){
-      char++;
-      el.textContent = text.slice(0,char);
-      if(char === text.length){ forward=false; setTimeout(typeLoop,1200); return;}
-    } else {
-      char--;
-      el.textContent = text.slice(0,char);
-      if(char === 0){ forward=true; idx=(idx+1)%phrases.length; }
-    }
-    setTimeout(typeLoop, forward?40:18);
-  }
-  typeLoop();
-
-  // reveal on scroll (simple)
-  const animTargets = document.querySelectorAll('[data-animate="hidden"]');
-  function reveal(){
-    document.querySelectorAll('.card, .project, .contact-item').forEach((el, i)=>{
-      const r = el.getBoundingClientRect();
-      if(r.top < window.innerHeight - 40){
-        el.classList.add('fade-in');
-        el.style.transitionDelay = (i*30)%300 + 'ms';
-      }
-    });
-  }
-  window.addEventListener('scroll', reveal);
-  reveal();
-
-  // year
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+<script src="script.js"></script>
 </body>
 </html>
