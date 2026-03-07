@@ -1,17 +1,18 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Contact — Haider Mohsin</title>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto+Slab:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Haider Mohsin</title>
+  <meta name="description" content="Get in touch with Haider Mohsin for cybersecurity collaboration, bug bounty discussions, and development projects." />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=Roboto+Slab:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <div class="brand"><div class="logo">Haider Mohsin</div></div>
+  <div class="grid-overlay" aria-hidden="true"></div>
+  <header class="site-header">
+    <a href="index.html" class="logo">Haider Mohsin</a>
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -21,17 +22,33 @@
     </nav>
   </header>
 
-  <section class="card">
-    <div class="section-title"><h1>Contact</h1></div>
-    <p class="muted">Open to freelance work, collaboration, and mentorship opportunities.</p>
-    <p><i class="fas fa-envelope"></i> <strong>Email:</strong> haidermohsin1357@gmail.com</p>
-    <p><i class="fab fa-github"></i> <strong>GitHub:</strong> github.com/haider1928</p>
-    <p><i class="fas fa-globe"></i> <strong>Fiverr:</strong> fiverr.com/haidermohsinn</p>
-    <a href="mailto:haidermohsin1357@gmail.com" class="btn btn-primary">Send Email</a>
-  </section>
+  <main>
+    <section class="section contact">
+      <h1>Contact</h1>
+      <p class="lead">Open to bug bounty collaboration, technical consulting, automation projects, and security research opportunities.</p>
+      <form class="contact-form" action="mailto:haidermohsin2468@gmail.com" method="post" enctype="text/plain">
+        <input type="text" name="name" placeholder="Your name" required />
+        <input type="email" name="email" placeholder="Your email" required />
+        <textarea name="message" rows="6" placeholder="Tell me about your project or security inquiry" required></textarea>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+
+      <div class="socials">
+        <a href="mailto:haidermohsin2468@gmail.com"><i class="fas fa-envelope"></i> haidermohsin2468@gmail.com</a>
+        <a href="https://github.com/haider1928" target="_blank" rel="noopener"><i class="fab fa-github"></i> github.com/haider1928</a>
+        <a href="https://www.linkedin.com/in/haider-mohsin" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> linkedin.com/in/haider-mohsin</a>
+        <a href="https://twitter.com/haider1928" target="_blank" rel="noopener"><i class="fab fa-twitter"></i> twitter.com/haider1928</a>
+        <a href="https://instagram.com/haider_lakhvera" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> instagram.com/haider_lakhvera</a>
+      </div>
+
+      <article class="glass" style="margin-top:14px;">
+        <h3>Bug Bounty Inquiries</h3>
+        <p>For private testing discussions or responsible disclosure collaboration, please include target scope, test window, and communication preference in your message.</p>
+      </article>
+    </section>
+  </main>
 
   <footer>© <span data-year></span> Haider Mohsin</footer>
-</div>
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
