@@ -1,0 +1,28 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">CSP Bypass and XSS Lab</title>
+  <desc id="desc">Visual preview for browser security and payload lab.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5f1236" />
+      <stop offset="100%" stop-color="#2f0920" />
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)" />
+  <text x="90" y="96" fill="#fff0f8" font-family="Segoe UI, Arial, sans-serif" font-size="46" font-weight="700">CSP Bypass and XSS Lab</text>
+  <rect x="90" y="136" width="1100" height="500" rx="24" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" />
+  <rect x="136" y="188" width="440" height="396" rx="20" fill="rgba(255,255,255,0.12)" />
+  <rect x="620" y="188" width="522" height="102" rx="16" fill="rgba(255,255,255,0.12)" />
+  <rect x="620" y="316" width="522" height="268" rx="16" fill="rgba(255,255,255,0.09)" />
+  <g stroke="#ffd3e9" stroke-width="6" fill="none" stroke-linecap="round">
+    <path d="M188 252H520" />
+    <path d="M188 310H490" />
+    <path d="M188 368H472" />
+    <path d="M188 426H450" />
+    <path d="M188 484H422" />
+  </g>
+  <g fill="rgba(255,122,24,0.4)">
+    <rect x="652" y="346" width="458" height="66" rx="10" />
+    <rect x="652" y="434" width="458" height="66" rx="10" />
+  </g>
+  <text x="652" y="234" fill="#fff3fa" font-family="Segoe UI, Arial, sans-serif" font-size="30">Policy matrix and payload behavior</text>
+</svg>
