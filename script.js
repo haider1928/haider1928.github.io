@@ -1,8 +1,7 @@
-document.querySelectorAll('[data-year]').forEach((el) => {
+﻿document.querySelectorAll('[data-year]').forEach((el) => {
   el.textContent = new Date().getFullYear();
 });
 
-<<<<<<< ours
 const filters = document.querySelectorAll('.filter');
 const projectCards = document.querySelectorAll('.project-card');
 
@@ -22,22 +21,3 @@ if (filters.length && projectCards.length) {
     });
   });
 }
-=======
-const filterButtons = document.querySelectorAll('.filter-btn');
-const cards = document.querySelectorAll('.project-card');
-
-filterButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    const target = button.dataset.filter;
-
-    filterButtons.forEach((btn) => btn.classList.remove('active'));
-    button.classList.add('active');
-
-    cards.forEach((card) => {
-      const categories = card.dataset.category || '';
-      const match = target === 'all' || categories.includes(target);
-      card.style.display = match ? 'block' : 'none';
-    });
-  });
-});
->>>>>>> theirs
