@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Abu al Hikam — Python Developer | Bug Hunter | Cybersecurity Researcher</title>
-  <meta name="description" content="Portfolio of Abu al Hikam (Haider Mohsin): cybersecurity research, Python automation, AI projects, ESP32 systems, and web development." />
+  <title>Haider Mohsin — Python Developer | Bug Hunter | Cybersecurity Researcher</title>
+  <meta name="description" content="Haider Mohsin portfolio featuring cybersecurity research, Python development, AI automation, ESP32 projects, bot development, and web engineering." />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=Roboto+Slab:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
@@ -12,133 +12,55 @@
 <body>
   <div class="grid-overlay" aria-hidden="true"></div>
   <header class="site-header">
-    <a href="#home" class="logo">Haider Mohsin</a>
+    <a href="index.html" class="logo">Haider Mohsin</a>
     <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#career">Career</a>
-      <a href="#blog">Research</a>
-      <a href="#contact">Contact</a>
+      <a href="index.html" class="active">Home</a>
+      <a href="about/">About</a>
+      <a href="skills/">Skills</a>
+      <a href="projects/">Projects</a>
+      <a href="contact/">Contact</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero" id="home">
+    <section class="hero section">
       <p class="tag">Personal Portfolio / Technical Showcase</p>
-      <h1>Abu al Hikam — Python Developer | Bug Hunter | Cybersecurity Researcher</h1>
-      <p class="lead">I build automation tools, security workflows, and practical systems across Python, AI-assisted recon, web apps, and ESP32-based hardware projects.</p>
+      <h1>Haider Mohsin — Python Developer | Bug Hunter | Cybersecurity Researcher</h1>
+      <p class="lead">I design and build practical security tooling, AI-assisted automation, and production-minded software systems across web, bots, and embedded environments.</p>
       <div class="actions">
-        <a class="btn btn-primary" href="#projects"><i class="fas fa-shield-halved"></i> View Projects</a>
-        <a class="btn btn-secondary" href="#contact"><i class="fas fa-paper-plane"></i> Contact Me</a>
+        <a class="btn btn-primary" href="projects/"><i class="fas fa-shield-halved"></i> View Projects</a>
+        <a class="btn btn-secondary" href="contact/"><i class="fas fa-paper-plane"></i> Contact Me</a>
       </div>
+
       <div class="hero-cards">
-        <article class="glass"><h3>Focus</h3><p>Offensive security, bug bounty, tool development, and automation.</p></article>
-        <article class="glass"><h3>Core Stack</h3><p>Python, Flask/Django, AI workflows, Discord.py, APIs, ESP32.</p></article>
+        <article class="glass">
+          <h3>Security Engineering</h3>
+          <p>Focused on XSS, WebSocket security, CSP bypass testing, and structured bug bounty workflows with strong report quality.</p>
+        </article>
+        <article class="glass">
+          <h3>Development Stack</h3>
+          <p>Python automation, Flask/Django development, AI-assisted recon pipelines, Discord bots, and ESP32 automation systems.</p>
+        </article>
+        <article class="glass">
+          <h3>Career Direction</h3>
+          <p>Growing toward advanced offensive security and tooling development with an emphasis on practical, measurable impact.</p>
+        </article>
       </div>
     </section>
 
-    <section id="about" class="section">
-      <h2>About Me</h2>
-      <p>I am a cybersecurity-focused developer who combines bug hunting with engineering. My work blends XSS/WebSocket research, Python automation, and AI-assisted recon with production-minded scripting and web app development.</p>
-      <p>My career goal is to grow as an offensive security specialist who not only discovers impactful vulnerabilities but also designs practical tools and automation systems for faster, smarter assessments.</p>
-    </section>
-
-    <section id="skills" class="section">
-      <h2>Skills</h2>
-      <div class="skills-grid">
-        <article class="skill-card"><i class="fas fa-user-secret"></i><h3>Cybersecurity</h3><p>XSS research, WebSocket hacking, CSP bypass techniques, and bug bounty workflow.</p></article>
-        <article class="skill-card"><i class="fab fa-python"></i><h3>Python Development</h3><p>Automation scripts, custom frameworks, bot development, and task orchestration.</p></article>
-        <article class="skill-card"><i class="fas fa-code"></i><h3>Web Development</h3><p>Flask/Django projects, scraping pipelines, security-aware front-end/back-end work.</p></article>
-        <article class="skill-card"><i class="fas fa-brain"></i><h3>AI Projects</h3><p>AI-powered bug hunting assistants, smart recon engines, and analyst augmentation.</p></article>
-        <article class="skill-card"><i class="fas fa-microchip"></i><h3>Hardware Projects</h3><p>ESP32 remote control systems, automation devices, and IoT integrations.</p></article>
-        <article class="skill-card"><i class="fas fa-toolbox"></i><h3>Other Tools</h3><p>Recon engines, API workflows, Discord.py bots, and Instagram automation.</p></article>
-      </div>
-    </section>
-
-    <section id="projects" class="section">
+    <section class="section">
       <div class="section-head">
-        <h2>Projects</h2>
-        <div class="filters">
-          <button class="filter active" data-filter="all">All</button>
-          <button class="filter" data-filter="ai">AI & Automation</button>
-          <button class="filter" data-filter="web">Web & Bots</button>
-          <button class="filter" data-filter="embedded">Embedded</button>
-          <button class="filter" data-filter="security">Security Research</button>
-        </div>
+        <h2>Core Focus Areas</h2>
       </div>
-      <div class="projects-grid">
-        <article class="project-card" data-category="ai security">
-          <h3>AI Bug Hunter Assistant</h3>
-          <p>AI-powered helper that prioritizes targets, suggests payload variants, and tracks triage notes for faster bug bounty execution.</p>
-          <p class="tech">Python • AI • APIs</p>
-        </article>
-        <article class="project-card" data-category="ai security">
-          <h3>Automated Recon Engine</h3>
-          <p>Pipeline for subdomain collection, endpoint discovery, and surface scoring to identify high-value testing opportunities.</p>
-          <p class="tech">Python • Recon • Automation</p>
-        </article>
-        <article class="project-card" data-category="web">
-          <h3>Instagram Automation Toolkit</h3>
-          <p>Controlled automation suite for account workflow management, reporting, and repeatable engagement operations.</p>
-          <p class="tech">Python • Selenium • APIs</p>
-        </article>
-        <article class="project-card" data-category="web">
-          <h3>Discord.py Utility Bots</h3>
-          <p>Custom bots for moderation, activity automation, and command-based operations with clean permission handling.</p>
-          <p class="tech">Python • Discord.py • Asyncio</p>
-        </article>
-        <article class="project-card" data-category="embedded">
-          <h3>ESP32 Remote Control System</h3>
-          <p>Remote device management platform using ESP32 modules for practical control and automation scenarios.</p>
-          <p class="tech">ESP32 • MQTT/HTTP • IoT</p>
-        </article>
-        <article class="project-card" data-category="security">
-          <h3>XSS & WebSocket Exploit Research</h3>
-          <p>Collection of payload testing notes, exploit prototypes, and bug bounty writeups focused on modern web apps.</p>
-          <p class="tech">JavaScript • Burp • Security Testing</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="career" class="section">
-      <h2>Career & Achievements</h2>
-      <ul class="timeline">
-        <li>Active participation in bug bounty and responsible disclosure workflows.</li>
-        <li>Research focus on web vulnerabilities including XSS and WebSocket attack surfaces.</li>
-        <li>Built automation-first tools to improve recon, triage, and reporting speed.</li>
-        <li>Languages: Python, Urdu, English.</li>
-      </ul>
-    </section>
-
-    <section id="blog" class="section">
-      <h2>Blog / Research Highlights</h2>
       <div class="mini-grid">
-        <article class="glass"><h3>XSS Notes</h3><p>Payload strategy, sanitizer bypass experiments, and practical filtering insights.</p></article>
-        <article class="glass"><h3>WebSocket Findings</h3><p>Handshake abuse scenarios and message-level auth bypass testing patterns.</p></article>
-        <article class="glass"><h3>Python Automation Tips</h3><p>How to build modular recon and reporting scripts for reproducible workflows.</p></article>
-      </div>
-    </section>
-
-    <section id="contact" class="section contact">
-      <h2>Contact</h2>
-      <p>Open to collaboration, bug bounty programs, and technical project work.</p>
-      <form class="contact-form" action="mailto:haidermohsin2468@gmail.com" method="post" enctype="text/plain">
-        <input type="text" name="name" placeholder="Your name" required />
-        <input type="email" name="email" placeholder="Your email" required />
-        <textarea name="message" rows="5" placeholder="Message" required></textarea>
-        <button type="submit" class="btn btn-primary">Send Message</button>
-      </form>
-      <div class="socials">
-        <a href="mailto:haidermohsin2468@gmail.com"><i class="fas fa-envelope"></i> haidermohsin2468@gmail.com</a>
-        <a href="https://github.com/haider1928" target="_blank" rel="noopener"><i class="fab fa-github"></i> github.com/haider1928</a>
-        <a href="https://instagram.com/haider_lakhvera" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> @haider_lakhvera</a>
+        <article class="glass"><h3>Cybersecurity Research</h3><p>Hands-on exploitation research and defensive awareness for modern web applications.</p></article>
+        <article class="glass"><h3>AI & Automation</h3><p>Recon engines and workflow accelerators that reduce repetitive testing time.</p></article>
+        <article class="glass"><h3>Embedded Projects</h3><p>ESP32 remote-control and automation projects that bridge hardware with software.</p></article>
       </div>
     </section>
   </main>
 
-  <footer>© <span data-year></span> Haider Mohsin • Built for speed, security, and impact.</footer>
-
+  <footer>© <span data-year></span> Haider Mohsin • Built for speed, clarity, and technical depth.</footer>
   <script src="script.js"></script>
 </body>
 </html>
