@@ -9,6 +9,7 @@
   <meta property="og:description" content="Project cards with problems solved, technologies, and outcomes." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <meta name="description" content="Project portfolio covering AI automation, web & bots, embedded systems, and security research." />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=Roboto+Slab:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles.css" />
@@ -24,6 +25,14 @@
       <a href="../about/">About</a>
       <a href="../skills/">Skills</a>
       <a href="../projects/" class="active" aria-current="page">Projects</a>
+  <div class="grid-overlay" aria-hidden="true"></div>
+  <header class="site-header">
+    <a href="../index.html" class="logo">Haider Mohsin</a>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about/">About</a>
+      <a href="../skills/">Skills</a>
+      <a href="../projects/" class="active">Projects</a>
       <a href="../contact/">Contact</a>
     </nav>
   </header>
@@ -33,6 +42,11 @@
       <div class="section-head">
         <h1>Projects</h1>
         <div class="filters" role="tablist" aria-label="Project category filters">
+  <main>
+    <section class="section">
+      <div class="section-head">
+        <h1>Projects</h1>
+        <div class="filters">
           <button class="filter active" data-filter="all">All</button>
           <button class="filter" data-filter="ai">AI & Automation</button>
           <button class="filter" data-filter="web">Web & Bot</button>
@@ -112,6 +126,66 @@
           <p>Problem solved: limited reusable payload playbooks. Built a repeatable CSP/XSS lab and documented exploit chains and mitigation-ready writeups.</p>
           <p class="tech">Tech: CSP • XSS • Reporting</p>
           <div class="project-links"><a href="https://github.com/haider1928" target="_blank" rel="noopener">Writeups</a></div>
+          <h3>AI Bug Hunter</h3>
+          <p>Assistant that suggests payload sequences, scores testing targets, and improves triage prioritization during bug bounty operations.</p>
+          <p class="tech">Tech: Python • LLM APIs • Prompt workflows</p>
+          <a href="https://github.com/haider1928" target="_blank" rel="noopener">GitHub</a>
+        </article>
+
+        <article class="project-card" data-category="ai">
+          <h3>Recon Engine Automation</h3>
+          <p>Automated recon pipeline for host discovery, endpoint collection, and categorized attack-surface mapping.</p>
+          <p class="tech">Tech: Python • APIs • Async workers</p>
+          <a href="https://github.com/haider1928" target="_blank" rel="noopener">GitHub</a>
+        </article>
+
+        <article class="project-card" data-category="web">
+          <h3>Instagram Automation Bots</h3>
+          <p>Bot-driven workflows for structured posting/monitoring tasks with controlled automation logic and reporting support.</p>
+          <p class="tech">Tech: Python • Selenium • APIs</p>
+          <a href="https://github.com/haider1928" target="_blank" rel="noopener">GitHub</a>
+        </article>
+
+        <article class="project-card" data-category="web">
+          <h3>Discord.py Bots</h3>
+          <p>Community automation bots with command handlers, moderation utilities, and event-driven workflows.</p>
+          <p class="tech">Tech: Python • Discord.py • Asyncio</p>
+          <a href="https://github.com/haider1928" target="_blank" rel="noopener">GitHub</a>
+        </article>
+
+        <article class="project-card" data-category="web">
+          <h3>Custom Websites</h3>
+          <p>Responsive portfolio and web application builds using Flask/Django concepts and security-minded architecture.</p>
+          <p class="tech">Tech: Flask • Django • HTML/CSS/JS</p>
+          <a href="https://github.com/haider1928" target="_blank" rel="noopener">GitHub</a>
+        </article>
+
+        <article class="project-card" data-category="embedded">
+          <h3>ESP32 Remote Automation</h3>
+          <p>Embedded control platform for remotely switching and monitoring connected devices through lightweight interfaces.</p>
+          <p class="tech">Tech: ESP32 • MQTT/HTTP • Embedded C</p>
+          <a href="https://github.com/haider1928" target="_blank" rel="noopener">GitHub</a>
+        </article>
+
+        <article class="project-card" data-category="security">
+          <h3>Vue.js / Mavo XSS Research</h3>
+          <p>Security testing focused on payload crafting and bypass behavior in modern front-end frameworks.</p>
+          <p class="tech">Tech: JavaScript • Burp Suite • Browser security</p>
+          <a href="https://github.com/haider1928" target="_blank" rel="noopener">Writeups</a>
+        </article>
+
+        <article class="project-card" data-category="security">
+          <h3>WebSocket Exploit Tools</h3>
+          <p>Testing scripts and proof-of-concept helpers to evaluate message authorization and state manipulation risks.</p>
+          <p class="tech">Tech: Python • WebSockets • Proxy tooling</p>
+          <a href="https://github.com/haider1928" target="_blank" rel="noopener">GitHub</a>
+        </article>
+
+        <article class="project-card" data-category="security">
+          <h3>CSP Bypass Lab & Bug Bounty Writeups</h3>
+          <p>A growing lab and documentation set for CSP bypass tests, bug bounty case studies, and practical remediation notes.</p>
+          <p class="tech">Tech: CSP • XSS • Reporting</p>
+          <a href="https://github.com/haider1928" target="_blank" rel="noopener">Writeups</a>
         </article>
       </div>
     </section>
@@ -119,5 +193,6 @@
 
   <footer>© <span data-year></span> Haider Mohsin</footer>
   <script src="../script.js" defer></script>
+  <script src="../script.js"></script>
 </body>
 </html>

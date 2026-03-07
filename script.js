@@ -29,6 +29,10 @@ if (nav && toggle) {
   });
 }
 
+﻿document.querySelectorAll('[data-year]').forEach((el) => {
+  el.textContent = new Date().getFullYear();
+});
+
 const filters = document.querySelectorAll('.filter');
 const projectCards = document.querySelectorAll('.project-card');
 
