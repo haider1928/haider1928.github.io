@@ -1,62 +1,70 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Haider Mohsin — Home</title>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto+Slab:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Haider Mohsin — Python Developer | Bug Hunter | Cybersecurity Researcher</title>
+  <meta name="description" content="Professional portfolio of Haider Mohsin covering cybersecurity research, Python automation, AI projects, ESP32 systems, and full-stack web development." />
+  <meta property="og:title" content="Haider Mohsin Portfolio" />
+  <meta property="og:description" content="Cybersecurity, Python, AI automation, bots, and embedded systems projects." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://haider1928.github.io/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=Roboto+Slab:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <div class="brand">
-      <div class="logo">Haider Mohsin</div>
-      <div style="color:var(--muted);font-weight:600;font-size:.92rem">Technical Specialist</div>
-    </div>
-    <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About</a>
-      <a href="skills.html">Skills</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <div class="grid-overlay" aria-hidden="true"></div>
+  <header class="site-header">
+    <a href="index.html" class="logo">Haider Mohsin</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><i class="fas fa-bars"></i> Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary Navigation">
+      <a href="index.html" class="active" aria-current="page">Home</a>
+      <a href="about/">About</a>
+      <a href="skills/">Skills</a>
+      <a href="projects/">Projects</a>
+      <a href="contact/">Contact</a>
     </nav>
   </header>
 
-  <main class="hero">
-    <section class="card">
-      <div class="section-title">
-        <h1>Welcome</h1>
+  <main id="main-content">
+    <section class="hero section">
+      <p class="tag">Personal Portfolio / Technical Showcase</p>
+      <h1>Haider Mohsin — Python Developer | Bug Hunter | Cybersecurity Researcher</h1>
+      <p class="lead">I help security teams and digital products find web vulnerabilities faster by combining offensive security research with automation-first engineering.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="projects/"><i class="fas fa-shield-halved"></i> View Projects</a>
+        <a class="btn btn-secondary" href="contact/"><i class="fas fa-paper-plane"></i> Contact Me</a>
       </div>
-      <p class="muted">This portfolio is now organized into separate pages. Use the links below to explore my background, skills, practical lab work, and contact details.</p>
-      <p><span class="badge">Pentester</span> <span class="badge">Python Developer</span> <span class="badge">IT Support</span></p>
-      <a class="btn btn-primary" href="projects.html"><i class="fas fa-laptop-code"></i> Go to Projects</a>
+
+      <div class="stats-grid" aria-label="Impact metrics">
+        <article class="metric-card"><h2>30+</h2><p>custom automation scripts and recon helpers created.</p></article>
+        <article class="metric-card"><h2>100+</h2><p>security labs and vulnerable app scenarios tested.</p></article>
+        <article class="metric-card"><h2>4</h2><p>core domains: Cybersecurity, AI Automation, Web, Embedded.</p></article>
+      </div>
+
+      <div class="hero-cards">
+        <article class="glass"><h3>Security Engineering</h3><p>I apply XSS, WebSocket, and CSP research to find realistic web risk and produce actionable reports.</p></article>
+        <article class="glass"><h3>Development Stack</h3><p>I build with Python, Flask/Django, Discord.py, API tooling, and AI-assisted workflows.</p></article>
+        <article class="glass"><h3>What I Solve</h3><p>I reduce manual security testing effort by building repeatable, high-signal automation systems.</p></article>
+      </div>
     </section>
 
-    <aside class="card">
-      <h3 style="margin-top:0">Quick Profile</h3>
-      <p><strong>Location:</strong> Lahore, Pakistan</p>
-      <p><strong>Focus:</strong> Bug bounty practice, automation tools, and reliable IT support.</p>
-      <p class="muted">Open to freelance and collaboration opportunities.</p>
-    </aside>
+    <section class="section">
+      <div class="section-head"><h2>Core Focus Areas</h2></div>
+      <div class="mini-grid">
+        <article class="glass"><h3>Cybersecurity Research</h3><p>Hands-on exploitation research for modern web applications and bug bounty targets.</p></article>
+        <article class="glass"><h3>AI & Automation</h3><p>Recon engines and triage tools that accelerate target discovery and issue validation.</p></article>
+        <article class="glass"><h3>Embedded Projects</h3><p>ESP32 remote-control and automation systems that connect hardware with secure web control layers.</p></article>
+      </div>
+    </section>
   </main>
 
-  <section style="margin-top:28px">
-    <div class="section-title">
-      <h2>Site Pages</h2>
-      <p>Choose a page to continue.</p>
-    </div>
-    <div class="page-links">
-      <a class="page-link card" href="about.html"><h3>About</h3><p class="muted">Professional summary and learning goals.</p></a>
-      <a class="page-link card" href="skills.html"><h3>Skills</h3><p class="muted">Cybersecurity, development, and IT tools.</p></a>
-      <a class="page-link card" href="projects.html"><h3>Projects & Labs</h3><p class="muted">Hands-on practice and technical work.</p></a>
-      <a class="page-link card" href="contact.html"><h3>Contact</h3><p class="muted">Email and collaboration details.</p></a>
-    </div>
-  </section>
-
-  <footer>© <span data-year></span> Haider Mohsin</footer>
-</div>
-<script src="script.js"></script>
+  <footer>© <span data-year></span> Haider Mohsin • Built for speed, accessibility, and technical depth.</footer>
+  <script src="script.js" defer></script>
 </body>
 </html>
