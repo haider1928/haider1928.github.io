@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
   const yearNodes = document.querySelectorAll("[data-year]");
   const currentYear = String(new Date().getFullYear());
   yearNodes.forEach((node) => {
@@ -105,7 +105,7 @@
         projectCards.forEach((card) => {
           const categories = (card.dataset.category || "").split(" ");
           const shouldShow = selected === "all" || categories.includes(selected);
-          card.hidden = !shouldShow;
+          card.style.display = shouldShow ? "" : "none";
         });
       });
     });
