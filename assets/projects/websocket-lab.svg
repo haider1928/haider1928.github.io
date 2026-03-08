@@ -1,0 +1,25 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">WebSocket Exploit Toolkit</title>
+  <desc id="desc">Preview visual representing WebSocket message manipulation tests.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5d2300" />
+      <stop offset="100%" stop-color="#2b1200" />
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)" />
+  <text x="98" y="100" fill="#fff3e8" font-family="Segoe UI, Arial, sans-serif" font-size="46" font-weight="700">WebSocket Exploit Toolkit</text>
+  <rect x="100" y="148" width="1080" height="470" rx="24" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" />
+  <rect x="142" y="194" width="994" height="82" rx="12" fill="rgba(255,255,255,0.14)" />
+  <rect x="142" y="304" width="480" height="272" rx="16" fill="rgba(255,255,255,0.1)" />
+  <rect x="656" y="304" width="480" height="120" rx="16" fill="rgba(255,122,24,0.28)" />
+  <rect x="656" y="456" width="480" height="120" rx="16" fill="rgba(255,255,255,0.1)" />
+  <g stroke="#ffd2af" stroke-width="5" stroke-linecap="round">
+    <path d="M202 232H720" />
+    <path d="M202 338H562" />
+    <path d="M202 384H520" />
+    <path d="M202 430H470" />
+  </g>
+  <text x="700" y="374" fill="#fff5ec" font-family="Segoe UI, Arial, sans-serif" font-size="28">Message auth check</text>
+  <text x="700" y="526" fill="#fff5ec" font-family="Segoe UI, Arial, sans-serif" font-size="28">State tamper replay</text>
+</svg>
