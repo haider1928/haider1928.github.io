@@ -139,4 +139,47 @@
   );
 
   revealNodes.forEach((node) => revealObserver.observe(node));
+
+  const contactForm = document.querySelector(".contact-form");
+  if (contactForm) {
+    contactForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const originalBtnText = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending...";
+
+      const formData = new FormData(contactForm);
+      const data = {
+        name: formData.get("name"),
+        email: formData.get("email"),
+        project_type: formData.get("project_type"),
+        message: formData.get("message")
+      };
+
+      try {
+        const response = await fetch("https://vapours-cell.onrender.com/forms", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+          alert("Message sent successfully!");
+          contactForm.reset();
+        } else {
+          throw new Error("Failed to send message");
+        }
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        alert("There was an error sending your message. Please try again later.");
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalBtnText;
+      }
+    });
+  }
 })();
