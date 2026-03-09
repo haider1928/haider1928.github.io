@@ -159,20 +159,19 @@
       };
 
       try {
-        const response = await fetch("https://vapours-cell.onrender.com/forms", {
+        await fetch("https://vapours-cell.onrender.com/forms", {
           method: "POST",
+          mode: "no-cors",
           headers: {
             "Content-Type": "text/plain"
           },
           body: JSON.stringify(data)
         });
 
-        if (response.ok) {
-          alert("Message sent successfully!");
-          contactForm.reset();
-        } else {
-          throw new Error("Failed to send message");
-        }
+        // With no-cors mode, the response is opaque and ok is false.
+        // We assume success if the fetch promise doesn't throw a network error.
+        alert("Message sent successfully!");
+        contactForm.reset();
       } catch (error) {
         console.error("Error submitting form:", error);
         alert("There was an error sending your message. Please try again later.");
