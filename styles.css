@@ -61,26 +61,26 @@ body {
   aspect-ratio: 1;
   border-radius: 50%;
   filter: blur(80px);
-  opacity: 0.45;
+  opacity: 0.7;
   mix-blend-mode: multiply;
   animation: float 25s infinite alternate ease-in-out;
 }
 
 .blob-1 {
-  background: radial-gradient(circle, rgba(224, 106, 46, 0.18), transparent 70%);
+  background: radial-gradient(circle, rgba(224, 106, 46, 0.45), transparent 70%);
   top: -10%;
   left: -5%;
 }
 
 .blob-2 {
-  background: radial-gradient(circle, rgba(11, 77, 184, 0.15), transparent 70%);
+  background: radial-gradient(circle, rgba(11, 77, 184, 0.4), transparent 70%);
   bottom: -5%;
   right: -5%;
   animation-delay: -5s;
 }
 
 .blob-3 {
-  background: radial-gradient(circle, rgba(14, 117, 101, 0.1), transparent 70%);
+  background: radial-gradient(circle, rgba(14, 117, 101, 0.3), transparent 70%);
   top: 40%;
   left: 30%;
   animation-delay: -12s;
@@ -92,13 +92,13 @@ body {
   content: '';
   position: absolute;
   border-radius: 50%;
-  opacity: 0.3;
+  opacity: 0.7;
 }
 
 .mesh-bg::before {
   width: 300px;
   height: 300px;
-  border: 2px dashed rgba(11, 77, 184, 0.12);
+  border: 2px dashed rgba(11, 77, 184, 0.3);
   top: 15%;
   right: 8%;
   animation: spin 40s linear infinite;
@@ -107,7 +107,7 @@ body {
 .mesh-bg::after {
   width: 200px;
   height: 200px;
-  border: 1px solid rgba(224, 106, 46, 0.1);
+  border: 2px solid rgba(224, 106, 46, 0.25);
   bottom: 20%;
   left: 5%;
   animation: spin 30s linear infinite reverse;
@@ -123,6 +123,80 @@ body {
   33% { transform: translate(4%, 5%) scale(1.05); }
   66% { transform: translate(-2%, 8%) scale(0.95); }
   100% { transform: translate(0, 0) scale(1); }
+}
+
+/* SVG Circuit Background */
+.bg-circuit {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.circuit-line {
+  fill: none;
+  stroke: rgba(11, 77, 184, 0.35);
+  stroke-width: 2;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+  animation: drawLine 6s ease-in-out infinite alternate;
+}
+
+.circuit-delay-1 { animation-delay: 1.5s; }
+.circuit-delay-2 { animation-delay: 3s; }
+.circuit-delay-3 { animation-delay: 4.5s; }
+
+@keyframes drawLine {
+  0% { stroke-dashoffset: 800; stroke-opacity: 0; }
+  20% { stroke-opacity: 1; }
+  100% { stroke-dashoffset: 0; stroke-opacity: 0.8; }
+}
+
+.circuit-node {
+  fill: rgba(11, 77, 184, 0.5);
+  animation: nodePulse 3s ease-in-out infinite;
+}
+
+.node-delay-1 { animation-delay: 0.5s; }
+.node-delay-2 { animation-delay: 1s; }
+.node-delay-3 { animation-delay: 1.5s; }
+.node-delay-4 { animation-delay: 2s; }
+.node-delay-5 { animation-delay: 2.5s; }
+
+@keyframes nodePulse {
+  0%, 100% { r: 4; fill-opacity: 0.3; }
+  50% { r: 8; fill-opacity: 0.8; }
+}
+
+.pulse-ring {
+  fill: none;
+  stroke: rgba(11, 77, 184, 0.4);
+  stroke-width: 2;
+  animation: sonarPulse 4s ease-out infinite;
+}
+
+@keyframes sonarPulse {
+  0% { r: 10; stroke-opacity: 0.7; stroke-width: 3; }
+  100% { r: 80; stroke-opacity: 0; stroke-width: 0.5; }
+}
+
+.float-hex {
+  fill: none;
+  stroke: rgba(224, 106, 46, 0.35);
+  stroke-width: 2;
+  animation: hexFloat 20s ease-in-out infinite alternate;
+}
+
+.hex-delay {
+  animation-delay: -10s;
+  stroke: rgba(14, 117, 101, 0.3);
+}
+
+@keyframes hexFloat {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 0.4; }
+  50% { transform: translate(15px, -25px) rotate(30deg); opacity: 0.9; }
+  100% { transform: translate(-10px, 10px) rotate(-15deg); opacity: 0.4; }
 }
 
 body::before {
