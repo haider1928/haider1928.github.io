@@ -95,15 +95,17 @@
   if (filterButtons.length && projectCards.length) {
     filterButtons.forEach((button) => {
       button.addEventListener("click", () => {
-        const selected = button.dataset.filter || "all";
+        const selected = (button.dataset.filter || "all").trim().toLowerCase();
 
         filterButtons.forEach((item) => {
-          item.classList.toggle("is-active", item === button);
-          item.setAttribute("aria-pressed", item === button ? "true" : "false");
+          const itemFilter = (item.dataset.filter || "all").trim().toLowerCase();
+          const isActive = itemFilter === selected;
+          item.classList.toggle("is-active", isActive);
+          item.setAttribute("aria-pressed", isActive ? "true" : "false");
         });
 
         projectCards.forEach((card) => {
-          const categories = (card.dataset.category || "").split(" ");
+          const categories = (card.dataset.category || "").trim().toLowerCase().split(/\s+/);
           const shouldShow = selected === "all" || categories.includes(selected);
           card.style.display = shouldShow ? "" : "none";
         });
@@ -157,29 +159,29 @@
 
     // Clear canvas
     ctx.clearRect(0, 0, captchaCanvas.width, captchaCanvas.height);
-    
+
     // Background noise
     ctx.fillStyle = "#f3f4f6";
     ctx.fillRect(0, 0, captchaCanvas.width, captchaCanvas.height);
-    
+
     // Random lines
     for (let i = 0; i < 5; i++) {
-        ctx.strokeStyle = `rgba(0,0,0,${Math.random() * 0.2})`;
-        ctx.beginPath();
-        ctx.moveTo(Math.random() * captchaCanvas.width, Math.random() * captchaCanvas.height);
-        ctx.lineTo(Math.random() * captchaCanvas.width, Math.random() * captchaCanvas.height);
-        ctx.stroke();
+      ctx.strokeStyle = `rgba(0,0,0,${Math.random() * 0.2})`;
+      ctx.beginPath();
+      ctx.moveTo(Math.random() * captchaCanvas.width, Math.random() * captchaCanvas.height);
+      ctx.lineTo(Math.random() * captchaCanvas.width, Math.random() * captchaCanvas.height);
+      ctx.stroke();
     }
 
     // Draw characters
     ctx.font = "bold 28px Space Grotesk, sans-serif";
     ctx.textBaseline = "middle";
-    
+
     for (let i = 0; i < currentCaptcha.length; i++) {
       const x = 20 + i * 22;
       const y = captchaCanvas.height / 2 + (Math.random() * 10 - 5);
       const angle = (Math.random() * 0.4 - 0.2);
-      
+
       ctx.save();
       ctx.translate(x, y);
       ctx.rotate(angle);
@@ -217,18 +219,23 @@
       // Immediate reset as requested
       contactForm.reset();
       generateCaptcha();
-      alert("Message sent successfully!");
+      
+      // Small delay before alert to ensure reset state is rendered and fetch is initiated
+      setTimeout(() => {
+        alert("Message sent successfully!");
+      }, 50);
 
-      // Fire and forget fetch
+      // Fire and forget fetch with keepalive for better browser reliability (especially Edge)
       fetch("https://vapours-cell.onrender.com/forms", {
         method: "POST",
         mode: "no-cors",
+        keepalive: true,
         headers: {
           "Content-Type": "text/plain"
         },
         body: JSON.stringify(data)
       }).catch(error => {
-        console.error("Background submission error:", error);
+        console.warn("Background submission issue:", error);
       });
     });
   }
