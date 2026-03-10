@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --bg: #f7f4ee;
   --bg-soft: #eaf1ff;
   --surface: #fffdfa;
@@ -680,4 +680,51 @@ footer {
     animation-duration: 0s !important;
     transition-duration: 0s !important;
   }
+}
+
+.captcha-field {
+  margin-top: 1.5rem;
+}
+
+.captcha-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+#captcha-canvas {
+  background-color: #f3f4f6;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+
+.btn-icon {
+  padding: 0.5rem;
+  background: none;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-icon:hover {
+  background-color: #f9fafb;
+  color: #111827;
+  border-color: #d1d5db;
+}
+
+.btn-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+#captcha-input {
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  text-transform: uppercase;
 }

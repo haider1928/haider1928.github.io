@@ -141,14 +141,70 @@
   revealNodes.forEach((node) => revealObserver.observe(node));
 
   const contactForm = document.querySelector(".contact-form");
+  const captchaCanvas = document.getElementById("captcha-canvas");
+  const captchaInput = document.getElementById("captcha-input");
+  const refreshButton = document.getElementById("refresh-captcha");
+  let currentCaptcha = "";
+
+  const generateCaptcha = () => {
+    if (!captchaCanvas) return;
+    const ctx = captchaCanvas.getContext("2d");
+    const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"; // Removed similar looking chars
+    currentCaptcha = "";
+    for (let i = 0; i < 6; i++) {
+      currentCaptcha += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+
+    // Clear canvas
+    ctx.clearRect(0, 0, captchaCanvas.width, captchaCanvas.height);
+    
+    // Background noise
+    ctx.fillStyle = "#f3f4f6";
+    ctx.fillRect(0, 0, captchaCanvas.width, captchaCanvas.height);
+    
+    // Random lines
+    for (let i = 0; i < 5; i++) {
+        ctx.strokeStyle = `rgba(0,0,0,${Math.random() * 0.2})`;
+        ctx.beginPath();
+        ctx.moveTo(Math.random() * captchaCanvas.width, Math.random() * captchaCanvas.height);
+        ctx.lineTo(Math.random() * captchaCanvas.width, Math.random() * captchaCanvas.height);
+        ctx.stroke();
+    }
+
+    // Draw characters
+    ctx.font = "bold 28px Space Grotesk, sans-serif";
+    ctx.textBaseline = "middle";
+    
+    for (let i = 0; i < currentCaptcha.length; i++) {
+      const x = 20 + i * 22;
+      const y = captchaCanvas.height / 2 + (Math.random() * 10 - 5);
+      const angle = (Math.random() * 0.4 - 0.2);
+      
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(angle);
+      ctx.fillStyle = "#111827";
+      ctx.fillText(currentCaptcha[i], 0, 0);
+      ctx.restore();
+    }
+  };
+
+  if (captchaCanvas) {
+    generateCaptcha();
+    refreshButton?.addEventListener("click", generateCaptcha);
+  }
+
   if (contactForm) {
-    contactForm.addEventListener("submit", async (event) => {
+    contactForm.addEventListener("submit", (event) => {
       event.preventDefault();
 
-      const submitBtn = contactForm.querySelector('button[type="submit"]');
-      const originalBtnText = submitBtn.textContent;
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Sending...";
+      const userInput = captchaInput.value.toUpperCase();
+      if (userInput !== currentCaptcha) {
+        alert("Incorrect captcha. Please try again.");
+        generateCaptcha();
+        captchaInput.value = "";
+        return;
+      }
 
       const formData = new FormData(contactForm);
       const data = {
@@ -158,27 +214,22 @@
         message: formData.get("message")
       };
 
-      try {
-        await fetch("https://vapours-cell.onrender.com/forms", {
-          method: "POST",
-          mode: "no-cors",
-          headers: {
-            "Content-Type": "text/plain"
-          },
-          body: JSON.stringify(data)
-        });
+      // Immediate reset as requested
+      contactForm.reset();
+      generateCaptcha();
+      alert("Message sent successfully!");
 
-        // With no-cors mode, the response is opaque and ok is false.
-        // We assume success if the fetch promise doesn't throw a network error.
-        alert("Message sent successfully!");
-        contactForm.reset();
-      } catch (error) {
-        console.error("Error submitting form:", error);
-        alert("There was an error sending your message. Please try again later.");
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalBtnText;
-      }
+      // Fire and forget fetch
+      fetch("https://vapours-cell.onrender.com/forms", {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "text/plain"
+        },
+        body: JSON.stringify(data)
+      }).catch(error => {
+        console.error("Background submission error:", error);
+      });
     });
   }
 })();

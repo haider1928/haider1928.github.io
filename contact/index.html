@@ -97,6 +97,19 @@
               <label for="message">Message</label>
               <textarea id="message" name="message" placeholder="Share target scope, timeline, and expected outcome." required></textarea>
             </div>
+            <div class="field captcha-field">
+              <label for="captcha-input">Verify you are human</label>
+              <div class="captcha-wrapper">
+                <canvas id="captcha-canvas" width="160" height="50" aria-label="Captcha image"></canvas>
+                <button type="button" id="refresh-captcha" class="btn btn-icon" aria-label="Refresh captcha">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M23 4v6h-6"></path>
+                    <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                  </svg>
+                </button>
+              </div>
+              <input id="captcha-input" name="captcha_input" type="text" placeholder="Enter characters" required />
+            </div>
             <button class="btn btn-primary" type="submit">Send message</button>
             <p class="help-text">For private security discussions, include scope and preferred communication window.</p>
           </form>
