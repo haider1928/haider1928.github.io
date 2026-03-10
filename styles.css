@@ -335,7 +335,7 @@ p {
 }
 
 .grid-3 {
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .grid-2 {
@@ -362,6 +362,24 @@ p {
 
 .card p:last-child {
   margin-bottom: 0;
+}
+
+.skills-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.skills-grid .card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-5);
+}
+
+.skills-grid .card h2,
+.skills-grid .card p {
+  text-align: center;
 }
 
 .muted {
