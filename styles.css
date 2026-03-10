@@ -61,62 +61,32 @@ body {
   aspect-ratio: 1;
   border-radius: 50%;
   filter: blur(80px);
-  opacity: 0.7;
+  opacity: 0.5;
   mix-blend-mode: multiply;
   animation: float 25s infinite alternate ease-in-out;
 }
 
 .blob-1 {
-  background: radial-gradient(circle, rgba(224, 106, 46, 0.45), transparent 70%);
+  background: radial-gradient(circle, rgba(30, 90, 180, 0.25), transparent 70%);
   top: -10%;
   left: -5%;
 }
 
 .blob-2 {
-  background: radial-gradient(circle, rgba(11, 77, 184, 0.4), transparent 70%);
+  background: radial-gradient(circle, rgba(11, 77, 184, 0.3), transparent 70%);
   bottom: -5%;
   right: -5%;
   animation-delay: -5s;
 }
 
 .blob-3 {
-  background: radial-gradient(circle, rgba(14, 117, 101, 0.3), transparent 70%);
+  background: radial-gradient(circle, rgba(14, 117, 101, 0.2), transparent 70%);
   top: 40%;
   left: 30%;
   animation-delay: -12s;
 }
 
-/* Animated geometric particles */
-.mesh-bg::before,
-.mesh-bg::after {
-  content: '';
-  position: absolute;
-  border-radius: 50%;
-  opacity: 0.7;
-}
 
-.mesh-bg::before {
-  width: 300px;
-  height: 300px;
-  border: 2px dashed rgba(11, 77, 184, 0.3);
-  top: 15%;
-  right: 8%;
-  animation: spin 40s linear infinite;
-}
-
-.mesh-bg::after {
-  width: 200px;
-  height: 200px;
-  border: 2px solid rgba(224, 106, 46, 0.25);
-  bottom: 20%;
-  left: 5%;
-  animation: spin 30s linear infinite reverse;
-}
-
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
 
 @keyframes float {
   0% { transform: translate(0, 0) scale(1); }
@@ -134,70 +104,119 @@ body {
   pointer-events: none;
 }
 
-.circuit-line {
-  fill: none;
-  stroke: rgba(11, 77, 184, 0.35);
-  stroke-width: 2;
-  stroke-dasharray: 800;
-  stroke-dashoffset: 800;
-  animation: drawLine 6s ease-in-out infinite alternate;
+/* Grid matrix dots */
+.grid-dots circle {
+  fill: rgba(11, 77, 184, 0.2);
+  animation: dotPulse 4s ease-in-out infinite;
 }
 
-.circuit-delay-1 { animation-delay: 1.5s; }
-.circuit-delay-2 { animation-delay: 3s; }
-.circuit-delay-3 { animation-delay: 4.5s; }
+.grid-dots circle:nth-child(odd) { animation-delay: -2s; }
+.grid-dots circle:nth-child(3n) { animation-delay: -1s; }
 
-@keyframes drawLine {
-  0% { stroke-dashoffset: 800; stroke-opacity: 0; }
-  20% { stroke-opacity: 1; }
-  100% { stroke-dashoffset: 0; stroke-opacity: 0.8; }
+@keyframes dotPulse {
+  0%, 100% { fill-opacity: 0.15; r: 1.5; }
+  50% { fill-opacity: 0.5; r: 2.5; }
 }
 
-.circuit-node {
+/* Network data-flow lines */
+.data-flow {
+  stroke: rgba(11, 77, 184, 0.25);
+  stroke-width: 1.5;
+  stroke-dasharray: 8 6;
+  animation: flowDash 3s linear infinite;
+}
+
+.df-2 { animation-delay: -0.4s; }
+.df-3 { animation-delay: -0.8s; }
+.df-4 { animation-delay: -1.2s; }
+.df-5 { animation-delay: -1.6s; }
+.df-6 { animation-delay: -2.0s; }
+.df-7 { animation-delay: -2.4s; }
+.df-8 { animation-delay: -2.8s; }
+.df-9 { animation-delay: -0.6s; }
+
+@keyframes flowDash {
+  0% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -28; }
+}
+
+/* Active network nodes */
+.net-node {
   fill: rgba(11, 77, 184, 0.5);
-  animation: nodePulse 3s ease-in-out infinite;
+  stroke: rgba(11, 77, 184, 0.2);
+  stroke-width: 8;
+  animation: nodeGlow 2.5s ease-in-out infinite;
 }
 
-.node-delay-1 { animation-delay: 0.5s; }
-.node-delay-2 { animation-delay: 1s; }
-.node-delay-3 { animation-delay: 1.5s; }
-.node-delay-4 { animation-delay: 2s; }
-.node-delay-5 { animation-delay: 2.5s; }
+.nn-2 { animation-delay: -0.4s; }
+.nn-3 { animation-delay: -0.8s; }
+.nn-4 { animation-delay: -1.2s; }
+.nn-5 { animation-delay: -1.6s; }
+.nn-6 { animation-delay: -2.0s; }
+.nn-7 { animation-delay: -2.4s; }
 
-@keyframes nodePulse {
-  0%, 100% { r: 4; fill-opacity: 0.3; }
-  50% { r: 8; fill-opacity: 0.8; }
+@keyframes nodeGlow {
+  0%, 100% { fill-opacity: 0.3; stroke-opacity: 0.1; }
+  50% { fill-opacity: 0.8; stroke-opacity: 0.4; }
 }
 
-.pulse-ring {
+/* Scanning beam */
+.scan-beam {
+  fill: rgba(14, 117, 101, 0.25);
+  animation: scanDown 6s linear infinite;
+}
+
+@keyframes scanDown {
+  0% { y: -10; opacity: 0; }
+  5% { opacity: 1; }
+  95% { opacity: 1; }
+  100% { y: 900; opacity: 0; }
+}
+
+/* Radar sweep */
+.radar-ring {
   fill: none;
-  stroke: rgba(11, 77, 184, 0.4);
+  stroke: rgba(11, 77, 184, 0.2);
+  stroke-width: 1;
+}
+
+.rr-2 { stroke-dasharray: 4 4; }
+.rr-3 { stroke-dasharray: 2 4; }
+
+.radar-arm {
+  stroke: rgba(14, 117, 101, 0.5);
   stroke-width: 2;
-  animation: sonarPulse 4s ease-out infinite;
+  transform-origin: 0 0;
+  animation: radarSweep 4s linear infinite;
 }
 
-@keyframes sonarPulse {
-  0% { r: 10; stroke-opacity: 0.7; stroke-width: 3; }
-  100% { r: 80; stroke-opacity: 0; stroke-width: 0.5; }
+@keyframes radarSweep {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
-.float-hex {
-  fill: none;
-  stroke: rgba(224, 106, 46, 0.35);
-  stroke-width: 2;
-  animation: hexFloat 20s ease-in-out infinite alternate;
+/* Binary text */
+.binary-text {
+  font-family: "Space Grotesk", monospace;
+  font-size: 14px;
+  fill: rgba(11, 77, 184, 0.2);
+  letter-spacing: 3px;
+  animation: binaryFlicker 5s steps(1) infinite;
 }
 
-.hex-delay {
-  animation-delay: -10s;
-  stroke: rgba(14, 117, 101, 0.3);
+.bt-2 { animation-delay: -1.5s; }
+.bt-3 { animation-delay: -3s; }
+
+@keyframes binaryFlicker {
+  0%, 100% { fill-opacity: 0.15; }
+  10% { fill-opacity: 0.4; }
+  20% { fill-opacity: 0.1; }
+  30% { fill-opacity: 0.5; }
+  40% { fill-opacity: 0.2; }
+  60% { fill-opacity: 0.45; }
+  80% { fill-opacity: 0.1; }
 }
 
-@keyframes hexFloat {
-  0% { transform: translate(0, 0) rotate(0deg); opacity: 0.4; }
-  50% { transform: translate(15px, -25px) rotate(30deg); opacity: 0.9; }
-  100% { transform: translate(-10px, 10px) rotate(-15deg); opacity: 0.4; }
-}
 
 body::before {
   content: "";
