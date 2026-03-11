@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
   const yearNodes = document.querySelectorAll("[data-year]");
   const currentYear = String(new Date().getFullYear());
   yearNodes.forEach((node) => {
