@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --bg: #03060b;
   --bg-soft: #0b1622;
   --surface: rgba(7, 12, 18, 0.75);
@@ -577,8 +577,8 @@ p {
 
 .card:hover {
   transform: translateY(-6px) scale(1.01);
-  border-color: rgba(36, 209, 143, 0.2);
-  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(86, 207, 225, 0.35);
+  background: rgba(9, 16, 24, 0.9);
   box-shadow: var(--shadow-lg);
 }
 
@@ -1104,6 +1104,7 @@ footer {
   font-weight: 600;
   text-transform: uppercase;
 }
+
 
 
 
