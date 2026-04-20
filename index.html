@@ -3,762 +3,173 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Haider — Security-Focused Python Automation Engineer</title>
-  <meta name="description" content="Haider is a security-focused Python automation engineer who builds secure tools, bots, scanners, and intelligent workflows with a bug bounty mindset." />
-  <meta name="keywords" content="Python, Automation, Security, Bug Bounty, Developer, Portfolio" />
-  <meta name="author" content="Haider" />
-  <meta property="og:title" content="Haider — Security-Focused Python Automation Engineer" />
-  <meta property="og:description" content="I build secure Python tools, automation systems, bots, and security-focused workflows with a strong foundation in cybersecurity." />
-  <meta property="og:type" content="website" />
+  <title>Haider — Python Automation &amp; Security</title>
+  <meta name="description" content="Security-focused Python automation engineer. I build tools, bots, scanners, and secure workflows." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <!-- ═══════════════ NAVIGATION ═══════════════ -->
-  <nav class="nav" id="nav">
-    <div class="nav__inner">
-      <a href="#" class="nav__logo">Haider<span class="nav__logo-dot">.</span></a>
-      <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">haider<span>.</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span>
       </button>
-      <ul class="nav__links" id="navLinks">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#tools">Tools</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#learning">Learning</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <a href="#contact" class="nav__cta">Get in Touch</a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="learning.html">Reading</a>
+        <a href="contact.html">Contact</a>
+      </div>
     </div>
   </nav>
 
-  <!-- ═══════════════ HERO ═══════════════ -->
-  <section class="hero" id="hero">
-    <div class="hero__bg">
-      <div class="hero__blob hero__blob--1"></div>
-      <div class="hero__blob hero__blob--2"></div>
-      <div class="hero__blob hero__blob--3"></div>
-      <div class="hero__grid"></div>
-    </div>
-    <div class="hero__content">
-      <div class="hero__text">
-        <div class="hero__badge reveal">
-          <span class="hero__badge-dot"></span>
-          Available for Projects
-        </div>
-        <h1 class="hero__title reveal">
-          Security-Focused<br />
-          <span class="hero__title-gradient">Python Automation</span><br />
-          Engineer
-        </h1>
-        <p class="hero__subtitle reveal">
-          I build automation tools, bots, and security-aware systems with a bug bounty mindset.
-          Turning Python into secure automation, tooling, and intelligent workflows.
-        </p>
-        <div class="hero__actions reveal">
-          <a href="#projects" class="btn btn--primary">
-            <span>Explore My Work</span>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a href="#contact" class="btn btn--ghost">
-            <span>Get in Touch</span>
-          </a>
-        </div>
-      </div>
-      <div class="hero__card reveal">
-        <div class="hero__card-inner">
-          <div class="hero__card-header">
-            <div class="hero__card-avatar">H</div>
-            <div>
-              <div class="hero__card-name">Haider</div>
-              <div class="hero__card-role">Python &amp; Security</div>
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-grid-bg"></div>
+      <div class="hero-glow"></div>
+      <div class="container">
+        <div class="hero-content">
+          <div>
+            <p class="hero-label">Python / Security / Automation</p>
+            <h1 class="hero-title">Security-Focused Python Automation Engineer</h1>
+            <p class="hero-desc">I write Python that interacts with web applications, automates security workflows, and builds tools that solve real problems. My work sits at the intersection of offensive security and practical automation.</p>
+            <div class="hero-actions">
+              <a href="projects.html" class="btn btn-primary">View Projects</a>
+              <a href="contact.html" class="btn btn-outline">Contact</a>
             </div>
           </div>
-          <div class="hero__card-tags">
-            <span class="tag tag--python">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-              Python
+          <div class="terminal">
+            <div class="terminal-bar">
+              <span class="terminal-dot"></span>
+              <span class="terminal-dot"></span>
+              <span class="terminal-dot"></span>
+              <span class="terminal-title">~/security-tools</span>
+            </div>
+            <div class="terminal-body" id="terminalBody">
+              <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">python3 recon.py --target example.com</span></div>
+              <div class="t-line"><span class="t-out">[*] Starting subdomain enumeration...</span></div>
+              <div class="t-line"><span class="t-out">[*] Found 14 subdomains</span></div>
+              <div class="t-line"><span class="t-out">[*] Crawling endpoints...</span></div>
+              <div class="t-line"><span class="t-ok">[+] 47 endpoints mapped</span></div>
+              <div class="t-line"><span class="t-out">[*] Testing for XSS vectors...</span></div>
+              <div class="t-line"><span class="t-ok">[+] 3 potential findings logged</span></div>
+              <div class="t-line"><span class="t-out">[*] Report saved: ./reports/example.md</span></div>
+              <div class="t-line"><span class="t-prompt">$</span> <span class="t-cursor"></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <section class="section">
+      <div class="container">
+        <div class="highlights reveal">
+          <div class="highlight">
+            <span class="highlight-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
             </span>
-            <span class="tag tag--auto">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
-              Automation
+            <h3>Python</h3>
+            <p>Primary language for everything I build</p>
+          </div>
+          <div class="highlight">
+            <span class="highlight-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
             </span>
-            <span class="tag tag--sec">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              Security
+            <h3>Automation</h3>
+            <p>Bots, workflows, and scripted processes</p>
+          </div>
+          <div class="highlight">
+            <span class="highlight-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </span>
-            <span class="tag tag--bug">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.2 4.2l2.8 2.8M17 17l2.8 2.8M1 12h4M19 12h4M4.2 19.8l2.8-2.8M17 7l2.8-2.8"/></svg>
-              Bug Bounty
+            <h3>Security</h3>
+            <p>Offensive security testing and secure design</p>
+          </div>
+          <div class="highlight">
+            <span class="highlight-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
             </span>
-            <span class="tag tag--tool">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
-              Tool Building
-            </span>
-          </div>
-          <div class="hero__card-stats">
-            <div class="hero__card-stat">
-              <span class="hero__card-stat-icon">⚡</span>
-              <span>Python-Focused</span>
-            </div>
-            <div class="hero__card-stat">
-              <span class="hero__card-stat-icon">🛡️</span>
-              <span>Security-Aware</span>
-            </div>
-            <div class="hero__card-stat">
-              <span class="hero__card-stat-icon">🤖</span>
-              <span>Automation-Driven</span>
-            </div>
-            <div class="hero__card-stat">
-              <span class="hero__card-stat-icon">🔧</span>
-              <span>Tool Builder</span>
-            </div>
+            <h3>Bug Bounty</h3>
+            <p>Finding real vulnerabilities in real systems</p>
           </div>
         </div>
       </div>
-    </div>
-    <div class="hero__scroll">
-      <span>Scroll to explore</span>
-      <div class="hero__scroll-line"></div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ═══════════════ ABOUT ═══════════════ -->
-  <section class="section about" id="about">
-    <div class="container">
-      <div class="section__header reveal">
-        <span class="section__label">01 — About Me</span>
-        <h2 class="section__title">The Person Behind <span class="gradient-text">the Code</span></h2>
-      </div>
-      <div class="about__grid">
-        <div class="about__text reveal">
-          <p class="about__lead">
-            I'm Haider — a Python developer with a deep passion for security and automation. I don't just write code; I think about how code can be broken, defended, and weaponized for good.
-          </p>
-          <p>
-            My foundation is built on strong Python fundamentals — clean syntax, logical problem-solving, and scripting that actually works. But what sets me apart is my security-first mindset. Every function I write, every tool I build, I'm thinking about input validation, safe data handling, and how an attacker might exploit a weakness.
-          </p>
-          <p>
-            I approach development with an offensive perspective but design with defense in mind. I understand how vulnerabilities are discovered and exploited — and I use that knowledge to build systems that are resilient by design, not by accident.
-          </p>
-          <p>
-            Right now, I'm making the leap from writing individual scripts to engineering structured, reusable tools — the kind of systems that solve real problems in security research and automation. This isn't just a hobby. It's a career I'm building from the ground up.
-          </p>
-        </div>
-        <div class="about__highlights reveal">
-          <div class="about__highlight-card">
-            <div class="about__highlight-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            </div>
-            <h3>Clean Code</h3>
-            <p>Strong Python syntax, scripting, and logical architecture</p>
+    <!-- PREVIEW: WHAT I DO -->
+    <section class="section">
+      <div class="container">
+        <span class="section-label reveal">Direction</span>
+        <h2 class="section-title reveal">What I work on</h2>
+        <p class="section-desc reveal">Tools and systems at the intersection of Python automation and security research.</p>
+        <div class="grid-3 reveal">
+          <div class="card">
+            <h3>Automation Bots</h3>
+            <p>Scripted workflows that handle repetitive tasks with reliability. Posting, translating, monitoring, data collection. Built to run unattended.</p>
           </div>
-          <div class="about__highlight-card">
-            <div class="about__highlight-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <h3>Security DNA</h3>
-            <p>Attacker's mindset applied to defensive, secure design</p>
+          <div class="card">
+            <h3>Security Scanners</h3>
+            <p>Tools for XSS detection, endpoint crawling, and URL analysis. Focused on actionable output with minimal false positives.</p>
           </div>
-          <div class="about__highlight-card">
-            <div class="about__highlight-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-            </div>
-            <h3>Builder Spirit</h3>
-            <p>From scripts to structured systems and real-world tools</p>
+          <div class="card">
+            <h3>Research Tooling</h3>
+            <p>Payload testing, response analysis, and data filtering. Supporting the workflow between vulnerability discovery and documentation.</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ═══════════════ SKILLS ═══════════════ -->
-  <section class="section skills" id="skills">
-    <div class="container">
-      <div class="section__header reveal">
-        <span class="section__label">02 — Skills</span>
-        <h2 class="section__title">Technical <span class="gradient-text">Arsenal</span></h2>
-        <p class="section__desc">A deep toolkit spanning Python, automation, web interaction, and security engineering.</p>
-      </div>
-      <div class="skills__grid">
-        <!-- Python Foundations -->
-        <div class="skill-card reveal" style="--card-accent: #FFD43B;">
-          <div class="skill-card__icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-          </div>
-          <h3 class="skill-card__title">Python Foundations</h3>
-          <ul class="skill-card__list">
-            <li>Syntax &amp; Data Structures</li>
-            <li>Scripting &amp; Automation</li>
-            <li>Logical Problem-Solving</li>
-          </ul>
-          <div class="skill-card__glow"></div>
-        </div>
-        <!-- Automation -->
-        <div class="skill-card reveal" style="--card-accent: #00D4FF;">
-          <div class="skill-card__icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
-          </div>
-          <h3 class="skill-card__title">Automation</h3>
-          <ul class="skill-card__list">
-            <li>HTTP Request Automation</li>
-            <li>Data Handling &amp; Processing</li>
-            <li>Task Automation</li>
-            <li>Scripted Workflows</li>
-          </ul>
-          <div class="skill-card__glow"></div>
-        </div>
-        <!-- Web Interaction -->
-        <div class="skill-card reveal" style="--card-accent: #A855F7;">
-          <div class="skill-card__icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
-          </div>
-          <h3 class="skill-card__title">Web Interaction</h3>
-          <ul class="skill-card__list">
-            <li>Form Submission Automation</li>
-            <li>Endpoint Testing</li>
-            <li>Session &amp; Cookie Handling</li>
-            <li>Authenticated Scanning</li>
-          </ul>
-          <div class="skill-card__glow"></div>
-        </div>
-        <!-- Security Mindset -->
-        <div class="skill-card reveal" style="--card-accent: #F43F5E;">
-          <div class="skill-card__icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <h3 class="skill-card__title">Security Mindset</h3>
-          <ul class="skill-card__list">
-            <li>Input Validation</li>
-            <li>Safe Data Handling</li>
-            <li>Secure Coding Practices</li>
-            <li>Attacker Perspective</li>
-            <li>Defensive Design</li>
-          </ul>
-          <div class="skill-card__glow"></div>
-        </div>
-        <!-- Tooling Direction -->
-        <div class="skill-card reveal" style="--card-accent: #10B981;">
-          <div class="skill-card__icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
-          </div>
-          <h3 class="skill-card__title">Tooling Direction</h3>
-          <ul class="skill-card__list">
-            <li>Bots &amp; Custom Scanners</li>
-            <li>URL &amp; Response Analyzers</li>
-            <li>Fuzzing Assistants</li>
-          </ul>
-          <div class="skill-card__glow"></div>
+    <!-- CALLOUT -->
+    <section class="section">
+      <div class="container">
+        <div class="callout reveal">
+          <div class="callout-accent"></div>
+          <p>Most people are either Python developers or security researchers. <strong>I am building at the intersection of both</strong> — writing security-focused automation tools with an offensive security mindset and defensive design principles.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ═══════════════ TOOLS / FOCUS AREAS ═══════════════ -->
-  <section class="section tools" id="tools">
-    <div class="container">
-      <div class="section__header reveal">
-        <span class="section__label">03 — Focus Areas</span>
-        <h2 class="section__title">What I'm <span class="gradient-text">Building</span></h2>
-        <p class="section__desc">Security research &amp; automation tooling — engineered for real-world impact.</p>
-      </div>
-      <div class="tools__grid">
-        <div class="tool-block reveal">
-          <div class="tool-block__number">01</div>
-          <div class="tool-block__icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+    <!-- PREVIEW: SKILLS -->
+    <section class="section">
+      <div class="container">
+        <span class="section-label reveal">Foundation</span>
+        <h2 class="section-title reveal">Technical focus areas</h2>
+        <div class="grid-2 reveal">
+          <div class="card">
+            <h3>Python + Automation</h3>
+            <p>HTTP request automation, data handling, task scripting, CLI tool development. Python is the backbone of every project I build.</p>
           </div>
-          <h3 class="tool-block__title">Automation Bots</h3>
-          <ul class="tool-block__list">
-            <li>Website interaction bots</li>
-            <li>Scripted workflow engines</li>
-            <li>Repetitive task automation</li>
-          </ul>
-          <div class="tool-block__line"></div>
+          <div class="card">
+            <h3>Security + Offense</h3>
+            <p>XSS testing, recon automation, payload generation, session handling. I approach every system from an attacker's perspective.</p>
+          </div>
         </div>
-        <div class="tool-block reveal">
-          <div class="tool-block__number">02</div>
-          <div class="tool-block__icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          </div>
-          <h3 class="tool-block__title">Custom Scanners</h3>
-          <ul class="tool-block__list">
-            <li>XSS detection tools</li>
-            <li>Endpoint crawlers</li>
-            <li>URL discovery utilities</li>
-          </ul>
-          <div class="tool-block__line"></div>
-        </div>
-        <div class="tool-block reveal">
-          <div class="tool-block__number">03</div>
-          <div class="tool-block__icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.78 7.78 5.5 5.5 0 017.78-7.78zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
-          </div>
-          <h3 class="tool-block__title">Research Tools</h3>
-          <ul class="tool-block__list">
-            <li>Payload injectors &amp; testers</li>
-            <li>Response analyzers</li>
-            <li>Data parsing &amp; filtering</li>
-          </ul>
-          <div class="tool-block__line"></div>
+        <div style="margin-top:20px; text-align:center;">
+          <a href="skills.html" class="btn btn-outline">View all skills</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ═══════════════ SECURITY + PYTHON OVERLAP ═══════════════ -->
-  <section class="section overlap" id="overlap">
-    <div class="container">
-      <div class="section__header reveal">
-        <span class="section__label">04 — Core Strength</span>
-        <h2 class="section__title">Security <span class="gradient-text">× Python</span></h2>
-        <p class="section__desc">Where offensive security meets Python engineering — my sweet spot.</p>
-      </div>
-      <div class="overlap__grid">
-        <div class="overlap__card reveal">
-          <div class="overlap__card-accent" style="--accent: #00D4FF;"></div>
-          <span class="overlap__card-label">Reconnaissance</span>
-          <h3>Automated Recon</h3>
-          <ul>
-            <li>Subdomain enumeration</li>
-            <li>Endpoint discovery</li>
-            <li>URL collection &amp; mapping</li>
-          </ul>
-        </div>
-        <div class="overlap__card reveal">
-          <div class="overlap__card-accent" style="--accent: #F43F5E;"></div>
-          <span class="overlap__card-label">Offense</span>
-          <h3>Vulnerability Automation</h3>
-          <ul>
-            <li>XSS fuzzing pipelines</li>
-            <li>Parameter brute-forcing</li>
-            <li>Header manipulation testing</li>
-          </ul>
-        </div>
-        <div class="overlap__card reveal">
-          <div class="overlap__card-accent" style="--accent: #A855F7;"></div>
-          <span class="overlap__card-label">Interaction</span>
-          <h3>Web Interaction Engines</h3>
-          <ul>
-            <li>Session &amp; cookie management</li>
-            <li>Authenticated scanning</li>
-            <li>Stateful request chains</li>
-          </ul>
-        </div>
-        <div class="overlap__card reveal">
-          <div class="overlap__card-accent" style="--accent: #FFD43B;"></div>
-          <span class="overlap__card-label">Payloads</span>
-          <h3>Transformation Engines</h3>
-          <ul>
-            <li>Dynamic payload generation</li>
-            <li>Encoding &amp; obfuscation</li>
-            <li>WAF-aware testing workflows</li>
-          </ul>
-        </div>
-        <div class="overlap__card reveal">
-          <div class="overlap__card-accent" style="--accent: #10B981;"></div>
-          <span class="overlap__card-label">Analysis</span>
-          <h3>Data Processing</h3>
-          <ul>
-            <li>Response parsing &amp; filtering</li>
-            <li>Signal extraction</li>
-            <li>Clean result logging</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+  </main>
 
-  <!-- ═══════════════ UNIQUE ADVANTAGE ═══════════════ -->
-  <section class="section callout" id="advantage">
-    <div class="container">
-      <div class="callout__box reveal">
-        <div class="callout__glow"></div>
-        <blockquote class="callout__quote">
-          "Most people are either Python developers or security researchers.<br/>
-          <span class="gradient-text">I am becoming a security-minded Python automation builder.</span>"
-        </blockquote>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════ CURRENT LEVEL ═══════════════ -->
-  <section class="section current" id="current">
-    <div class="container">
-      <div class="section__header reveal">
-        <span class="section__label">05 — Current Phase</span>
-        <h2 class="section__title">Where I Am <span class="gradient-text">Right Now</span></h2>
-      </div>
-      <div class="current__content reveal">
-        <div class="current__phase">
-          <span class="current__from">Intermediate</span>
-          <div class="current__arrow">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="url(#arrowGrad)" stroke-width="2">
-              <defs><linearGradient id="arrowGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#00D4FF"/><stop offset="100%" stop-color="#A855F7"/></linearGradient></defs>
-              <path d="M5 12h14M13 6l6 6-6 6"/>
-            </svg>
-          </div>
-          <span class="current__to">Tool Builder Phase</span>
-        </div>
-        <div class="current__details">
-          <div class="current__detail-card">
-            <h4>📍 Where I've been</h4>
-            <p>Writing Python scripts — learning syntax, solving problems, understanding automation fundamentals.</p>
-          </div>
-          <div class="current__detail-card">
-            <h4>🚀 Where I'm going</h4>
-            <p>Engineering structured, reusable tools — building real security automation systems, not just experiments.</p>
-          </div>
-          <div class="current__detail-card">
-            <h4>💡 What I know</h4>
-            <p>The foundation is solid. Now it's about applying it to real-world tooling that solves actual problems.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════ GROWTH ═══════════════ -->
-  <section class="section growth" id="growth">
-    <div class="container">
-      <div class="section__header reveal">
-        <span class="section__label">06 — Growth</span>
-        <h2 class="section__title">What I'm <span class="gradient-text">Improving Next</span></h2>
-        <p class="section__desc">The roadmap ahead — leveling up across Python, networking, and security engineering.</p>
-      </div>
-      <div class="growth__grid">
-        <div class="growth__card reveal">
-          <div class="growth__card-icon" style="--g-accent: #FFD43B;">⚡</div>
-          <h3>Advanced Python</h3>
-          <ul>
-            <li>asyncio &amp; concurrency</li>
-            <li>Multithreading</li>
-            <li>Multiprocessing</li>
-          </ul>
-        </div>
-        <div class="growth__card reveal">
-          <div class="growth__card-icon" style="--g-accent: #00D4FF;">🌐</div>
-          <h3>Networking</h3>
-          <ul>
-            <li>Raw sockets</li>
-            <li>Packet crafting</li>
-            <li>Protocol analysis</li>
-          </ul>
-        </div>
-        <div class="growth__card reveal">
-          <div class="growth__card-icon" style="--g-accent: #A855F7;">🔍</div>
-          <h3>Web Internals</h3>
-          <ul>
-            <li>HTTP deep behavior</li>
-            <li>Browser internals</li>
-            <li>Request lifecycle</li>
-          </ul>
-        </div>
-        <div class="growth__card reveal">
-          <div class="growth__card-icon" style="--g-accent: #10B981;">🏗️</div>
-          <h3>Software Engineering</h3>
-          <ul>
-            <li>Reusable modules</li>
-            <li>CLI design &amp; UX</li>
-            <li>Logging &amp; debugging</li>
-          </ul>
-        </div>
-        <div class="growth__card reveal">
-          <div class="growth__card-icon" style="--g-accent: #F43F5E;">🔗</div>
-          <h3>Security Integration</h3>
-          <ul>
-            <li>Full scanner pipelines</li>
-            <li>Exploit chain automation</li>
-            <li>Intelligent fuzzing</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════ PROJECTS ═══════════════ -->
-  <section class="section projects" id="projects">
-    <div class="container">
-      <div class="section__header reveal">
-        <span class="section__label">07 — Projects</span>
-        <h2 class="section__title">The <span class="gradient-text">Build List</span></h2>
-        <p class="section__desc">From concepts to pipelines — the tools I'm engineering.</p>
-      </div>
-      <div class="projects__tiers">
-        <!-- Tier 1 -->
-        <div class="projects__tier reveal">
-          <div class="projects__tier-label">
-            <span class="projects__tier-badge projects__tier-badge--1">Tier 1</span>
-            <span>Foundation Tools</span>
-          </div>
-          <div class="projects__tier-grid">
-            <div class="project-card">
-              <div class="project-card__header">
-                <h3>Recon Automation Framework</h3>
-                <span class="project-card__status project-card__status--progress">In Progress</span>
-              </div>
-              <p>Automated subdomain enumeration, endpoint discovery, and URL collection pipeline for bug bounty recon.</p>
-              <div class="project-card__tags">
-                <span>Python</span><span>Recon</span><span>Automation</span>
-              </div>
-            </div>
-            <div class="project-card">
-              <div class="project-card__header">
-                <h3>Custom XSS Scanner</h3>
-                <span class="project-card__status project-card__status--progress">In Progress</span>
-              </div>
-              <p>Targeted XSS detection tool with payload injection, response analysis, and WAF-aware testing capabilities.</p>
-              <div class="project-card__tags">
-                <span>Security</span><span>Scanner</span><span>XSS</span>
-              </div>
-            </div>
-            <div class="project-card">
-              <div class="project-card__header">
-                <h3>URL Parameter Analyzer</h3>
-                <span class="project-card__status project-card__status--concept">Concept</span>
-              </div>
-              <p>Intelligent URL parsing and parameter analysis tool for identifying potential injection points and attack surfaces.</p>
-              <div class="project-card__tags">
-                <span>Analysis</span><span>URL</span><span>Parsing</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Tier 2 -->
-        <div class="projects__tier reveal">
-          <div class="projects__tier-label">
-            <span class="projects__tier-badge projects__tier-badge--2">Tier 2</span>
-            <span>Advanced Systems</span>
-          </div>
-          <div class="projects__tier-grid">
-            <div class="project-card">
-              <div class="project-card__header">
-                <h3>Authenticated Crawler</h3>
-                <span class="project-card__status project-card__status--planned">Planned</span>
-              </div>
-              <p>Session-aware web crawler with cookie management, authentication handling, and smart endpoint discovery.</p>
-              <div class="project-card__tags">
-                <span>Crawling</span><span>Auth</span><span>Sessions</span>
-              </div>
-            </div>
-            <div class="project-card">
-              <div class="project-card__header">
-                <h3>Smart Fuzzing Engine</h3>
-                <span class="project-card__status project-card__status--planned">Planned</span>
-              </div>
-              <p>Intelligent fuzzing framework with dynamic payload generation, encoding, and adaptive testing strategies.</p>
-              <div class="project-card__tags">
-                <span>Fuzzing</span><span>Payloads</span><span>Engine</span>
-              </div>
-            </div>
-            <div class="project-card">
-              <div class="project-card__header">
-                <h3>Bug Triage Assistant</h3>
-                <span class="project-card__status project-card__status--concept">Concept</span>
-              </div>
-              <p>Automated vulnerability classification, severity scoring, and report generation for discovered findings.</p>
-              <div class="project-card__tags">
-                <span>Triage</span><span>Reports</span><span>Automation</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Tier 3 -->
-        <div class="projects__tier reveal">
-          <div class="projects__tier-label">
-            <span class="projects__tier-badge projects__tier-badge--3">Tier 3</span>
-            <span>The Pipeline</span>
-          </div>
-          <div class="projects__tier-grid">
-            <div class="project-card project-card--hero">
-              <div class="project-card__header">
-                <h3>Full Bug Bounty Automation Pipeline</h3>
-                <span class="project-card__status project-card__status--planned">Planned</span>
-              </div>
-              <p>End-to-end automation: Recon → Scan → Filter → Report. A complete pipeline from target discovery to vulnerability documentation, designed for efficient and ethical security research.</p>
-              <div class="project-card__tags">
-                <span>Pipeline</span><span>Full-Stack</span><span>Automation</span><span>Security</span>
-              </div>
-              <div class="project-card__pipeline">
-                <span>Recon</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                <span>Scan</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                <span>Filter</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                <span>Report</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════ LEARNING ═══════════════ -->
-  <section class="section learning" id="learning">
-    <div class="container">
-      <div class="section__header reveal">
-        <span class="section__label">08 — Learning Stack</span>
-        <h2 class="section__title">Currently <span class="gradient-text">Studying</span></h2>
-        <p class="section__desc">The books shaping my offensive security and Python engineering skills.</p>
-      </div>
-      <div class="learning__grid">
-        <div class="learning__card reveal">
-          <div class="learning__card-spine" style="--spine-color: #F43F5E;"></div>
-          <div class="learning__card-content">
-            <span class="learning__card-label">Book 01</span>
-            <h3>Black Hat Python</h3>
-            <p>Offensive tooling, network interaction, and exploit development using Python as the primary weapon.</p>
-            <div class="learning__card-focus">
-              <span>Offensive Tooling</span>
-              <span>Network Ops</span>
-              <span>Exploits</span>
-            </div>
-          </div>
-        </div>
-        <div class="learning__card reveal">
-          <div class="learning__card-spine" style="--spine-color: #00D4FF;"></div>
-          <div class="learning__card-content">
-            <span class="learning__card-label">Book 02</span>
-            <h3>Bug Bounty Bootcamp</h3>
-            <p>Recon automation, testing workflows, and a systematic approach to finding vulnerabilities in the wild.</p>
-            <div class="learning__card-focus">
-              <span>Recon</span>
-              <span>Workflows</span>
-              <span>Bug Bounty</span>
-            </div>
-          </div>
-        </div>
-        <div class="learning__card reveal">
-          <div class="learning__card-spine" style="--spine-color: #A855F7;"></div>
-          <div class="learning__card-content">
-            <span class="learning__card-label">Book 03</span>
-            <h3>The Web Application Hacker's Handbook</h3>
-            <p>Real-world vulnerability patterns, attack methodologies, and a deep understanding of how web apps break.</p>
-            <div class="learning__card-focus">
-              <span>Vulnerabilities</span>
-              <span>Attack Methods</span>
-              <span>Web Apps</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════ REALITY CHECK ═══════════════ -->
-  <section class="section reality" id="reality">
-    <div class="container">
-      <div class="reality__content reveal">
-        <div class="section__header">
-          <span class="section__label">09 — The Honest Take</span>
-          <h2 class="section__title">Grounded <span class="gradient-text">Ambition</span></h2>
-        </div>
-        <div class="reality__grid">
-          <div class="reality__item">
-            <div class="reality__check">✓</div>
-            <div>
-              <h4>I have the skills</h4>
-              <p>Strong Python fundamentals, security mindset, automation experience.</p>
-            </div>
-          </div>
-          <div class="reality__item">
-            <div class="reality__check">✓</div>
-            <div>
-              <h4>I have the direction</h4>
-              <p>Clear path from scripts to tools to full security automation systems.</p>
-            </div>
-          </div>
-          <div class="reality__item">
-            <div class="reality__check-next">→</div>
-            <div>
-              <h4>Next: Signature projects</h4>
-              <p>Building recognized tools, public repositories, and a portfolio that speaks for itself.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════ CONTACT ═══════════════ -->
-  <section class="section contact" id="contact">
-    <div class="container">
-      <div class="section__header reveal">
-        <span class="section__label">10 — Contact</span>
-        <h2 class="section__title">Let's <span class="gradient-text">Connect</span></h2>
-        <p class="section__desc">Interested in collaborating, hiring, or just talking security and Python? Reach out.</p>
-      </div>
-      <div class="contact__content reveal">
-        <div class="contact__info">
-          <p class="contact__lead">I'm always open to interesting projects, collaboration opportunities, and conversations about security automation.</p>
-          <div class="contact__links">
-            <a href="mailto:haider@example.com" class="contact__link" id="contactEmail">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <span>haider@example.com</span>
-            </a>
-            <a href="https://github.com/haider1928" target="_blank" rel="noopener noreferrer" class="contact__link" id="contactGithub">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-              <span>github.com/haider1928</span>
-            </a>
-          </div>
-          <a href="#" class="btn btn--primary contact__resume" id="resumeDownload">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span>Download Resume</span>
-          </a>
-        </div>
-        <form class="contact__form" id="contactForm">
-          <div class="contact__field">
-            <label for="formName">Name</label>
-            <input type="text" id="formName" placeholder="Your name" required />
-          </div>
-          <div class="contact__field">
-            <label for="formEmail">Email</label>
-            <input type="email" id="formEmail" placeholder="you@example.com" required />
-          </div>
-          <div class="contact__field">
-            <label for="formMessage">Message</label>
-            <textarea id="formMessage" placeholder="Tell me about your project or idea..." rows="5" required></textarea>
-          </div>
-          <button type="submit" class="btn btn--primary" id="formSubmit">
-            <span>Send Message</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-          </button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════ FOOTER ═══════════════ -->
   <footer class="footer">
     <div class="container">
-      <div class="footer__inner">
-        <div class="footer__brand">
-          <span class="footer__logo">Haider<span class="nav__logo-dot">.</span></span>
-          <p class="footer__tagline">Security-Focused Python Automation Engineer</p>
-        </div>
-        <div class="footer__links">
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-        </div>
-        <div class="footer__bottom">
-          <p>&copy; 2026 Haider. Engineered with Python &amp; purpose.</p>
-          <div class="footer__tech">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JS</span>
-          </div>
-        </div>
+      <div class="footer-inner">
+        <span class="footer-name">haider<span>.</span></span>
+        <span class="footer-right">Python / Security / Automation</span>
       </div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

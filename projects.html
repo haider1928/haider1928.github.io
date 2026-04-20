@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Haider</title>
+  <meta name="description" content="Security tools, automation systems, and research utilities I am building." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">haider<span>.</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="learning.html">Reading</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <div class="page-header">
+      <div class="container">
+        <span class="label">Projects</span>
+        <h1>What I am building</h1>
+        <p>Tools organized by complexity. Each one solves a specific problem in security research or automation.</p>
+      </div>
+    </div>
+
+    <!-- TIER 1 -->
+    <section class="section">
+      <div class="container">
+        <div class="tier-label reveal">
+          <span class="tier-badge tier-badge-1">Tier 1</span>
+          Foundation Tools
+        </div>
+        <div class="grid-3 reveal">
+
+          <div class="card">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:10px;">
+              <h3 style="margin-bottom:0;">Recon Automation Framework</h3>
+              <span class="project-status status-progress">In Progress</span>
+            </div>
+            <p>Automated subdomain enumeration, endpoint discovery, and URL collection. Takes a target domain and produces a structured map of its attack surface. Outputs clean, filtered results ready for manual review or automated scanning.</p>
+            <div class="project-tags">
+              <span>Python</span>
+              <span>Recon</span>
+              <span>Automation</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:10px;">
+              <h3 style="margin-bottom:0;">Custom XSS Scanner</h3>
+              <span class="project-status status-progress">In Progress</span>
+            </div>
+            <p>Targeted cross-site scripting detection tool. Injects test payloads into URL parameters and form fields, analyzes server responses for reflection, and logs confirmed or suspected findings with context.</p>
+            <div class="project-tags">
+              <span>Python</span>
+              <span>Security</span>
+              <span>XSS</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:10px;">
+              <h3 style="margin-bottom:0;">URL Parameter Analyzer</h3>
+              <span class="project-status status-planned">Planned</span>
+            </div>
+            <p>Parses URLs from recon output, extracts query parameters, categorizes them by potential vulnerability type, and flags high-value targets. Useful for prioritizing manual testing after automated collection.</p>
+            <div class="project-tags">
+              <span>Python</span>
+              <span>Analysis</span>
+              <span>Parsing</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TIER 2 -->
+    <section class="section">
+      <div class="container">
+        <div class="tier-label reveal">
+          <span class="tier-badge tier-badge-2">Tier 2</span>
+          Advanced Systems
+        </div>
+        <div class="grid-3 reveal">
+
+          <div class="card">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:10px;">
+              <h3 style="margin-bottom:0;">Authenticated Crawler</h3>
+              <span class="project-status status-planned">Planned</span>
+            </div>
+            <p>A web crawler that maintains authenticated sessions — handling login, cookies, CSRF tokens, and session refresh. Maps endpoints that are only visible behind authentication, where most real vulnerabilities live.</p>
+            <div class="project-tags">
+              <span>Python</span>
+              <span>Crawling</span>
+              <span>Sessions</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:10px;">
+              <h3 style="margin-bottom:0;">Smart Fuzzing Engine</h3>
+              <span class="project-status status-planned">Planned</span>
+            </div>
+            <p>An intelligent fuzzer that adapts its payload set based on server responses. Supports encoding, obfuscation, and WAF-aware testing strategies. Generates report-ready output for each tested parameter.</p>
+            <div class="project-tags">
+              <span>Python</span>
+              <span>Fuzzing</span>
+              <span>Payloads</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:10px;">
+              <h3 style="margin-bottom:0;">Bug Triage Assistant</h3>
+              <span class="project-status status-planned">Planned</span>
+            </div>
+            <p>Takes raw scan output and categorizes findings by severity, duplicate likelihood, and exploitability. Helps reduce noise from automated tools and surfaces the issues that actually matter for reporting.</p>
+            <div class="project-tags">
+              <span>Python</span>
+              <span>Triage</span>
+              <span>Reporting</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TIER 3 -->
+    <section class="section">
+      <div class="container">
+        <div class="tier-label reveal">
+          <span class="tier-badge tier-badge-3">Tier 3</span>
+          The Pipeline
+        </div>
+        <div class="reveal">
+          <div class="card">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:10px;">
+              <h3 style="margin-bottom:0;">Full Bug Bounty Automation Pipeline</h3>
+              <span class="project-status status-planned">Planned</span>
+            </div>
+            <p>End-to-end automation that connects every stage of the bug bounty workflow. Takes a target, runs recon, crawls endpoints, fuzzes parameters, filters noise, and produces a structured report. The goal is a system where a human only needs to review the final output — everything else is handled by code.</p>
+            <div class="pipeline-flow">
+              <span class="step">Recon</span>
+              <span class="arrow">&rarr;</span>
+              <span class="step">Scan</span>
+              <span class="arrow">&rarr;</span>
+              <span class="step">Fuzz</span>
+              <span class="arrow">&rarr;</span>
+              <span class="step">Filter</span>
+              <span class="arrow">&rarr;</span>
+              <span class="step">Report</span>
+            </div>
+            <div class="project-tags">
+              <span>Python</span>
+              <span>Full Pipeline</span>
+              <span>Automation</span>
+              <span>Security</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-name">haider<span>.</span></span>
+        <span class="footer-right">Python / Security / Automation</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
