@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reading — Haider</title>
+  <meta name="description" content="Books and resources I am studying to deepen my offensive security and Python engineering skills." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">haider<span>.</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="learning.html" class="active">Reading</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <div class="page-header">
+      <div class="container">
+        <span class="label">Reading</span>
+        <h1>Currently studying</h1>
+        <p>The books shaping how I think about security, Python tooling, and offensive security research.</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div style="display:flex;flex-direction:column;gap:16px;">
+
+          <!-- Black Hat Python -->
+          <div class="card book-card reveal">
+            <div class="book-spine book-spine-1"></div>
+            <div class="book-body">
+              <h3>Black Hat Python</h3>
+              <h4>What I am learning</h4>
+              <p>This book teaches offensive security with Python from the ground up. Network sniffing, building bots, SSH tunneling, writing keyloggers, trojan development, and web application exploitation — all in Python. It is not about using existing tools. It is about building your own from raw sockets and standard libraries.</p>
+              <h4>How I apply it</h4>
+              <p>Every chapter translates directly into a tool I can build. The network interaction patterns, the way the book handles raw sockets and packet crafting, the approach to building C2 infrastructure — these inform how I architect my own recon and scanning tools. The techniques are offensive security focused, but understanding them is essential for building defensively resilient systems.</p>
+            </div>
+          </div>
+
+          <!-- Bug Bounty Bootcamp -->
+          <div class="card book-card reveal">
+            <div class="book-spine book-spine-2"></div>
+            <div class="book-body">
+              <h3>Bug Bounty Bootcamp</h3>
+              <h4>What I am learning</h4>
+              <p>Systematic methodology for finding real vulnerabilities in production web applications. Recon techniques, subdomain enumeration, automated testing workflows, and how to write reports that get accepted by programs. It covers XSS, SSRF, IDOR, race conditions, and other vulnerability classes with hands-on examples.</p>
+              <h4>How I apply it</h4>
+              <p>This is the most directly applicable book to what I build. The recon automation framework I am working on is essentially the workflow described in the early chapters, turned into code. The testing methodology informs how I structure my scanners — what to test, in what order, and how to filter results into actionable output.</p>
+            </div>
+          </div>
+
+          <!-- Web App Hacker's Handbook -->
+          <div class="card book-card reveal">
+            <div class="book-spine book-spine-3"></div>
+            <div class="book-body">
+              <h3>The Web Application Hacker's Handbook</h3>
+              <h4>What I am learning</h4>
+              <p>Deep dive into how web applications work internally and how every layer can be exploited. Authentication mechanisms, session management, access controls, input handling, server-side logic — the book covers the full stack of web security from the attacker's perspective.</p>
+              <h4>How I apply it</h4>
+              <p>This gives me the theoretical depth that pure tool-building lacks. When I write a scanner that tests for XSS, I need to understand why certain payloads work in certain contexts and fail in others. When I build an authenticated crawler, I need to understand how sessions actually work at the protocol level. This book fills those gaps.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-name">haider<span>.</span></span>
+        <span class="footer-right">Python / Security / Automation</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

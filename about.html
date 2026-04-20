@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Haider</title>
+  <meta name="description" content="Background, mindset, and direction. Python developer focused on security automation." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">haider<span>.</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="learning.html">Reading</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <div class="page-header">
+      <div class="container">
+        <span class="label">About</span>
+        <h1>Background</h1>
+        <p>Where I come from, what I focus on, and where I am headed.</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="grid-2">
+          <div class="reveal">
+            <h2 class="section-title">How I got here</h2>
+            <p style="color:var(--text-mid);line-height:1.85;margin-bottom:16px;font-size:0.92rem;">
+              I started with Python the way most people do — writing scripts to automate small tasks, solving logic problems, learning the syntax. But somewhere along the way, I got pulled into security. I started reading about how web applications get exploited, how attackers think, and how the tools they use are built. That changed how I write code.
+            </p>
+            <p style="color:var(--text-mid);line-height:1.85;margin-bottom:16px;font-size:0.92rem;">
+              Now every time I write a function, I think about what happens when someone sends it unexpected input. When I build a workflow that handles data, I think about sanitization and safe handling patterns. When I interact with web endpoints, I think about session security, authentication edge cases, and what a malicious request would look like.
+            </p>
+            <p style="color:var(--text-mid);line-height:1.85;margin-bottom:16px;font-size:0.92rem;">
+              This is not just a theoretical interest. I actively practice offensive security — testing for XSS, analyzing endpoints, automating recon workflows, and studying how real vulnerabilities are discovered and reported. I read books written for penetration testers and apply what I learn by building the tools described in them.
+            </p>
+            <p style="color:var(--text-mid);line-height:1.85;font-size:0.92rem;">
+              I am transitioning from writing individual scripts to building structured, reusable tools and systems. The scripts I wrote six months ago work, but they are not engineered. What I am building now has proper error handling, modular architecture, clean interfaces, and documentation. That is the shift I am in the middle of right now.
+            </p>
+          </div>
+          <div class="reveal">
+            <h2 class="section-title">How I think about code</h2>
+            <p style="color:var(--text-mid);line-height:1.85;margin-bottom:16px;font-size:0.92rem;">
+              Security is not something I bolt on after writing the code. It is how I write the code in the first place. Input validation is not optional. Data handling is never assumed to be safe. Patterns that open the door to injection, path traversal, or unsafe deserialization are patterns I have learned to recognize and avoid.
+            </p>
+            <p style="color:var(--text-mid);line-height:1.85;margin-bottom:16px;font-size:0.92rem;">
+              I think with an attacker's mindset but I design with a defender's priorities. Understanding how something can break is the first step to building it right. That dual perspective is what separates security-aware development from just development.
+            </p>
+            <p style="color:var(--text-mid);line-height:1.85;font-size:0.92rem;">
+              My strongest skill right now is taking a manual, repetitive security workflow and turning it into something automated and repeatable. Whether that is enumerating subdomains, fuzzing parameters, or parsing response data for patterns — I can take the steps a researcher does by hand and encode them into a Python tool that does it faster, cleaner, and more consistently.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALLOUT -->
+    <section class="section">
+      <div class="container">
+        <div class="callout reveal">
+          <div class="callout-accent"></div>
+          <p>Most people are either Python developers or security researchers. <strong>I am becoming a security-minded Python automation builder.</strong> That overlap is where the most useful tools get created — and that is where I am focused.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- REALITY / DIRECTION -->
+    <section class="section">
+      <div class="container">
+        <span class="section-label reveal">Direction</span>
+        <h2 class="section-title reveal">Where I stand right now</h2>
+        <p class="section-desc reveal">Honest assessment. No exaggeration.</p>
+        <div class="reality-grid reveal">
+          <div class="reality-item">
+            <div class="reality-check check-done">&#10003;</div>
+            <div>
+              <h4>I have the foundation</h4>
+              <p>Strong Python fundamentals, security knowledge, and hands-on experience automating real workflows.</p>
+            </div>
+          </div>
+          <div class="reality-item">
+            <div class="reality-check check-done">&#10003;</div>
+            <div>
+              <h4>I have the direction</h4>
+              <p>Clear path from scripts to structured tools. From experiments to systems that other people can use.</p>
+            </div>
+          </div>
+          <div class="reality-item">
+            <div class="reality-check check-next">&rarr;</div>
+            <div>
+              <h4>Building toward public, recognized work</h4>
+              <p>The next step is building tools that are polished enough to release publicly — well-documented, well-tested, and useful beyond my own workflow.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GROWTH -->
+    <section class="section">
+      <div class="container">
+        <span class="section-label reveal">Growth</span>
+        <h2 class="section-title reveal">What I am improving next</h2>
+        <div class="grid-3 reveal">
+          <div class="card">
+            <h3>Advanced Python</h3>
+            <ul>
+              <li>asyncio and concurrency patterns</li>
+              <li>Multithreading for scanning tools</li>
+              <li>Multiprocessing for heavy workloads</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Networking</h3>
+            <ul>
+              <li>Raw socket programming</li>
+              <li>Packet crafting and analysis</li>
+              <li>Protocol-level understanding</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Engineering</h3>
+            <ul>
+              <li>Reusable module architecture</li>
+              <li>CLI design and user experience</li>
+              <li>Structured logging and debugging</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-name">haider<span>.</span></span>
+        <span class="footer-right">Python / Security / Automation</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

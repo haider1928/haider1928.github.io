@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Haider — Python Automation &amp; Security</title>
+  <meta name="description" content="Security-focused Python automation engineer. I build tools, bots, scanners, and secure workflows." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">haider<span>.</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="skills.html">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="learning.html">Reading</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-grid-bg"></div>
+      <div class="hero-glow"></div>
+      <div class="container">
+        <div class="hero-content">
+          <div>
+            <p class="hero-label">Python / Security / Automation</p>
+            <h1 class="hero-title">Security-Focused Python Automation Engineer</h1>
+            <p class="hero-desc">I write Python that interacts with web applications, automates security workflows, and builds tools that solve real problems. My work sits at the intersection of offensive security and practical automation.</p>
+            <div class="hero-actions">
+              <a href="projects.html" class="btn btn-primary">View Projects</a>
+              <a href="contact.html" class="btn btn-outline">Contact</a>
+            </div>
+          </div>
+          <div class="terminal">
+            <div class="terminal-bar">
+              <span class="terminal-dot"></span>
+              <span class="terminal-dot"></span>
+              <span class="terminal-dot"></span>
+              <span class="terminal-title">~/security-tools</span>
+            </div>
+            <div class="terminal-body" id="terminalBody">
+              <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">python3 recon.py --target example.com</span></div>
+              <div class="t-line"><span class="t-out">[*] Starting subdomain enumeration...</span></div>
+              <div class="t-line"><span class="t-out">[*] Found 14 subdomains</span></div>
+              <div class="t-line"><span class="t-out">[*] Crawling endpoints...</span></div>
+              <div class="t-line"><span class="t-ok">[+] 47 endpoints mapped</span></div>
+              <div class="t-line"><span class="t-out">[*] Testing for XSS vectors...</span></div>
+              <div class="t-line"><span class="t-ok">[+] 3 potential findings logged</span></div>
+              <div class="t-line"><span class="t-out">[*] Report saved: ./reports/example.md</span></div>
+              <div class="t-line"><span class="t-prompt">$</span> <span class="t-cursor"></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <section class="section">
+      <div class="container">
+        <div class="highlights reveal">
+          <div class="highlight">
+            <span class="highlight-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </span>
+            <h3>Python</h3>
+            <p>Primary language for everything I build</p>
+          </div>
+          <div class="highlight">
+            <span class="highlight-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+            </span>
+            <h3>Automation</h3>
+            <p>Bots, workflows, and scripted processes</p>
+          </div>
+          <div class="highlight">
+            <span class="highlight-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </span>
+            <h3>Security</h3>
+            <p>Offensive security testing and secure design</p>
+          </div>
+          <div class="highlight">
+            <span class="highlight-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </span>
+            <h3>Bug Bounty</h3>
+            <p>Finding real vulnerabilities in real systems</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREVIEW: WHAT I DO -->
+    <section class="section">
+      <div class="container">
+        <span class="section-label reveal">Direction</span>
+        <h2 class="section-title reveal">What I work on</h2>
+        <p class="section-desc reveal">Tools and systems at the intersection of Python automation and security research.</p>
+        <div class="grid-3 reveal">
+          <div class="card">
+            <h3>Automation Bots</h3>
+            <p>Scripted workflows that handle repetitive tasks with reliability. Posting, translating, monitoring, data collection. Built to run unattended.</p>
+          </div>
+          <div class="card">
+            <h3>Security Scanners</h3>
+            <p>Tools for XSS detection, endpoint crawling, and URL analysis. Focused on actionable output with minimal false positives.</p>
+          </div>
+          <div class="card">
+            <h3>Research Tooling</h3>
+            <p>Payload testing, response analysis, and data filtering. Supporting the workflow between vulnerability discovery and documentation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALLOUT -->
+    <section class="section">
+      <div class="container">
+        <div class="callout reveal">
+          <div class="callout-accent"></div>
+          <p>Most people are either Python developers or security researchers. <strong>I am building at the intersection of both</strong> — writing security-focused automation tools with an offensive security mindset and defensive design principles.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREVIEW: SKILLS -->
+    <section class="section">
+      <div class="container">
+        <span class="section-label reveal">Foundation</span>
+        <h2 class="section-title reveal">Technical focus areas</h2>
+        <div class="grid-2 reveal">
+          <div class="card">
+            <h3>Python + Automation</h3>
+            <p>HTTP request automation, data handling, task scripting, CLI tool development. Python is the backbone of every project I build.</p>
+          </div>
+          <div class="card">
+            <h3>Security + Offense</h3>
+            <p>XSS testing, recon automation, payload generation, session handling. I approach every system from an attacker's perspective.</p>
+          </div>
+        </div>
+        <div style="margin-top:20px; text-align:center;">
+          <a href="skills.html" class="btn btn-outline">View all skills</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-name">haider<span>.</span></span>
+        <span class="footer-right">Python / Security / Automation</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
