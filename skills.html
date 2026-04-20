@@ -1,14 +1,142 @@
-﻿<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Skills | Haider Mohsin</title>
-  <meta http-equiv="refresh" content="0; url=skills/" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills — Haider</title>
+  <meta name="description" content="Technical skills across Python development, automation, web interaction, security, and tooling." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <p>Redirecting to <a href="skills/">skills/</a>...</p>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">haider<span>.</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="skills.html" class="active">Skills</a>
+        <a href="projects.html">Projects</a>
+        <a href="learning.html">Reading</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <div class="page-header">
+      <div class="container">
+        <span class="label">Skills</span>
+        <h1>Technical Focus</h1>
+        <p>Structured breakdown of what I work with, organized by domain.</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="grid-2">
+
+          <!-- Python Foundations -->
+          <div class="card skill-card reveal">
+            <div class="card-accent" style="background:var(--accent);"></div>
+            <h3>Python Foundations</h3>
+            <p style="margin-bottom:12px;">The core language skills that everything else is built on.</p>
+            <ul>
+              <li>Clean syntax and idiomatic patterns</li>
+              <li>Scripting for automation and data processing</li>
+              <li>Logical problem-solving and algorithm design</li>
+              <li>File I/O, string manipulation, data structures</li>
+              <li>Error handling and defensive coding</li>
+            </ul>
+          </div>
+
+          <!-- Automation -->
+          <div class="card skill-card reveal">
+            <div class="card-accent" style="background:var(--green);"></div>
+            <h3>Automation</h3>
+            <p style="margin-bottom:12px;">Making machines do repetitive work accurately and consistently.</p>
+            <ul>
+              <li>HTTP request automation (requests, httpx)</li>
+              <li>Data extraction, transformation, and loading</li>
+              <li>Task scheduling and workflow orchestration</li>
+              <li>API interaction and response parsing</li>
+              <li>File processing and batch operations</li>
+            </ul>
+          </div>
+
+          <!-- Web Interaction -->
+          <div class="card skill-card reveal">
+            <div class="card-accent" style="background:var(--purple);"></div>
+            <h3>Web Interaction</h3>
+            <p style="margin-bottom:12px;">Programmatic control over how I interact with web applications.</p>
+            <ul>
+              <li>Form submission and input automation</li>
+              <li>Endpoint testing and response analysis</li>
+              <li>Session handling and state management</li>
+              <li>Cookie management and authentication flows</li>
+              <li>Headless browser automation</li>
+            </ul>
+          </div>
+
+          <!-- Security Mindset -->
+          <div class="card skill-card reveal">
+            <div class="card-accent" style="background:var(--red);"></div>
+            <h3>Security Mindset</h3>
+            <p style="margin-bottom:12px;">Thinking about what can go wrong before writing the first line.</p>
+            <ul>
+              <li>Input validation and sanitization</li>
+              <li>Secure coding patterns and safe data handling</li>
+              <li>Understanding injection, XSS, and SSRF vectors</li>
+              <li>Attacker perspective for testing and review</li>
+              <li>Defensive design in tool architecture</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TOOLING DIRECTION — full width -->
+    <section class="section">
+      <div class="container">
+        <span class="section-label reveal">Direction</span>
+        <h2 class="section-title reveal">Tooling I am building toward</h2>
+        <p class="section-desc reveal">The categories of tools that combine everything above into real output.</p>
+        <div class="grid-3 reveal">
+          <div class="card">
+            <h3>Bots</h3>
+            <p>Automated agents that interact with platforms, collect data, or perform scheduled actions. Discord bots, posting bots, monitoring scripts.</p>
+          </div>
+          <div class="card">
+            <h3>Scanners</h3>
+            <p>Tools that crawl, probe, and test web applications for vulnerabilities. XSS detectors, endpoint crawlers, parameter fuzzers.</p>
+          </div>
+          <div class="card">
+            <h3>Automation Frameworks</h3>
+            <p>Structured pipelines that chain multiple tools together. From recon to scanning to reporting — end-to-end automation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-name">haider<span>.</span></span>
+        <span class="footer-right">Python / Security / Automation</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
-
-
