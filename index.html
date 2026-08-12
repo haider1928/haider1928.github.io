@@ -3,172 +3,614 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Haider — Python Automation &amp; Security</title>
-  <meta name="description" content="Security-focused Python automation engineer. I build tools, bots, scanners, and secure workflows." />
+  <title>Haider Mohsin — Python Developer &amp; Cybersecurity Engineer</title>
+  <meta name="description" content="Personal engineering &amp; security portfolio of Haider Mohsin: Python Developer, Cybersecurity Engineer, and AI Builder." />
+  
+  <!-- Open Graph Metadata -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://haidermohsin.com/" />
+  <meta property="og:title" content="Haider Mohsin — Python Developer & Cybersecurity Engineer" />
+  <meta property="og:description" content="I build practical software at the intersection of Python, cybersecurity, automation, and AI." />
+
+  <!-- Fonts & Master Stylesheet -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">haider<span>.</span></a>
-      <button class="nav-toggle" id="navToggle" aria-label="Menu">
-        <span></span><span></span>
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress"></div>
+
+  <!-- Technical Blueprint Grid Background -->
+  <div class="bg-ambient">
+    <div class="bg-grid"></div>
+  </div>
+
+  <!-- Navbar -->
+  <div class="nav-wrapper">
+    <nav class="nav-glass">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-badge">HM</div>
+        <span>HAIDER MOHSIN</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
       </button>
+
       <div class="nav-links" id="navLinks">
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">About</a>
-        <a href="skills.html">Skills</a>
-        <a href="projects.html">Projects</a>
-        <a href="learning.html">Reading</a>
-        <a href="contact.html">Contact</a>
+        <a href="#hero" class="active">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#skills">SKILLS</a>
+        <a href="#projects">PROJECTS</a>
+        <a href="#security-lab">SECURITY LAB</a>
+        <a href="#open-source">OPEN SOURCE</a>
+        <a href="#learning">LEARNING</a>
+        <a href="#contact">CONTACT</a>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </div>
 
   <main>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-grid-bg"></div>
-      <div class="hero-glow"></div>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
       <div class="container">
-        <div class="hero-content">
-          <div>
-            <p class="hero-label">Python / Security / Automation</p>
-            <h1 class="hero-title">Security-Focused Python Automation Engineer</h1>
-            <p class="hero-desc">I write Python that interacts with web applications, automates security workflows, and builds tools that solve real problems. My work sits at the intersection of offensive security and practical automation.</p>
+        <div class="hero-grid-layout">
+          
+          <div class="hero-left-content reveal">
+            <div class="hero-subhead">
+              <span style="color:var(--accent-green);">■</span>
+              DEVELOPER &amp; SECURITY RESEARCH LAB
+            </div>
+            
+            <h1 class="heading-xl hero-title">
+              HI, I'M <br />
+              <span class="text-cyan">HAIDER MOHSIN.</span>
+            </h1>
+
+            <div class="hero-roles">
+              <span>PYTHON DEVELOPER</span>
+              <span class="dot">•</span>
+              <span>CYBERSECURITY ENGINEER</span>
+              <span class="dot">•</span>
+              <span>AI BUILDER</span>
+            </div>
+
+            <p class="hero-desc">
+              I build practical software at the intersection of Python, cybersecurity, automation, and AI. Focused on CLI tools, security research, and intelligent agent workflows.
+            </p>
+
             <div class="hero-actions">
-              <a href="projects.html" class="btn btn-primary">View Projects</a>
-              <a href="contact.html" class="btn btn-outline">Contact</a>
+              <a href="#projects" class="btn btn-primary">
+                VIEW PROJECTS →
+              </a>
+
+              <a href="https://github.com/haider1928" target="_blank" rel="noopener" class="btn btn-secondary">
+                GITHUB PROFILE
+              </a>
+
+              <a href="#contact" class="btn btn-ghost">CONTACT ME</a>
             </div>
           </div>
-          <div class="terminal">
-            <div class="terminal-bar">
-              <span class="terminal-dot"></span>
-              <span class="terminal-dot"></span>
-              <span class="terminal-dot"></span>
-              <span class="terminal-title">~/security-tools</span>
+
+          <!-- Hero Right: Sharp Terminal Window -->
+          <div class="hero-right-visual reveal">
+            <div class="terminal-window">
+              <div class="terminal-header">
+                <div class="terminal-controls">
+                  <span class="terminal-dot close"></span>
+                  <span class="terminal-dot min"></span>
+                  <span class="terminal-dot max"></span>
+                </div>
+
+                <div class="terminal-tabs">
+                  <button class="terminal-tab active" data-tab="ozmed.py">ozmed.py</button>
+                  <button class="terminal-tab" data-tab="ai-bug-hunter">ai-bug-hunter</button>
+                  <button class="terminal-tab" data-tab="sargoshi">sargoshi.py</button>
+                </div>
+              </div>
+
+              <div class="terminal-body" id="terminalBody">
+                <!-- Dynamically populated by js/main.js -->
+              </div>
             </div>
-            <div class="terminal-body" id="terminalBody">
-              <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">python3 recon.py --target example.com</span></div>
-              <div class="t-line"><span class="t-out">[*] Starting subdomain enumeration...</span></div>
-              <div class="t-line"><span class="t-out">[*] Found 14 subdomains</span></div>
-              <div class="t-line"><span class="t-out">[*] Crawling endpoints...</span></div>
-              <div class="t-line"><span class="t-ok">[+] 47 endpoints mapped</span></div>
-              <div class="t-line"><span class="t-out">[*] Testing for XSS vectors...</span></div>
-              <div class="t-line"><span class="t-ok">[+] 3 potential findings logged</span></div>
-              <div class="t-line"><span class="t-out">[*] Report saved: ./reports/example.md</span></div>
-              <div class="t-line"><span class="t-prompt">$</span> <span class="t-cursor"></span></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">01 / ABOUT</span>
+          <h2 class="heading-lg">SOFTWARE ENGINEER &amp; RESEARCHER</h2>
+          <div class="tech-divider"></div>
+        </div>
+
+        <div class="about-grid">
+          
+          <!-- Profile Card -->
+          <div class="profile-card reveal">
+            <div class="profile-avatar-wrap">HM</div>
+
+            <h3 class="profile-name">Haider Mohsin</h3>
+            <p class="profile-title">Python Developer &amp; Security Researcher</p>
+
+            <div class="profile-badges">
+              <span class="badge badge-tech">[ PYTHON ]</span>
+              <span class="badge badge-tech">[ CYBERSECURITY ]</span>
+              <span class="badge badge-tech">[ AUTOMATION ]</span>
+              <span class="badge badge-tech">[ AI AGENTS ]</span>
+              <span class="badge badge-tech">[ WEB SECURITY ]</span>
+            </div>
+
+            <div class="profile-status">
+              <div class="profile-status-label">
+                <span style="color:var(--accent-green);">■</span>
+                ACTIVE FOCUS
+              </div>
+              <div style="color:var(--text-main); font-weight:600; font-family:var(--font-mono); font-size:0.85rem;">
+                Building security tools &amp; autonomous CLI agents
+              </div>
             </div>
           </div>
+
+          <!-- Narrative Content -->
+          <div class="about-text-content reveal">
+            <p>
+              I started with Python by automating workflows, solving logic problems, and understanding language internals. As I deepened my study of web security, I focused on analyzing how applications break, how attackers think, and how security tooling is engineered.
+            </p>
+            <p>
+              Now, <strong>defensive engineering principles are built into my development process from day one</strong>. Whether architecting AI terminal assistants or writing security testing scripts, I emphasize input validation, error handling, clean CLI interfaces, and protocol-level security.
+            </p>
+
+            <div class="about-highlights-grid">
+              <div class="about-highlight-box">
+                <h4 class="text-cyan">Attacker's Perspective</h4>
+                <p>Analyzing vulnerability mechanics to write resilient software.</p>
+              </div>
+
+              <div class="about-highlight-box">
+                <h4 class="text-green">Security Automation</h4>
+                <p>Encoding manual security steps into Python CLI tools.</p>
+              </div>
+
+              <div class="about-highlight-box">
+                <h4 class="text-blue">Clean Engineering</h4>
+                <p>Modular codebases, structured logging, and clean APIs.</p>
+              </div>
+
+              <div class="about-highlight-box">
+                <h4 class="text-amber">AI CLI Tooling</h4>
+                <p>Building terminal assistants that execute computer tasks.</p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- HIGHLIGHTS -->
-    <section class="section">
+    <!-- SKILLS SECTION -->
+    <section class="section" id="skills">
       <div class="container">
-        <div class="highlights reveal">
-          <div class="highlight">
-            <span class="highlight-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            </span>
-            <h3>Python</h3>
-            <p>Primary language for everything I build</p>
+        <div class="section-header">
+          <span class="section-tag">02 / SKILLS</span>
+          <h2 class="heading-lg">TECHNICAL SPECIFICATION SHEET</h2>
+          <div class="tech-divider"></div>
+        </div>
+
+        <div class="skills-grid">
+          
+          <div class="skill-category-card reveal">
+            <div class="skill-cat-header">
+              <span class="text-cyan" style="font-family:var(--font-mono); font-weight:bold;">01</span>
+              <h3 class="skill-cat-title">Programming Languages &amp; Core</h3>
+            </div>
+            <div class="skill-pills-container">
+              <span class="badge badge-tech">[ Python (Core, httpx, asyncio) ]</span>
+              <span class="badge badge-tech">[ JavaScript ]</span>
+              <span class="badge badge-tech">[ TypeScript ]</span>
+              <span class="badge badge-tech">[ HTML5 &amp; CSS3 ]</span>
+              <span class="badge badge-tech">[ CLI Architecture ]</span>
+            </div>
           </div>
-          <div class="highlight">
-            <span class="highlight-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
-            </span>
-            <h3>Automation</h3>
-            <p>Bots, workflows, and scripted processes</p>
+
+          <div class="skill-category-card reveal">
+            <div class="skill-cat-header">
+              <span class="text-green" style="font-family:var(--font-mono); font-weight:bold;">02</span>
+              <h3 class="skill-cat-title">Cybersecurity &amp; Research</h3>
+            </div>
+            <div class="skill-pills-container">
+              <span class="badge badge-tech">[ Web Security Testing ]</span>
+              <span class="badge badge-tech">[ Reconnaissance &amp; OSINT ]</span>
+              <span class="badge badge-tech">[ Burp Suite ]</span>
+              <span class="badge badge-tech">[ Linux Systems ]</span>
+              <span class="badge badge-tech">[ Networking &amp; Sockets ]</span>
+              <span class="badge badge-tech">[ Malware Analysis (Edu) ]</span>
+            </div>
           </div>
-          <div class="highlight">
-            <span class="highlight-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </span>
-            <h3>Security</h3>
-            <p>Offensive security testing and secure design</p>
+
+          <div class="skill-category-card reveal">
+            <div class="skill-cat-header">
+              <span class="text-blue" style="font-family:var(--font-mono); font-weight:bold;">03</span>
+              <h3 class="skill-cat-title">Automation &amp; Bots</h3>
+            </div>
+            <div class="skill-pills-container">
+              <span class="badge badge-tech">[ Web Scraping ]</span>
+              <span class="badge badge-tech">[ API Automation ]</span>
+              <span class="badge badge-tech">[ Discord &amp; Telegram Bots ]</span>
+              <span class="badge badge-tech">[ Task Orchestration ]</span>
+            </div>
           </div>
-          <div class="highlight">
-            <span class="highlight-icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </span>
-            <h3>Bug Bounty</h3>
-            <p>Finding real vulnerabilities in real systems</p>
+
+          <div class="skill-category-card reveal">
+            <div class="skill-cat-header">
+              <span class="text-amber" style="font-family:var(--font-mono); font-weight:bold;">04</span>
+              <h3 class="skill-cat-title">AI &amp; Autonomous Agents</h3>
+            </div>
+            <div class="skill-pills-container">
+              <span class="badge badge-tech">[ LLM API Integrations ]</span>
+              <span class="badge badge-tech">[ AI CLI Agents ]</span>
+              <span class="badge badge-tech">[ Security Workflows ]</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION (10 REAL PUBLIC REPOSITORIES) -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">03 / PROJECTS</span>
+          <h2 class="heading-lg">PUBLIC REPOSITORIES &amp; RESEARCH</h2>
+          <div class="tech-divider"></div>
+        </div>
+
+        <!-- Filter Pills & Search Input Controls -->
+        <div class="projects-header-controls reveal">
+          <div class="project-filters">
+            <button class="filter-btn active" data-filter="all">ALL (10)</button>
+            <button class="filter-btn" data-filter="cybersecurity">CYBERSECURITY</button>
+            <button class="filter-btn" data-filter="python">PYTHON</button>
+            <button class="filter-btn" data-filter="ai">AI</button>
+            <button class="filter-btn" data-filter="automation">AUTOMATION</button>
+            <button class="filter-btn" data-filter="web">WEB</button>
+            <button class="filter-btn" data-filter="education">EDUCATION</button>
+            <button class="filter-btn" data-filter="bot">BOT</button>
+          </div>
+
+          <div class="project-search-wrap">
+            <svg class="project-search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="projectSearchInput" class="project-search-input" placeholder="Search projects..." />
+          </div>
+        </div>
+
+        <!-- Featured Projects Container -->
+        <div class="featured-projects-layout" id="featuredProjectsContainer">
+          <!-- Dynamically populated by js/main.js -->
+        </div>
+
+        <!-- Secondary Grid Container -->
+        <div class="projects-grid-secondary" id="secondaryProjectsContainer">
+          <!-- Dynamically populated by js/main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- CYBERSECURITY SECTION (LAB CONSOLE) -->
+    <section class="section" id="security-lab">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">04 / SECURITY LAB</span>
+          <h2 class="heading-lg">RESEARCH CONSOLE</h2>
+          <div class="tech-divider"></div>
+        </div>
+
+        <div class="security-lab-container reveal">
+          <div class="security-lab-grid">
+            
+            <div>
+              <h3 class="heading-sm text-green" style="margin-bottom:16px;">
+                // FOCUS DOMAINS
+              </h3>
+
+              <div class="security-metric-item">
+                <div class="security-metric-header">
+                  <span>Web Application Security</span>
+                  <span class="text-green">Primary Focus</span>
+                </div>
+                <div class="security-metric-bar">
+                  <div class="security-metric-fill" style="width: 90%;"></div>
+                </div>
+              </div>
+
+              <div class="security-metric-item">
+                <div class="security-metric-header">
+                  <span>Python Security Automation</span>
+                  <span class="text-green">Core Specialty</span>
+                </div>
+                <div class="security-metric-bar">
+                  <div class="security-metric-fill" style="width: 94%;"></div>
+                </div>
+              </div>
+
+              <div class="security-metric-item">
+                <div class="security-metric-header">
+                  <span>Reconnaissance &amp; OSINT</span>
+                  <span class="text-green">Active Study</span>
+                </div>
+                <div class="security-metric-bar">
+                  <div class="security-metric-fill" style="width: 86%;"></div>
+                </div>
+              </div>
+
+              <div class="security-metric-item">
+                <div class="security-metric-header">
+                  <span>Linux Systems &amp; Networking</span>
+                  <span class="text-green">Foundation</span>
+                </div>
+                <div class="security-metric-bar">
+                  <div class="security-metric-fill" style="width: 88%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="security-ops-panel">
+              <div class="text-green" style="font-weight:bold; margin-bottom:8px;">
+                [+] DEFENSIVE ENGINEERING PRINCIPLES
+              </div>
+              <ul style="display:flex; flex-direction:column; gap:8px; color:var(--text-sub);">
+                <li>• <strong>Zero-Trust Input:</strong> Untrusted parameter and header validation.</li>
+                <li>• <strong>Context Encoding:</strong> Sanitizing data according to specific rendering contexts.</li>
+                <li>• <strong>Session Integrity:</strong> Cookie security flags and CSRF prevention.</li>
+                <li>• <strong>Educational Malware Research:</strong> Analyzing C2 communication mechanics to improve detection signatures.</li>
+              </ul>
+            </div>
+
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PREVIEW: WHAT I DO -->
-    <section class="section">
+    <!-- OPEN SOURCE SECTION -->
+    <section class="section" id="open-source">
       <div class="container">
-        <span class="section-label reveal">Direction</span>
-        <h2 class="section-title reveal">What I work on</h2>
-        <p class="section-desc reveal">Tools and systems at the intersection of Python automation and security research.</p>
-        <div class="grid-3 reveal">
-          <div class="card">
-            <h3>Automation Bots</h3>
-            <p>Scripted workflows that handle repetitive tasks with reliability. Posting, translating, monitoring, data collection. Built to run unattended.</p>
+        <div class="section-header">
+          <span class="section-tag">05 / OPEN SOURCE</span>
+          <h2 class="heading-lg">SELECTED REPOSITORIES</h2>
+          <div class="tech-divider"></div>
+        </div>
+
+        <div class="open-source-grid reveal">
+          
+          <div class="open-source-card">
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                <h4 class="heading-md" style="color:var(--text-main);">OZMED</h4>
+                <span class="badge badge-lang">Python</span>
+              </div>
+              <p style="color:var(--text-sub); font-size:0.86rem; margin-bottom:14px;">
+                Terminal-based AI assistant executing Python code, CLI commands, and web searching directly from the command line.
+              </p>
+            </div>
+            <a href="https://github.com/haider1928/ozmed" target="_blank" rel="noopener" class="btn btn-secondary" style="width:fit-content;">
+              View Repository →
+            </a>
           </div>
-          <div class="card">
-            <h3>Security Scanners</h3>
-            <p>Tools for XSS detection, endpoint crawling, and URL analysis. Focused on actionable output with minimal false positives.</p>
+
+          <div class="open-source-card">
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                <h4 class="heading-md" style="color:var(--text-main);">AI-BUG-HUNTER</h4>
+                <span class="badge badge-lang">Python</span>
+              </div>
+              <p style="color:var(--text-sub); font-size:0.86rem; margin-bottom:14px;">
+                Python CLI penetration testing workflow tool integrating AI step generation, command execution, and XSS knowledge base.
+              </p>
+            </div>
+            <a href="https://github.com/haider1928/AI-BUG-HUNTER" target="_blank" rel="noopener" class="btn btn-secondary" style="width:fit-content;">
+              View Repository →
+            </a>
           </div>
-          <div class="card">
-            <h3>Research Tooling</h3>
-            <p>Payload testing, response analysis, and data filtering. Supporting the workflow between vulnerability discovery and documentation.</p>
+
+          <div class="open-source-card">
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                <h4 class="heading-md" style="color:var(--text-main);">Sargoshi-Whisper</h4>
+                <span class="badge badge-lang">Python</span>
+              </div>
+              <p style="color:var(--text-sub); font-size:0.86rem; margin-bottom:14px;">
+                Security research demonstration analyzing Discord C2 remote administration payload mechanics in an educational context.
+              </p>
+            </div>
+            <a href="https://github.com/haider1928/Sargoshi-Whisper" target="_blank" rel="noopener" class="btn btn-secondary" style="width:fit-content;">
+              View Repository →
+            </a>
           </div>
+
+          <div class="open-source-card">
+            <div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                <h4 class="heading-md" style="color:var(--text-main);">BoardReady</h4>
+                <span class="badge badge-lang">TypeScript</span>
+              </div>
+              <p style="color:var(--text-sub); font-size:0.86rem; margin-bottom:14px;">
+                Grade 9 &amp; 10 board examination study planner building structured preparation schedules backward from exam dates.
+              </p>
+            </div>
+            <a href="https://github.com/haider1928/BoardReady" target="_blank" rel="noopener" class="btn btn-secondary" style="width:fit-content;">
+              View Repository →
+            </a>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- CALLOUT -->
-    <section class="section">
+    <!-- LEARNING SECTION -->
+    <section class="section" id="learning">
       <div class="container">
-        <div class="callout reveal">
-          <div class="callout-accent"></div>
-          <p>Most people are either Python developers or security researchers. <strong>I am building at the intersection of both</strong> — writing security-focused automation tools with an offensive security mindset and defensive design principles.</p>
+        <div class="section-header">
+          <span class="section-tag">06 / LEARNING</span>
+          <h2 class="heading-lg">SECURITY &amp; ENGINEERING BOOKSHELF</h2>
+          <div class="tech-divider"></div>
+        </div>
+
+        <div class="bookshelf-grid">
+          
+          <div class="book-card-3d reveal">
+            <div>
+              <h3 class="book-title">Black Hat Python</h3>
+              <p style="color:var(--text-muted); font-size:0.78rem; margin-bottom:8px;">By Justin Seitz &amp; Tim Arnold</p>
+              
+              <div class="book-section-heading">What I Learn</div>
+              <p class="book-text">
+                Network sniffing, raw sockets, SSH tunneling, custom C2 architecture, and web exploitation built directly in Python.
+              </p>
+
+              <div class="book-section-heading">How I Apply It</div>
+              <p class="book-text">
+                Informs how socket interactions and network packet processing are structured in custom security tools.
+              </p>
+            </div>
+          </div>
+
+          <div class="book-card-3d reveal">
+            <div>
+              <h3 class="book-title">Bug Bounty Bootcamp</h3>
+              <p style="color:var(--text-muted); font-size:0.78rem; margin-bottom:8px;">By Vickie Li</p>
+              
+              <div class="book-section-heading">What I Learn</div>
+              <p class="book-text">
+                Systematic methodology for discovering web vulnerabilities: XSS, SSRF, IDOR, and recon automation pipelines.
+              </p>
+
+              <div class="book-section-heading">How I Apply It</div>
+              <p class="book-text">
+                Provides testing flows and payload strategies encoded into my recon and scanner frameworks.
+              </p>
+            </div>
+          </div>
+
+          <div class="book-card-3d reveal">
+            <div>
+              <h3 class="book-title">The Web Application Hacker's Handbook</h3>
+              <p style="color:var(--text-muted); font-size:0.78rem; margin-bottom:8px;">By Dafydd Stuttard &amp; Marcus Pinto</p>
+              
+              <div class="book-section-heading">What I Learn</div>
+              <p class="book-text">
+                In-depth breakdown of web application architecture, session management, authentication edge cases, and protocol security.
+              </p>
+
+              <div class="book-section-heading">How I Apply It</div>
+              <p class="book-text">
+                Provides foundational theoretical depth for understanding why vulnerabilities occur and how to write secure code.
+              </p>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- PREVIEW: SKILLS -->
-    <section class="section">
+    <!-- CONTACT SECTION -->
+    <section class="section" id="contact">
       <div class="container">
-        <span class="section-label reveal">Foundation</span>
-        <h2 class="section-title reveal">Technical focus areas</h2>
-        <div class="grid-2 reveal">
-          <div class="card">
-            <h3>Python + Automation</h3>
-            <p>HTTP request automation, data handling, task scripting, CLI tool development. Python is the backbone of every project I build.</p>
+        <div class="contact-card-wrapper reveal">
+          <div class="contact-layout-grid">
+            
+            <div class="contact-info-side">
+              <span class="section-tag">07 / CONTACT</span>
+              <h2 class="heading-lg" style="margin-bottom:14px;">
+                LET'S BUILD SOMETHING <span class="text-cyan">INTERESTING.</span>
+              </h2>
+              <p>
+                Have a project, security automation idea, or tooling challenge? Open to discussions, collaborations, and engineering projects.
+              </p>
+
+              <div class="contact-direct-links">
+                <a href="mailto:haidermohsin2468@gmail.com" class="contact-direct-item">
+                  <span class="text-cyan">EMAIL:</span> haidermohsin2468@gmail.com
+                </a>
+
+                <a href="https://github.com/haider1928" target="_blank" rel="noopener" class="contact-direct-item">
+                  <span class="text-cyan">GITHUB:</span> github.com/haider1928
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                  <label for="name">Your Name</label>
+                  <input type="text" id="name" class="form-input" placeholder="e.g. Alex" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" class="form-input" placeholder="you@domain.com" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea id="message" class="form-textarea" rows="4" placeholder="What are you building?" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width:100%;">
+                  SEND MESSAGE →
+                </button>
+              </form>
+            </div>
+
           </div>
-          <div class="card">
-            <h3>Security + Offense</h3>
-            <p>XSS testing, recon automation, payload generation, session handling. I approach every system from an attacker's perspective.</p>
-          </div>
-        </div>
-        <div style="margin-top:20px; text-align:center;">
-          <a href="skills.html" class="btn btn-outline">View all skills</a>
         </div>
       </div>
     </section>
 
   </main>
 
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer-inner">
-        <span class="footer-name">haider<span>.</span></span>
-        <span class="footer-right">Python / Security / Automation</span>
+        <div class="footer-brand">
+          <div class="nav-logo-badge">HM</div>
+          <span>HAIDER MOHSIN</span>
+        </div>
+
+        <div class="footer-tagline">
+          Python Developer • Cybersecurity Engineer • AI Builder
+        </div>
+
+        <div class="footer-links">
+          <a href="https://github.com/haider1928" target="_blank" rel="noopener">GitHub</a>
+          <a href="mailto:haidermohsin2468@gmail.com">Email</a>
+        </div>
+
+        <div class="footer-copy">
+          © 2026 Haider Mohsin. All rights reserved. Software Engineer &amp; Security Research Portfolio.
+        </div>
       </div>
     </div>
   </footer>
+
+  <!-- PROJECT DETAIL MODAL OVERLAY -->
+  <div class="project-modal-overlay" id="projectModalOverlay">
+    <div class="project-modal-card">
+      <button class="project-modal-close" id="projectModalClose" aria-label="Close modal">&times;</button>
+      <div id="projectModalBody">
+        <!-- Dynamically rendered by js/main.js -->
+      </div>
+    </div>
+  </div>
 
   <script src="js/main.js"></script>
 </body>
