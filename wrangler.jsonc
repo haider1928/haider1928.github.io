@@ -1,6 +1,10 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "haider1928-github-io",
+  // The build (nitro, via @lovable.dev/vite-tanstack-config) merges this file into
+  // .output/server/wrangler.json, replaces `main` with the bundled worker and adds
+  // the static assets binding. `wrangler deploy` picks that up automatically via
+  // .wrangler/deploy/config.json, so always run `bun run build` first.
   "main": "@tanstack/react-start/server-entry",
   "compatibility_date": "2026-10-19",
   "compatibility_flags": ["nodejs_compat"],
