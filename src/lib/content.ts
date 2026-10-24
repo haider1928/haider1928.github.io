@@ -10,7 +10,14 @@ import {
   seedSettings,
   seedSocials,
 } from "./seed";
-import type { Service, SiteContent } from "./types";
+import type { Faq, FormQuestion, Purpose, Service, ServicePackage, SiteContent } from "./types";
+
+type Published = { published?: boolean };
+type DbService = Omit<Service, "packages" | "faqs"> & {
+  service_packages?: (ServicePackage & Published)[];
+  faqs?: (Faq & Published)[];
+};
+type DbPurpose = Omit<Purpose, "questions"> & { form_questions?: (FormQuestion & Published)[] };
 
 const bySort = <T extends { sort_order: number }>(a: T, b: T) => a.sort_order - b.sort_order;
 
@@ -31,17 +38,27 @@ async function loadContent(): Promise<SiteContent> {
   if (!sb) return builtInContent;
   try {
     const now = new Date().toISOString();
-    const [settings, categories, services, offers, projects, achievements, socials, purposes] = await Promise.all([
-      sb.from("site_settings").select("key,value"),
-      sb.from("categories").select("*").eq("published", true),
-      sb.from("services").select("*, service_packages(*), faqs(*)").eq("published", true),
-      sb.from("offers").select("*").eq("published", true).or(`ends_at.is.null,ends_at.gt.${now}`),
-      sb.from("projects").select("*").eq("published", true),
-      sb.from("achievements").select("*").eq("published", true),
-      sb.from("social_links").select("*").eq("published", true),
-      sb.from("form_purposes").select("*, form_questions(*)").eq("published", true),
-    ]);
-    const err = [settings, categories, services, offers, projects, achievements, socials, purposes].find((r) => r.error);
+    const [settings, categories, services, offers, projects, achievements, socials, purposes] =
+      await Promise.all([
+        sb.from("site_settings").select("key,value"),
+        sb.from("categories").select("*").eq("published", true),
+        sb.from("services").select("*, service_packages(*), faqs(*)").eq("published", true),
+        sb.from("offers").select("*").eq("published", true).or(`ends_at.is.null,ends_at.gt.${now}`),
+        sb.from("projects").select("*").eq("published", true),
+        sb.from("achievements").select("*").eq("published", true),
+        sb.from("social_links").select("*").eq("published", true),
+        sb.from("form_purposes").select("*, form_questions(*)").eq("published", true),
+      ]);
+    const err = [
+      settings,
+      categories,
+      services,
+      offers,
+      projects,
+      achievements,
+      socials,
+      purposes,
+    ].find((r) => r.error);
     if (err?.error) throw err.error;
 
     const s = { ...seedSettings } as SiteContent["settings"];
@@ -51,10 +68,10 @@ async function loadContent(): Promise<SiteContent> {
       settings: s,
       categories: (categories.data ?? []).sort(bySort),
       services: (services.data ?? [])
-        .map((r: any): Service => ({
+        .map((r: DbService): Service => ({
           ...r,
-          packages: (r.service_packages ?? []).filter((p: any) => p.published !== false).sort(bySort),
-          faqs: (r.faqs ?? []).filter((f: any) => f.published !== false).sort(bySort),
+          packages: (r.service_packages ?? []).filter((p) => p.published !== false).sort(bySort),
+          faqs: (r.faqs ?? []).filter((f) => f.published !== false).sort(bySort),
         }))
         .sort(bySort),
       offers: (offers.data ?? []).sort(bySort),
@@ -62,9 +79,9 @@ async function loadContent(): Promise<SiteContent> {
       achievements: (achievements.data ?? []).sort(bySort),
       socials: (socials.data ?? []).sort(bySort),
       purposes: (purposes.data ?? [])
-        .map((p: any) => ({
+        .map((p: DbPurpose) => ({
           ...p,
-          questions: (p.form_questions ?? []).filter((q: any) => q.published !== false).sort(bySort),
+          questions: (p.form_questions ?? []).filter((q) => q.published !== false).sort(bySort),
         }))
         .sort(bySort),
       source: "database",
@@ -87,7 +104,6 @@ export type GithubRepo = {
   html_url: string;
   homepage: string | null;
   language: string | null;
-  stargazers_count: number;
   topics?: string[];
   updated_at: string;
   fork: boolean;
@@ -98,9 +114,12 @@ export const githubReposQuery = (user: string) =>
   queryOptions({
     queryKey: ["github", user],
     queryFn: async (): Promise<GithubRepo[]> => {
-      const res = await fetch(`https://api.github.com/users/${encodeURIComponent(user)}/repos?per_page=100&sort=updated`, {
-        headers: { Accept: "application/vnd.github+json" },
-      });
+      const res = await fetch(
+        `https://api.github.com/users/${encodeURIComponent(user)}/repos?per_page=100&sort=updated`,
+        {
+          headers: { Accept: "application/vnd.github+json" },
+        },
+      );
       if (!res.ok) throw new Error(`GitHub returned ${res.status}`);
       const data = (await res.json()) as GithubRepo[];
       return data.filter((r) => !r.fork);

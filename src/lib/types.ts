@@ -121,6 +121,8 @@ export type Settings = { [k: string]: string } & {
   skills: string;
   github_user: string;
   fiverr_url: string;
+  linkedin_url: string;
+  htb_profile_url: string;
 };
 
 export type SiteContent = {
@@ -135,5 +137,12 @@ export type SiteContent = {
   source: "database" | "built-in";
 };
 
-export const SUBMISSION_STATUSES = ["new", "contacted", "in_progress", "won", "lost", "spam"] as const;
+export const SUBMISSION_STATUSES = [
+  "new",
+  "contacted",
+  "in_progress",
+  "won",
+  "lost",
+  "spam",
+] as const;
 export type SubmissionStatus = (typeof SUBMISSION_STATUSES)[number];

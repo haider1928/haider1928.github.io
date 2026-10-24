@@ -5,13 +5,14 @@ import * as S from "../src/lib/seed";
 const q = (v: unknown): string => {
   if (v === null || v === undefined) return "null";
   if (typeof v === "boolean" || typeof v === "number") return String(v);
-  if (Array.isArray(v) && v.every((x) => typeof x === "string")) return `array[${v.map(q).join(",")}]::text[]`;
+  if (Array.isArray(v) && v.every((x) => typeof x === "string"))
+    return `array[${v.map(q).join(",")}]::text[]`;
   if (typeof v === "object") return `'${JSON.stringify(v).replace(/'/g, "''")}'::jsonb`;
   return `'${String(v).replace(/'/g, "''")}'`;
 };
-const ins = (table: string, cols: string[], rows: Record<string, unknown>[], conflict: string) =>
+const ins = (table: string, cols: string[], rows: readonly object[], conflict: string) =>
   rows.length
-    ? `insert into public.${table} (${cols.join(",")}) values\n${rows.map((r) => `  (${cols.map((c) => q(r[c])).join(",")})`).join(",\n")}\non conflict (${conflict}) do nothing;\n`
+    ? `insert into public.${table} (${cols.join(",")}) values\n${rows.map((r) => `  (${cols.map((c) => q((r as Record<string, unknown>)[c])).join(",")})`).join(",\n")}\non conflict (${conflict}) do nothing;\n`
     : "";
 
 const schema = `-- haidermohsin.com — full Supabase setup. Safe to re-run.
@@ -117,6 +118,7 @@ create index if not exists services_cat_idx on public.services (category_slug, s
 create index if not exists packages_service_idx on public.service_packages (service_id);
 create index if not exists faqs_service_idx on public.faqs (service_id);
 create index if not exists questions_purpose_idx on public.form_questions (purpose_key);
+create unique index if not exists achievements_title_key on public.achievements (title);
 
 -- updated_at triggers, grants and RLS -------------------------------------
 do $$
@@ -151,10 +153,40 @@ revoke all on public.submissions from anon;
 `;
 
 let seed = "";
-seed += ins("site_settings", ["key", "value"], Object.entries(S.seedSettings).map(([key, value]) => ({ key, value })), "key");
+seed += ins(
+  "site_settings",
+  ["key", "value"],
+  Object.entries(S.seedSettings).map(([key, value]) => ({ key, value })),
+  "key",
+);
 seed += ins("social_links", ["label", "url", "icon", "sort_order"], S.seedSocials, "url");
-seed += ins("categories", ["slug", "name", "description", "icon", "sort_order"], S.seedCategories, "slug");
-seed += ins("services", ["slug", "category_slug", "name", "tagline", "summary", "description", "icon", "includes", "audience", "process", "purpose_keys", "fiverr_url", "featured", "sort_order"], S.seedServices as any, "slug");
+seed += ins(
+  "categories",
+  ["slug", "name", "description", "icon", "sort_order"],
+  S.seedCategories,
+  "slug",
+);
+seed += ins(
+  "services",
+  [
+    "slug",
+    "category_slug",
+    "name",
+    "tagline",
+    "summary",
+    "description",
+    "icon",
+    "includes",
+    "audience",
+    "process",
+    "purpose_keys",
+    "fiverr_url",
+    "featured",
+    "sort_order",
+  ],
+  S.seedServices,
+  "slug",
+);
 for (const s of S.seedServices) {
   const sid = `(select id from public.services where slug = ${q(s.slug)})`;
   for (const p of s.packages)
@@ -162,13 +194,67 @@ for (const s of S.seedServices) {
   for (const f of s.faqs)
     seed += `insert into public.faqs (service_id,question,answer,sort_order) values (${sid},${q(f.question)},${q(f.answer)},${f.sort_order}) on conflict (service_id,question) do nothing;\n`;
 }
-seed += ins("offers", ["slug", "title", "description", "badge", "service_slug", "purpose_keys", "cta_label", "ends_at", "featured", "sort_order"], S.seedOffers as any, "slug");
-seed += ins("projects", ["slug", "title", "summary", "description", "status", "tags", "highlights", "purpose_keys", "repo_url", "live_url", "featured", "sort_order"], S.seedProjects as any, "slug");
-seed += ins("form_purposes", ["key", "label", "description", "icon", "next_step", "next_step_href", "email_required", "sort_order"], S.seedPurposes as any, "key");
+seed += ins(
+  "offers",
+  [
+    "slug",
+    "title",
+    "description",
+    "badge",
+    "service_slug",
+    "purpose_keys",
+    "cta_label",
+    "ends_at",
+    "featured",
+    "sort_order",
+  ],
+  S.seedOffers,
+  "slug",
+);
+seed += ins(
+  "projects",
+  [
+    "slug",
+    "title",
+    "summary",
+    "description",
+    "status",
+    "tags",
+    "highlights",
+    "purpose_keys",
+    "repo_url",
+    "live_url",
+    "featured",
+    "sort_order",
+  ],
+  S.seedProjects,
+  "slug",
+);
+seed += ins(
+  "achievements",
+  ["title", "description", "achieved_on", "kind", "link", "sort_order"],
+  S.seedAchievements,
+  "title",
+);
+seed += ins(
+  "form_purposes",
+  [
+    "key",
+    "label",
+    "description",
+    "icon",
+    "next_step",
+    "next_step_href",
+    "email_required",
+    "sort_order",
+  ],
+  S.seedPurposes,
+  "key",
+);
 seed += ins(
   "form_questions",
   ["purpose_key", "key", "label", "help", "type", "options", "required", "sort_order"],
-  S.seedPurposes.flatMap((p) => p.questions.map((qq) => ({ ...qq, purpose_key: p.key }))) as any,
+  S.seedPurposes.flatMap((p) => p.questions.map((qq) => ({ ...qq, purpose_key: p.key }))),
   "purpose_key, key",
 );
 // empty text[] needs a cast

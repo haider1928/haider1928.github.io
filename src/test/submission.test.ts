@@ -8,7 +8,10 @@ describe("submission rules", () => {
     expect(submissionSchema.safeParse({ ...base, email: "" }).success).toBe(false);
   });
   it("allows no email for 'just exploring'", () => {
-    expect(submissionSchema.safeParse({ ...base, purpose: "exploring", email: "", emailRequired: false }).success).toBe(true);
+    expect(
+      submissionSchema.safeParse({ ...base, purpose: "exploring", email: "", emailRequired: false })
+        .success,
+    ).toBe(true);
   });
   it("treats a filled honeypot as a bot", () => {
     expect(isBot(submissionSchema.parse({ ...base, website: "spam.com" }))).toBe(true);

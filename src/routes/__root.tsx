@@ -26,10 +26,22 @@ function NotFoundComponent() {
       <div className="max-w-md text-center">
         <p className="font-mono text-sm text-primary">$ curl {"<this-page>"} → 404</p>
         <h1 className="mt-3 text-4xl font-bold">Nothing to exploit here.</h1>
-        <p className="mt-3 text-muted-foreground">This page doesn't exist or was moved. Let's get you somewhere useful.</p>
+        <p className="mt-3 text-muted-foreground">
+          This page doesn't exist or was moved. Let's get you somewhere useful.
+        </p>
         <div className="mt-6 flex justify-center gap-2">
-          <Link to="/" className="inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground">Go home</Link>
-          <Link to="/services" className="inline-flex items-center rounded-md border border-border px-4 py-2 text-sm">Browse services</Link>
+          <Link
+            to="/"
+            className="inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground"
+          >
+            Go home
+          </Link>
+          <Link
+            to="/services"
+            className="inline-flex items-center rounded-md border border-border px-4 py-2 text-sm"
+          >
+            Browse services
+          </Link>
         </div>
       </div>
     </div>
@@ -81,7 +93,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Haider Mohsin — Developer & Security Practitioner" },
-      { name: "description", content: "Web development, pentesting, AI agents, automation and Python teaching by Haider Mohsin, Lahore." },
+      {
+        name: "description",
+        content:
+          "Web development, pentesting, AI agents, automation and Python teaching by Haider Mohsin, Lahore.",
+      },
       { name: "author", content: "Haider Mohsin" },
       { name: "theme-color", content: "#14171c" },
       { name: "referrer", content: "strict-origin-when-cross-origin" },
@@ -91,10 +107,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;600;700&display=swap",
+      },
     ],
     scripts: [
       {
@@ -104,10 +123,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@type": "Person",
           name: "Haider Mohsin",
           url: "https://haidermohsin.com",
+          image: "https://haidermohsin.com/haider-mohsin.jpg",
           email: "hello@haidermohsin.com",
           jobTitle: "Developer and Cybersecurity Practitioner",
           address: { "@type": "PostalAddress", addressLocality: "Lahore", addressCountry: "PK" },
-          sameAs: ["https://github.com/haider1928", "https://www.fiverr.com/haidermohsinn", "https://instagram.com/haidermohsin_official"],
+          sameAs: [
+            "https://github.com/haider1928",
+            "https://www.fiverr.com/haidermohsinn",
+            "https://instagram.com/haidermohsin_official",
+          ],
         }),
       },
     ],
@@ -138,7 +162,10 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <VisitorProvider>
-        <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-2 focus:top-2 focus:z-50 focus:rounded focus:bg-primary focus:px-3 focus:py-2 focus:text-primary-foreground">
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-2 focus:top-2 focus:z-50 focus:rounded focus:bg-primary focus:px-3 focus:py-2 focus:text-primary-foreground"
+        >
           Skip to content
         </a>
         <SiteHeader />

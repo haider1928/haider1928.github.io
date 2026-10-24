@@ -101,6 +101,7 @@ create index if not exists services_cat_idx on public.services (category_slug, s
 create index if not exists packages_service_idx on public.service_packages (service_id);
 create index if not exists faqs_service_idx on public.faqs (service_id);
 create index if not exists questions_purpose_idx on public.form_questions (purpose_key);
+create unique index if not exists achievements_title_key on public.achievements (title);
 
 -- updated_at triggers, grants and RLS -------------------------------------
 do $$
@@ -136,7 +137,7 @@ insert into public.site_settings (key,value) values
   ('site_name','Haider Mohsin'),
   ('hero_eyebrow','Developer · Security practitioner · Lahore'),
   ('hero_title','Software that ships. Systems that hold.'),
-  ('hero_subtitle','I build web apps, Python tools and AI agents, then try to break them before anyone else does. Pick a service, add it to your request, and I''ll reply personally.'),
+  ('hero_subtitle','I build web apps, Python tools and AI agents, then try to break them before anyone else does. Pick a service, tap Buy, and I''ll reply personally.'),
   ('email','hello@haidermohsin.com'),
   ('whatsapp_number','923318888878'),
   ('whatsapp_message','Hi Haider, I found you on haidermohsin.com and wanted to ask about'),
@@ -149,7 +150,9 @@ Today I work on both sides: I build products for clients and students, and I tes
   ('about_now','Building SkillBridge, a talent marketplace for students of Punjab Group of Colleges, and organising a live attack-and-defend hacking event for student teams.'),
   ('skills','Python, TypeScript, React, Node.js, SQL, Supabase, REST APIs, Linux, Burp Suite, Nmap, OWASP Top 10, Recon & OSINT, LLM agents, Automation'),
   ('github_user','haider1928'),
-  ('fiverr_url','https://www.fiverr.com/haidermohsinn')
+  ('fiverr_url','https://www.fiverr.com/haidermohsinn'),
+  ('linkedin_url',''),
+  ('htb_profile_url','')
 on conflict (key) do nothing;
 insert into public.social_links (label,url,icon,sort_order) values
   ('GitHub','https://github.com/haider1928','github',1),
@@ -208,6 +211,32 @@ insert into public.projects (slug,title,summary,description,status,tags,highligh
   ('skillbridge','SkillBridge','A talent marketplace connecting students of Punjab Group of Colleges with real work.','SkillBridge helps students showcase their skills and find freelance and internship opportunities, while giving local businesses an easy way to hire young talent. It''s currently in development.','in_development',array['Marketplace','Web app','Students']::text[],array['Student profiles and skill showcases','Gigs and opportunities board','Built for Punjab Group of Colleges']::text[],array['business','collaboration','exploring']::text[],null,null,true,1),
   ('live-hacking-event','Live Hacking Event','An attack-and-defend competition where student teams build, break and protect websites.','Each student team builds two sites: one deliberately vulnerable and one hardened. Then teams attack each other''s targets and defend their own in real time. The goal is to teach security by doing it. Currently in development.','in_development',array['Cybersecurity','Event','Education']::text[],array['Attack & defend format','Vulnerable vs secure builds','Hands-on learning for students']::text[],array['security','learn','collaboration']::text[],null,null,true,2)
 on conflict (slug) do nothing;
+insert into public.achievements (title,description,achieved_on,kind,link,sort_order) values
+  ('VoIP calling system on bare ESP32 hardware','Built a fully functional VoIP calling system on bare hardware using ESP32 microcontrollers and SIP.',null,'Hardware',null,1),
+  ('OzMed AI','A sysadmin assistant that runs Python, PowerShell and system commands, can be sandboxed, and runs in the background.',null,'Repository','https://github.com/haider1928/ozmed',10),
+  ('AI Bug Hunter','An AI agent for security testing.',null,'Repository',null,11),
+  ('Instagram automation pipeline','A Python pipeline that fetches content, edits and posts it automatically, and manages the account.',null,'Repository',null,12),
+  ('PCTLS SkillBridge','A student marketplace where students buy and sell skills. Built with React, Vite, TypeScript, Tailwind and Supabase. The first version is live and still in development.',null,'Live project','https://skillbridge.haidermohsin.com/',20),
+  ('Board Ready','An AI study planner app for matric students, with an AI assistant and a fox mascot.',null,'Live project',null,21),
+  ('Constant Champion','4 weekly streaks in a row',null,'HTB badge',null,30),
+  ('Cyber Rookie 365','1 year',null,'HTB badge',null,31),
+  ('Binary Duo Explorer','2 years',null,'HTB badge',null,32),
+  ('Unwavering User','',null,'HTB badge',null,33),
+  ('Cyber Starter','',null,'HTB badge',null,34),
+  ('Developer','',null,'HTB badge',null,35),
+  ('Your request is my demand','',null,'HTB badge',null,36),
+  ('LinkedIn profile with consistent content','Established a LinkedIn profile with consistent content uploads.',null,'LinkedIn',null,40),
+  ('I Built an AI Agent That Runs Its Own Pentests','',null,'LinkedIn post',null,41),
+  ('The Load Balancer That Trusted a Header','Auth bypass to password reset poisoning',null,'LinkedIn post',null,42),
+  ('The Password Reset Token That Wasn''t Actually Checked','',null,'LinkedIn post',null,43),
+  ('From a Stored XSS to a Cracked MD5','',null,'LinkedIn post',null,44),
+  ('Breaking a Remember Me Cookie','',null,'LinkedIn post',null,45),
+  ('Web security seminar at Punjab College','Organizing a seminar for 200+ expected students where teams build a vulnerable website and a secure one, then attack and defend them.',null,'Upcoming',null,50),
+  ('4 years of hands-on coding','Python automation and scraping, web development and cybersecurity.',null,'Experience',null,60),
+  ('Hands-on lab practice','TryHackMe, Hack The Box and PortSwigger labs.',null,'Practice',null,61),
+  ('Tools I use','Burp Suite, Nmap, Wireshark, Metasploit, sqlmap, Gobuster, ffuf, Hashcat, John',null,'Tools',null,62),
+  ('eJPT certification','',null,'Planned',null,70)
+on conflict (title) do nothing;
 insert into public.form_purposes (key,label,description,icon,next_step,next_step_href,email_required,sort_order) values
   ('exploring','Just exploring','Having a look around. No pressure at all.','compass','Curious how secure your own site is? Try a free quick security check.','/services/security-scan',false,1),
   ('business','Hire me for business','You have a project, product or problem to solve.','briefcase','Start with a free 20-minute consultation to scope your project.','/contact',true,2),

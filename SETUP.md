@@ -53,3 +53,11 @@ Search and filter by status, purpose, service and date; click a row for full det
 
 ## Security notes
 Public visitors can only read published content. Submissions are written only by the server function (service key) after validation, honeypot and a limit of 3 requests per visitor per 10 minutes, and are readable only by allow-listed admins.
+
+## Filling in the "coming soon" placeholders
+
+In Supabase → Table Editor (after re-running `supabase/setup.sql` once so the new rows exist):
+
+- **site_settings**: set `linkedin_url` and `htb_profile_url`. They appear on the Achievements page and in the Buy pop-up.
+- **achievements**: put a URL in the `link` column for any row that shows "Link coming soon" (AI Bug Hunter, Instagram automation pipeline, Board Ready, the LinkedIn write-ups). For `HTB badge` rows, `link` is an optional badge image URL; without it a shield icon is shown.
+- Add more repos as new rows with `kind` = `Repository`. Other kinds: `Hardware`, `Live project`, `HTB badge`, `LinkedIn post`, `Upcoming`, `Experience`, `Practice`, `Tools`, `Planned`.

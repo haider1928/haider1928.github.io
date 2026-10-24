@@ -1,5 +1,11 @@
 import { useSuspenseQuery } from "@tanstack/react-query";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { contentQuery } from "@/lib/content";
 import { useVisitor } from "@/lib/visitor";
 import { Icon } from "./icons";
@@ -12,7 +18,9 @@ export function PurposeDialog() {
       <DialogContent className="max-w-md">
         <DialogHeader>
           <DialogTitle>Welcome! What brings you here?</DialogTitle>
-          <DialogDescription>Totally optional. I'll just highlight what's most useful for you.</DialogDescription>
+          <DialogDescription>
+            Totally optional. I'll just highlight what's most useful for you.
+          </DialogDescription>
         </DialogHeader>
         <div className="grid gap-2">
           {data.purposes.map((p) => (
@@ -31,7 +39,10 @@ export function PurposeDialog() {
             </button>
           ))}
         </div>
-        <button onClick={() => setDialogOpen(false)} className="mt-1 text-sm text-muted-foreground underline-offset-4 hover:underline">
+        <button
+          onClick={() => setDialogOpen(false)}
+          className="mt-1 text-sm text-muted-foreground underline-offset-4 hover:underline"
+        >
           Skip for now
         </button>
       </DialogContent>

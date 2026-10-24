@@ -15,3 +15,6 @@
 - Submissions are inserted only by the `submitRequest` server function with the service key, saved before notifications. Why: no public writes to private tables, notifications can't lose data.
 - Admin access is enforced by the `is_admin()` RLS function backed by `admin_emails`. Why: security must not rely on UI.
 - Cloudflare deploys use root `wrangler.jsonc` only as a base: nitro (inside `@lovable.dev/vite-tanstack-config`) merges it into `.output/server/wrangler.json` at build time, so always `bun run build` before `wrangler deploy`, and never add `@cloudflare/vite-plugin` or let wrangler edit `vite.config.ts`. Why: two Cloudflare build plugins conflict and break the build.
+- Achievements page sections are chosen by each row's `kind` via `src/lib/achievements.ts`; rows with a null `link` render a "coming soon" placeholder. Why: content stays editable in the database without code changes.
+- Images the live site needs (profile photo) are real files in `public/`, never `.asset.json` pointers; full URLs come from `src/lib/site.ts`. Why: asset pointers only resolve on Lovable hosting, not on Cloudflare.
+- There is no cart: "Buy" (`BuyDialog.tsx`) only opens an on-page dialog with contact options. Why: orders happen by direct contact.

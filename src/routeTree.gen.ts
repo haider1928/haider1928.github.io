@@ -13,7 +13,6 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AchievementsRouteImport } from './routes/achievements'
 import { Route as AdminRouteImport } from './routes/admin'
-import { Route as BasketRouteImport } from './routes/basket'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as OffersRouteImport } from './routes/offers'
 import { Route as PrivacyRouteImport } from './routes/privacy'
@@ -42,11 +41,6 @@ const AchievementsRoute = AchievementsRouteImport.update({
 const AdminRoute = AdminRouteImport.update({
   id: '/admin',
   path: '/admin',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BasketRoute = BasketRouteImport.update({
-  id: '/basket',
-  path: '/basket',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -100,7 +94,6 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/achievements': typeof AchievementsRoute
   '/admin': typeof AdminRoute
-  '/basket': typeof BasketRoute
   '/contact': typeof ContactRoute
   '/offers': typeof OffersRoute
   '/privacy': typeof PrivacyRoute
@@ -116,7 +109,6 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/achievements': typeof AchievementsRoute
   '/admin': typeof AdminRoute
-  '/basket': typeof BasketRoute
   '/contact': typeof ContactRoute
   '/offers': typeof OffersRoute
   '/privacy': typeof PrivacyRoute
@@ -133,7 +125,6 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/achievements': typeof AchievementsRoute
   '/admin': typeof AdminRoute
-  '/basket': typeof BasketRoute
   '/contact': typeof ContactRoute
   '/offers': typeof OffersRoute
   '/privacy': typeof PrivacyRoute
@@ -151,7 +142,6 @@ export interface FileRouteTypes {
     | '/about'
     | '/achievements'
     | '/admin'
-    | '/basket'
     | '/contact'
     | '/offers'
     | '/privacy'
@@ -167,7 +157,6 @@ export interface FileRouteTypes {
     | '/about'
     | '/achievements'
     | '/admin'
-    | '/basket'
     | '/contact'
     | '/offers'
     | '/privacy'
@@ -183,7 +172,6 @@ export interface FileRouteTypes {
     | '/about'
     | '/achievements'
     | '/admin'
-    | '/basket'
     | '/contact'
     | '/offers'
     | '/privacy'
@@ -200,7 +188,6 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   AchievementsRoute: typeof AchievementsRoute
   AdminRoute: typeof AdminRoute
-  BasketRoute: typeof BasketRoute
   ContactRoute: typeof ContactRoute
   OffersRoute: typeof OffersRoute
   PrivacyRoute: typeof PrivacyRoute
@@ -240,13 +227,6 @@ declare module '@tanstack/react-router' {
       path: '/admin'
       fullPath: '/admin'
       preLoaderRoute: typeof AdminRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/basket': {
-      id: '/basket'
-      path: '/basket'
-      fullPath: '/basket'
-      preLoaderRoute: typeof BasketRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -320,7 +300,6 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   AchievementsRoute: AchievementsRoute,
   AdminRoute: AdminRoute,
-  BasketRoute: BasketRoute,
   ContactRoute: ContactRoute,
   OffersRoute: OffersRoute,
   PrivacyRoute: PrivacyRoute,

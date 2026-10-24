@@ -1,6 +1,11 @@
 import { createServerFn } from "@tanstack/react-start";
 import { getRequest } from "@tanstack/react-start/server";
-import { isBot, isRateLimited, RATE_LIMIT_WINDOW_MINUTES, submissionSchema } from "./submission-schema";
+import {
+  isBot,
+  isRateLimited,
+  RATE_LIMIT_WINDOW_MINUTES,
+  submissionSchema,
+} from "./submission-schema";
 
 export type SubmitResult =
   | { ok: true; id: string }
@@ -17,23 +22,40 @@ export const submitRequest = createServerFn({ method: "POST" })
     // Bots get a fake success so they don't retry.
     if (isBot(data)) return { ok: true, id: "ok" };
 
-    const url = process.env['SUPABASE_URL'] || process.env['VITE_SUPABASE_URL'];
-    const serviceKey = process.env['SUPABASE_SERVICE_ROLE_KEY'];
+    const url = process.env["SUPABASE_URL"] || process.env["VITE_SUPABASE_URL"];
+    const serviceKey = process.env["SUPABASE_SERVICE_ROLE_KEY"];
     if (!url || !serviceKey) {
-      return { ok: false, reason: "not_configured", message: "The request inbox isn't connected yet." };
+      return {
+        ok: false,
+        reason: "not_configured",
+        message: "The request inbox isn't connected yet.",
+      };
     }
 
     const { createClient } = await import("@supabase/supabase-js");
-    const admin = createClient(url, serviceKey, { auth: { persistSession: false, autoRefreshToken: false } });
+    const admin = createClient(url, serviceKey, {
+      auth: { persistSession: false, autoRefreshToken: false },
+    });
 
     const req = getRequest();
-    const ip = req.headers.get("cf-connecting-ip") || req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
-    const ipHash = await sha256(`${ip}:${process.env['RATE_LIMIT_SALT'] || "hm"}`);
+    const ip =
+      req.headers.get("cf-connecting-ip") ||
+      req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+      "unknown";
+    const ipHash = await sha256(`${ip}:${process.env["RATE_LIMIT_SALT"] || "hm"}`);
 
     const since = new Date(Date.now() - RATE_LIMIT_WINDOW_MINUTES * 60_000).toISOString();
-    const { count } = await admin.from("submissions").select("id", { count: "exact", head: true }).eq("ip_hash", ipHash).gte("created_at", since);
+    const { count } = await admin
+      .from("submissions")
+      .select("id", { count: "exact", head: true })
+      .eq("ip_hash", ipHash)
+      .gte("created_at", since);
     if (isRateLimited(count ?? 0)) {
-      return { ok: false, reason: "rate_limited", message: "You've sent a few requests already. Please wait a few minutes." };
+      return {
+        ok: false,
+        reason: "rate_limited",
+        message: "You've sent a few requests already. Please wait a few minutes.",
+      };
     }
 
     const { data: row, error } = await admin
